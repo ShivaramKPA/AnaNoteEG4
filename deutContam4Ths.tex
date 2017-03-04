@@ -1,0 +1,206 @@
+% 9/10/13: File started from the copy of all the body part of TechNotes/deutContam.tex
+
+
+\section{Study of \nh3 Contamination of EG4 \nd3 Target}   %Introduction
+
+\begin{comment}  %This commented out part moved to \input{chap4simul/introDataAnalysis.tex} 
+%\subsection{Subsection Header}
+The first analysis goal for the EG4 \nd3 data set is to extract the difference of polarized cross sections (from the difference of yields) as given by the following expression:
+
+%http://en.wikibooks.org/wiki/LaTeX/Mathematics#Automatic_sizing : Very often mathematical features will differ in size, in which case the delimiters surrounding the expression should vary accordingly. This can be done automatically using the \left and \right commands.
+\begin{equation}
+%  \sigma_{diff} = \sigma^+ - \sigma^- = \frac{1}{N_t}\cdot \left[ \frac{N^+}{N^+_{e^-}} - \frac{N^-}{N^-_{e^-}} \right]\cdot \frac{1}{\Delta\Omega}\cdot E_{detector} %kp:
+  \delta \sigma = \sigma^+ - \sigma^- = \frac{1}{N_t}\cdot \left[ \frac{N^+}{N^+_{e^-}} - \frac{N^-}{N^-_{e^-}} \right]\cdot \frac{1}{\Delta\Omega}\cdot \frac{1}{E_{detector}} %SEKpr
+  \label{eqXSdiff}
+\end{equation}
+
+where, 
+\begin{itemize}
+  \item $N_t$ = Number of deuteron nucleii in the target = $3 N_a l_A \frac{\rho_A}{m_A}$, with 
+    \begin{itemize}
+      \item 3: number of Deuteron atoms in a \hnd3 molecule
+      \item $N_a = 6.02\times 10^{23}$: Avogadro's number
+      \item $l_A =$ target length (cm) $\times$ packing fraction
+     % \item $\rho_A = 0.917 (g/cm^3)$: Target density
+      \item $\rho_A = 1.056 (g/cm^3)$: Target density
+            %\item $m_A = 18.023584 (g)$: Mass of target molecule \15nd3  
+      %\item $m_A = 20.0474 (g)$: Mass of target molecule \lnd3  
+      \item $m_A = 21.042414237 (g)$: Mass of target molecule \hnd3   %Calculated myself by using the masses of 15N and deuterons
+      %I spent a whole day trying to find the 15ND3 mass by googling, but to no avail. So, above value is a temporary solution.
+      % Molecular Weight of 15NH3: 18.0239 g/mol   http://www.chembase.com/cbid_107639.htm
+      % Molar mass of ND3 is 20.0474 g/mol;  http://www.webqc.org/molecular-weight-of-ND3.html (it's 14ND3)
+      % 14ND3 = 14.0030740048+3*2.01410178 = 20.04537934 (Calculated myself)
+
+    \end{itemize}
+  \item $E_{detector}$ stands/accounts for the detector efficiencies
+  \item $N^{+/-}$: Number of scattered electrons for each helicity state (+/-).
+  \item $N^{+/-}_{e^-}$: Number of incident electrons for +/- helicity states = $\left(\frac{ C_{Fcup}^{+/-}\cdot (10^{-9}/9264)}{Q_{e^-}} \right)\cdot \frac{C_{BPM}}{C_{Fcup}}$ with 
+    \begin{itemize}
+      \item $C_{Fcup}^{+/-}$: Helicity dependent Faraday-cup counts (live time gated)
+      \item $\frac{10^9}{9264}$: Factor for converting Faraday cup counts into Coulombs. (The factor 1/9264 converts the counts into nano-coulombs.)
+      \item $Q_e = 1.0602\times 10^{-19}(C)$: the electron charge. %kp: electronic charge.
+      \item $\frac{C_{BPM}}{C_{Fcup}}$: the ratio of the Beam-Position-Monitor (BPM) and Faraday-cup counts. The BPM is located before the target so its count doesn't suffer the loss, but the Faraday-cup is located at the end of the beamline and because its physical radius is not large enough, parts of the beam's halo are not collected. Since, the size of the halo depends on the amount of material in the beamline as well as on the beam energy, the ratio is a function of the beam energy. For high beam energies such as 3 GeV, the ratio is close to 1 but for the lower beam energies it is lower than 1. For example the ratio is 0.965919 for 2.3 GeV \cite{HK_dXs_extr}. 
+    \end{itemize}
+   \item $\Delta\Omega=sin\theta\cdot\Delta\theta\cdot\Delta\phi$: The solid angle for the given kinematic bin.
+ % \item The third etc \ldots
+\end{itemize}
+
+\end{comment}
+
+In equation (\ref{eqXSdiff}), it is assumed that the ammonia target is 100\% pure i.e. composed of only %all with 
+\hnd3 molecules and that the contribution from the slightly polarized nitrogen is negligible. But, in practice, the standard \nd3 sample is not a 100\% pure material. Rather, it contains one or two percent of \lnd3, \hnh3 \cite{sarahTgt}, and some traces of other isotopic species of ammonia. % i.e. \lnh3, $^{15}$NHD$_2$, $^{14}$NHD$_2$, $^{15}$NH$_2$D, $^{14}$NH$_2$D. 
+It was reported by the EG1-DVCS experiment at Jlab \cite{bostedD2Cont}\cite{koiralaD2Cont} that a higher than usual amount of \nh3 (about 10\%) was observed in the \nd3 target, indicating that an inadvertent mix-up of \nh3 and \nd3 materials could have happened during the experimental run. Wondering if the EG4 experiment had a similar incident, we decided to investigate and estimate the amount of \nh3 contamination of our \nd3 target by looking at the data from the \nd3 run period of the experiment as described below.
+
+
+\subsection{Procedure}
+The method involves using ep elastic (or quasi-elastic in the case of non-proton target) events and comparing the width %resolutions 
+in some quantity that reflects the correlation between the scattered electron (e) and the recoiling proton (p) due to the kinematic constraints of such events. %There are many possible correlations that can be investigated (e.g., azimuthal angle correlation, polar angle correlation, momentum correlation, energy correlation). The best 
+The most suitable correlation is the one between the polar angles of the electron and the proton. That is because of the better angular resolution in CLAS than that for momentum, and also due to the fact that polar angle (\thns) resolution is much better than that of the azimuthal angle (\phns) because of the rotational effect (on %along 
+\phns) of the polarized target field as well as the drift chamber resolutions \cite{bostedD2Cont}.
+
+The \thns-correlation can be studied mainly in two ways. The first way is to reconstruct and histogram the beam energy using the measured polar angles and the known target mass and then compare the histogram from the \nd3 target run with that from a pure \nh3 target run. % Eb = M*( 1.0/( tan(theta_e/2) * theta(theta_pr)) - 1.0 )
+The other equivalent way is to predict the proton polar angles (using the measured electron angles, known target mass and the beam energy) and then histogram the deviation of the measured proton angles from the expected values. We chose to use a slightly modified %different 
+version of the latter approach %one 
+in which we histogram the following quantity\footnote{We chose this quantity $\Delta$ rather than the simple angle difference (\thns$_q$-\thns$_p$) because the former is more %kp: sensitive to the revealing of the contamination.}:
+directly interpretable in terms of transverse missing momentum for the case of quasi-elastic scattering.}: %SEKpr
+\begin{equation}
+\Delta = p_p\cdot(sin\theta_q - sin\theta_p)
+\label{pDsinTh}
+\end{equation}
+where $p_p$ is the measured proton momentum, \thns$_p$ is the measured polar angle of the proton, and \thns$_q$ is the expected polar angle of the recoiling proton (which is also the angle of the exchanged virtual photon (q)) given by:
+\begin{equation}
+\theta_q = tan^{-1}\left(\frac{M_p}{tan(\theta/2)\cdot(E_{beam}+M_p)} \right)%th1 = atan2(mmPr, tan(th1/2)*(Eb + mmPr));
+\label{thQ}
+\end{equation}
+
+The method exploits the fact that the width %resolution 
+of the quantity $\Delta$ from data with deuteron target decreases because the Fermi motion of the protons in the deuteron nuclei gives a spread of the order of 50 MeV in transverse momentum, and for longitudinal particle momenta of order of a few GeV, we obtain a polar angle spread about 20 mr, which is much larger than the intrinsic CLAS resolution of about 2 mr. 
+
+
+\subsection{Event Selection}
+% Read /u/home/adhikari/Acceptance/ChkND3_NH3_MixUp/readme which says, ../DataSkimming/skim_AllgudEvnts.C was used for skimming out epX events first and then using testCuts4skim.C to put tighter cuts and then make the above mentioned 'Delta' histogram, which are saved in root files to be used later by fitdTheta.C to do the fitting and get the final contamination results.
+First, for each data set (corresponding either to \nh3, \nd3 or $^{12}$C runs), using standard electron and proton identification cuts %(selection conditions), it is found out whether a given event 
+events each with a well reconstructed scattered electron and a similarly well reconstructed candidate for proton are selected. 
+We accept only events each of which have one electron, one proton and at most one neutral particle candidate (expected to be a neutron coming off from the deuteron target break-up). %We also look for events each of which has one electron, one proton and one neutral particle candidate (expected to be a neutron coming off from the deuteron target break-up). 
+If the event is one of the above two types, %it is put through the following more cuts to make sure they are elastic or quasi-elastic events:
+following additional cuts are applied to make sure it is elastic or quasi-elastic event:
+    \begin{itemize}
+       \item $E_X<0.15$ GeV \qquad with $E_X = M_p + E_e - E_{e'} - E_p = M_p + \nu - E_p $
+       \item $P_X<0.5$ GeV/c \qquad with $\vec{P}_X = \vec{0}_p + \vec{P}_e - \vec{P}_{e'} - \vec{P}_{p'} = \vec{P}_e - \vec{P}_{e'} - \vec{P}_{p'} $
+       \item $0.88 GeV<M_X<1.04 GeV$
+       \item $\theta_q<49.0^{\circ}$
+       \item $| |\phi_e - \phi_p| - 180.0^{\circ} |<2.0^{\circ}$
+    \end{itemize}
+where X indicates the missing entity in the d(e,e'p)X channel, which is expected to be neutron in the case of the quasi-elastic channel, thus $E_X$ is the missing energy and so on.
+
+If it passes these cuts, the quantity \Delt~ is calculated for the event and then histogrammed as shown by the red curves in the top-left (from $^{12}$C runs), top-right (from \nh3 runs), and bottom-right (from \nd3 runs) panels of Fig. \ref{fig:deutContAll}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\begin{figure}[hbt]
+%\centerline{\includegraphics[height=4.0in]{TechNotes/Figures/deutContamPlot.pdf}}
+\centerline{\includegraphics[height=4.0in]{TechNotes/Figures/deutContamPlot.eps}}
+\caption[Enter caption here for the lists]{Enter caption here}
+\label{fig:deutCont}
+\end{figure}
+\end{comment}
+
+%\subsection{Background Removal}
+After getting the histograms for the quantity \Delt~ for the ep-elastic or %ep 
+quasi-elastic events from the \nh3, \nd3 and $^{12}$C target data sets, we first remove the contribution from the non-hydrogen component of \nh3 and \nd3 targets by subtracting the corresponding carbon histogram (properly scaled to match with the shoulders from the background in each of the ammonia data). Since the carbon data is too low in counts (hence the raggedness in the histogram), %SEKpr: ruggedness->raggedness (kp: or rugged histogram)
+a fit (a 'gaussian' times a 'linear' function) to the carbon data is obtained, and that fit (shown as the blue line in the first panel in Fig. \ref{fig:deutContAll} is used instead of the histogram itself to remove the background. The blue line in the second (top-right) panel and the cyan  line in the last (bottom-right) panel show the properly scaled carbon fits which are subtracted from the \nh3 and \nd3 histograms (shown by red lines) respectively. After the subtraction, we get new histograms that represent 'pure' elastic or quasi-elastic data from protons and deuterons (shown by the magenta lines in the third and last panels respectively).
+
+
+\begin{figure}[H]%[h]
+%\centerline{\includegraphics[height=6.0in]{TechNotes/Figures/deutContamPlotsAll.pdf}}
+\centerline{\includegraphics[height=5.0in]{TexmakerMyFinTh/TechNotes/Figures/deutContamPlotsAll.png}}
+\caption[\Delt = $p_{p}\cdot(sin\theta_q - sin\theta_{p})$ for quasi-elastic events]{Histograms showing the quantity \Delt = $p_{p}\cdot(sin\theta_q - sin\theta_{p})$ for elastic or quasi-elastic events from carbon-12 (top-left), \nh3 (top-right) and \nd3 (bottom-right) target runs respectively. The third (bottom-left) panel shows the background removed elastic events from the \nh3 data. In the fourth panel, various \Delts are shown - red is the raw \nd3, light green is the scaled-$^{12}C$ for the nuclear background, brown is for the difference between the two.
+%\textcolor{red}{Figure to be updated with different line styles. Also, details to be added on the fourth plot. Couldn't finish on 11/26/13 early morning at 4.02 because the rather dim light didn't help me recongnize/distinguish the colors from one another.}
+}
+\label{fig:deutContAll}
+\end{figure}
+%%%%%%%%%% END FIGURE %%%%%%%%%%%%%
+
+
+
+
+
+\subsection{Extracting the Contamination}
+After we have the 'pure' elastic or quasi-elastic data from \nh3 and \nd3 runs, we get the mean and the spread 
+(standard deviation \sigm) %(usually called \sigm~ or standard deviation) 
+of the proton elastic peak by fitting the \nh3 data to a Gaussian function $f_p(x)$ (the blue line in the third panel with parameters p0=height, p1=mean and p2=\sigm). After we have the fit for the proton elastic peak, we fit the background subtracted deuteron data to a function f(x) that is a linear combination of the pure proton fit and a pure deuteron fit (the latter with the form of \textbf{a quadratic function $\times$ a Gaussian}\footnote{A pure Gaussian and other forms for the deuteron spectrum were tried but the overall fit was not as good.}) as follows:
+\begin{eqnarray}
+%\begin{align*} %didn't give equation number (used only one & which is put in front of = sign
+%\begin{equation}
+%f(x) & = & C_1\cdot f_p(x) + C_2\cdot f_d(x) \\
+     %& = & p_0\cdot f_p(x) + (p_1 + p_2\cdot x + p_3\cdot x^2)\cdot exp\left(- \left(\frac{x-p_4}{p_5}\right)^2\right)
+     %  & = & p_0\cdot f_p(x) + (p_1 + p_2\cdot x + p_3\cdot x^2)\cdot e^{- \left(\frac{x-p_4}{p_5}\right)^2}
+f(x)  & = & p_0\cdot f_p(x) + (p_1 + p_2\cdot x + p_3\cdot x^2)\cdot e^{- 0.5\cdot \left(\frac{x-p_4}{p_5}\right)^2}
+\label{eq:deutFit}
+%\end{equation}
+%\end{align*}
+\end{eqnarray}
+where $p_i$ (i = 0, 2, .. , 5) are the free parameters which are determined by fitting of f(x) to the deuteron data. The first term $p_0\cdot f_p(x)$ in f(x) represents the contribution from the contaminant (i.e., protons in \nd3) and the rest of the term in f(x) represents the contribution from the deuterons in \nd3. The total fit function f(x), the proton contribution and the deuteron part are shown by the blue, green and black lines in the fourth panel. The ratio of the area under the green line to that under the blue line gives us the relative amount of the \nh3 contamination in the \nd3 target.
+%SEKpr: Can you quote the ratio of the ``grean-peak''/integrated charge to that of the pure \nh3 peak (left panel)?
+
+\subsection{Results and Conclusion}
+From the calculation as described above, the estimate for the \nd3 contamination came out to be 4.4\% %4.418\%. %SEK 11/26/13 cor.
+%SEK comment: This is actually a generous overestimate. Since over other selection cuts (in particular on phi) enhance the p peak relative to the deuteron one.
+It was not possible to do a similar analysis %work 
+on the 1.3 GeV \nd3 data, because the CLAS acceptance constraints did not allow for the coincident detection of e and p from the exclusive (quasi-)elastic events. The basic conclusion is that at 2 GeV, we cannot get a 'pure' Gaussian spectrum for deuteron, and therefore, there is no way to unambiguously separate deuteron from proton in \nd3. The fact that the fit looks reasonably well (with contamination coming out to be only a few percent) and that we clearly do not see a narrow peak on top of a wider one (unlike in EG1-DVCS) should be sufficient to ascertain that EG4 did NOT have the same contamination problem as EG1-DVCS (which still has not been explained yet) \cite{pComKuhn}. To accommodate the fact that the contamination measurement is not reliably unambiguous, we will assume a rather generous systematic error due to the contamination.
+
+% Dr. Kuhn's comment after the final fit-plot (Date: 01/09/12): I think we have reached the point of diminishing returns. The basic conclusion is that at 2 GeV, we cannot get an ``undistorted Gaussian'' spectrum for D, and therefore there is no way to unambiguously separate D from H in ND3. The fact that your newest fit looks reasonably well (with only a few % contribution from H) and that we clearly do NOT see a narrow peak on top of a wider one should be sufficient to assume that EG4 did NOT have the same contamination problem as eg1-dvcs (which still hasn't been explained, btw). What we SHOULD do is assume a rather generous systematic error due to H contamination - that will ultimately reduce the precision of your results, but it cannot be helped. - Sebastian 
+
+
+%%%%%%%%%%%%%%%%%%%%%% Begin Equation and TABLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+% Equation
+\begin{equation}
+\cite{PDG}\qquad \frac{d^2\sigma}{dxdy} = x(s-M^2)\frac{d^2\sigma}{dxdQ^2} = \frac{2\pi M\nu}{E^\prime}\frac{d^2\sigma}{dE^\prime d\Omega}
+\end{equation}
+
+% Table
+\begin{table}[h]
+%\begin{ruledtabular}
+\begin{tabular}{lllllll}
+  \multicolumn{1}{c}{Col1}
+& \multicolumn{1}{c}{Col2}
+& \multicolumn{1}{c}{Col3}
+& \multicolumn{1}{c}{Col4}
+& \multicolumn{1}{c}{Col5}  
+& \multicolumn{1}{c}{Col6}  
+& \multicolumn{1}{c}{Col7}  \\
+\hline \hline
+1&           6/01 &  5/02 &  7/08 &  1  &   B &     $g_1$ \\ 
+ 
+\hline\hline
+2 &               12/08 & 12/08 & 12/11 & 2  & A &     NH$_3$ \\
+
+\hline \hline
+\end{tabular}
+%\end{ruledtabular}
+\caption{The caption goes here.}
+\label{table1}
+\end{table}
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%% END Equation and TABLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{comment}
+\begin{thebibliography}{9}
+
+%\bibitem{PDG} Particle Data Group, LBL.
+\bibitem{HK_dXs_extr} \href{http://wwwold.jlab.org/Hall-B/secure/eg4/hkkang/dXs_extraction_2nd.pdf}{H. Kang}, Procedure for extraction of difference of cross sections.
+\bibitem{sarahTgt} \href{http://clasweb.jlab.org/rungroups/eg4/wiki/index.php/October\_14\%2C\_2011\#Target\_Composition}{http://clasweb.jlab.org/rungroups/eg4/wiki/index.php/October\_14\%2C\_2011}
+\bibitem{bostedD2Cont} \href{http://wwwold.jlab.org/Hall-B/secure/eg1-dvcs/technotes/hind/hind.pdf}{P. Bosted, \nh3 correction for \nd3 target}, EG1-DVCS Technical Note \# 017
+\bibitem{koiralaD2Cont} \href{http://wwwold.jlab.org/Hall-B/secure/eg1-dvcs/skoirala/ND3Contam/WideContamDist.gif}{S. Koirala's work on Deuteron contamination (EG1-DVCS)}.
+\bibitem{pComKuhn} S. E. Kuhn, Private communications.
+\end{thebibliography}
+
+\end{document}
+\end{comment}

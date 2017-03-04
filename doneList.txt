@@ -1,0 +1,9 @@
+
+First draft version
+1) Tracing correction: Before 11/11/16
+2) EC- and vz-Cuts:  Completed on 11/11/16
+
+
+Yet to be Done on first draft version:
+#) CC-inefficiency, pion contamination, target contamination corrections
+#) Results

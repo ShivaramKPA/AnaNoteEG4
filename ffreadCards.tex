@@ -1,0 +1,74 @@
+\chapter{FFREAD cards used by GSIM} %Slifer Ap B, pg 205, or Sulkosky 3.2.1 pg 40
+\label{ffreadCards}
+
+%\FloatBarrier
+% http://tex.stackexchange.com/questions/9485/how-to-fix-table-position
+%\begin{center}
+\begin{table}[H]%[h!b!p!]
+\centering
+\caption[FFread cards for GSIM]{Some of the ffread cards \& their values which are used as GSIM input parameters.}
+\label{tab:ffread}
+    \begin{tabular}{ | l | l |}
+    \hline
+    \textbf{Cards}      &     \textbf{Values}     \\ \hline
+    MAGTYPE     &     2        \\  \hline
+    MAGSCALE    &    -0.5829 0.0 \textbf{\textcolor{blue}{(for 1.337 GeV)}}   \\  \hline
+    MAGSCALE    &    -0.3886 0.0 \textbf{\textcolor{blue}{(for 1.993 GeV)}}  \\  \hline
+    GEOM        &    'ALL'      \\  \hline
+    NOMC        &    'EC' 'SC' 'CC' 'DC'      \\  \hline
+    NOGEOM      &    'MINI' 'ST'  'TG2' 'TG' 'SOL'      \\  \hline
+    NOGEOM      &    'PTG' 'FOIL'      \\  \hline
+    NOMATE      &    'PTG' 'FOIL'      \\  \hline
+    PTGIFIELD   &     1      \\  \hline
+    TMGIFIELD   &     1      \\  \hline
+    TMGIFIELDM  &     1      \\  \hline
+    TMGFIELDM   &     51.0      \\  \hline
+    TMGSCALE    &     0.979       \\  \hline
+    PTGMAXRAD   &     300.0      \\  \hline
+%    -NTARGET 3
+%    -CHAMBER 4
+    MGPOS       &    0.0 0.0 -100.93      \\  \hline
+    BAFF        &    3. 9. 165.3 9. 180.5 9. 195.8      \\  \hline
+    RUNG        &    50556      \\  \hline
+    AUTO        &    1       \\  \hline
+    KINE        &    1       \\  \hline
+    \end{tabular}
+%    \caption[FFread cards for GSIM]{Some of the ffread cards \& their values which are used as GSIM input parameters.}
+%    \label{tab:ffread}
+\end{table}
+%\end{center}
+
+\begin{comment}
+adhikari@ifarm1101> m ffread10 
+CCCUTS .0001 1.e-4 1.e-4 1.e-4 1.e-4
+DCCUTS .0001 1.e-4 1.e-4 1.e-4 1.e-4
+ECCUTS .0001 1.e-4 1.e-4 1.e-4 1.e-4
+ICCUTS .0001 1.e-4 1.e-4 1.e-4 1.e-4
+SCCUTS .0001 1.e-4 1.e-4 1.e-4 1.e-4
+STCUTS .0001 1.e-4 1.e-4 1.e-4 1.e-4
+CUTS   .0001 1.e-4 1.e-4 1.e-4 1.e-4 1.e-4 1.e-4 1.e-4
+MAGTYPE 2
+MAGSCALE  -0.5829 0.0
+GEOM 'ALL'
+NOMC 'EC' 'SC' 'CC' 'DC'
+NOGEOM 'MINI' 'ST'  'TG2' 'TG' 'SOL'
+NOGEOM 'PTG' 'FOIL'
+NOMATE 'PTG' 'FOIL'
+PTGIFIELD 1
+TMGIFIELD 1
+TMGIFIELDM 1
+TMGFIELDM 51.0
+TMGSCALE 0.979 
+PTGMAXRAD 300.0
+-NTARGET 3
+-CHAMBER 4
+MGPOS 0.0 0.0 -100.93
+BAFF 3. 9. 165.3 9. 180.5 9. 195.8
+RUNG 50556
+AUTO 1 
+KINE 1 
+STOP
+%
+% /u/home/adhikari/SimStuff/SubmitJobs files ffread30/whTcl_0.tcl & ffread10/whTcl_0.tcl for 1.3 & 2.0 GeV simulations
+% 
+\end{comment}

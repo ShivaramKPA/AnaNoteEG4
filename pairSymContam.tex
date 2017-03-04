@@ -1,0 +1,28 @@
+% last modified dates (1/30/13; 9/17/13)
+
+\section{\epem-Pair Symmetric Contamination Corrections}
+%\section{Pair-Symmetric Contamination}
+The next major source of background is the secondary electrons from various \epems pair production processes. When an electron originating from such a pair passes through the detector, the detector has no way to distinguish it from the electrons that actually scattered off the target. Therefore, the detector simply accepts it as a true scattered electron candidate, thus producing a %taking in the 
+contamination that has to be estimated and corrected for. % by us later on during the data analysis. 
+The first such source is the wide-angle \epems pair production from bremsstrahlung photons generated in the target. The other major source is hadron decay such as the Dalitz decay (\piz$\rightarrow$\epem$\gamma$), \piz$\rightarrow\gamma\gamma$ and then conversion of these photons into \epems pairs. Likewise, the pseudoscalar particle $\eta$, and the vector mesons $\rho$, $\omega$, $\phi$ also decay to \epem, but they are not major contributors because of their very small decay probabilities as well as the small population compared to the \pizs and photons. Of all these sources, the biggest contributor to the secondary electrons is the %pair-symmetric decay of \piz s
+\piz$\rightarrow\gamma\gamma$ with $\gamma$ conversion to \epems \cite{bostedBckgCont}.
+%\textbf{\textcolor{red}{More details soon ..}}
+
+The amount of contamination from this type of process can be estimated by monitoring the amount of positrons that were recorded under the same experimental and kinematic conditions. Because of the symmetry in the amount of electrons and positrons produced from these sources, the positron to electron ratio %(ignoring the little contamination in the denominator)
+gives us the amount of the pair-symmetric contamination. However, due to the presence of the strong magnetic field inside the detector and the fact that the positrons have opposite charges, their detector acceptance would be different in a given setting. %But, by only 
+By reversing the magnetic field while keeping everything else the same, it is possible to estimate the contamination. For some of the beam energies used for the \nh3 data %from proton target part o
+f the EG4 experiment, some data were collected with identical experimental setting but with the torus field reversed. The data from those runs were used to estimate the amount of positrons in somewhat the same fashion as pion contamination. %This way, the pair-symmetric contamination could be estimated.  %SEK redundant
+For example, Fig. \ref{figpcFits} shows one estimate (both data points and the fit) of the contamination in EG4 compared with those determined for the EG1b experiment \cite{nGuler_th}.
+
+
+
+\begin{figure}[H] %ht, htpb (p - float, b = bottom, h=? t = top)
+\centering
+\leavevmode \includegraphics[width=1.0\textwidth]{TexmakerMyFinTh/FigBkGrnd/psContVsP_alFits3ppt.png}  %0.6 is the fraction of the real image width????
+\caption[Fits of pair-symmetric contamination]{Pair-symmetric contamination Fits (\%) as a function of electron momentum.  }
+\label{figpcFits}
+\end{figure}
+
+
+%SEK comment added on 11/26/13
+For this analysis, both the pion and \epem pair symmetric contaminations are small enough to be ignored. This leads to only a slight increase in the systematic error in the final physics results. %, which is estimated (see Sec \ref{}}.

@@ -1,0 +1,47 @@
+%\chapter{Kinematic Corrections}
+\section{Kinematic Corrections}
+\label{cha:KineCor}
+The reconstructed event vertices and associated particle 4-momenta are slightly off from their true values for several reasons. First, % of all, %SEK
+RECSIS does not take into account the fact that the beam is rastered in polarized target experiments. Next, any 
+imperfections and mis-alignments of detectors and other components of the experimental set-up are not accounted for. 
+Furthermore, the torus field map is not known precisely. 
+In addition, the effects of multiple-scattering and particle energy losses are not considered in RECSIS. %Finally, RECSIS itself has imperfections inherent in its algorithm. %SEK: Unless you want to explain, leave out.
+Therefore, to get more accurate results from the data analysis, the data quality must be improved by applying various kinematic corrections. Following is the list of the corrections that were applied for %is applied for each particle from our data 
+the analysis:
+
+\begin{enumerate}
+\item Incoming (beam) energy loss correction (due to ionization) 
+\item Tracking corrections
+%%%%\begin{enumerate}
+%%%%\item Beam off-set correction % equivalent to Raster correction?
+%\item Drift chamber dependent momentum correction
+%\item Z-vertex correction
+%%%%\item Solenoid axis tilt correction
+%%%%\item Solenoid axis offset correction
+%%%%\end{enumerate}
+%\item Stray magnetic field correction 
+\item Drift chamber dependent momentum correction
+%\item Multiple scattering correction (Not considered because, we are looking at electron-only inclusive events)
+\item Outgoing energy loss correction (due to ionization after scattering) %/reaction))
+\end{enumerate}
+
+
+
+%\section{Incoming Energy Loss Correction}
+\subsection{Incoming Energy Loss Correction}
+%Out of these corrections, the first one
+The first correction listed above considers the loss of beam energy due to atomic collisions before the actual nuclear scattering takes place. %As an adjustment for the loss, an estimate of 2 MeV
+A good estimate for this loss is 2 MeV on average \cite{pComKuhn, pComBosted}, which is subtracted from the nominal beam energy. This correction is applied during the analysis whenever the beam energy is involved\footnote{The beam energies that we used were derived from the Hall A and Hall C Tiefenback energies  or the MDSY1c or MDSY3c energies\cite{eg4Ebeam}}, %For more info, read X. Zheng's analysis note around page 35.
+and therefore it is not included in the correction package described below.
+
+
+
+
+
+%\input{rasterCorrection.tex}
+%\input{trackingCorrectionsEG4.tex}
+\input{trackingCorrectionsEG4_shorter.tex}
+%\input{kinematicCorrectionsPCor.tex}
+\input{kineCor_inclusivePCor.tex}
+
+

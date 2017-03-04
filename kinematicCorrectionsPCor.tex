@@ -1,0 +1,250 @@
+%\textcolor{red}{KPA: Based on your comments on ``thesisV1\_edit'', I think, I will have to invest quite a lot of time on this section in reorganizing as well as explaining. So, I decided not to do anything substantial for now (before the defense) other than a few fixes of ``typo''. \\  \\ SEK: I agree. Skip this part for now. }
+
+%\subsection{Overview}
+\subsection{Drift Chamber (DC) Dependent Momentum Correction} 
+%\subsubsection{Drift Chamber Dependent Correction Momentum Correction} %No subsection number shows up
+%\subsubsubsection{Drift Chamber Dependent Correction Momentum Correction} //Didn't work
+
+Different DC related factors contribute to the biggest part of the systematic deviations of particle momenta as reconstructed by RECSIS. The drift chambers could be misaligned relative to their nominal positions or the survey results that is used by RECSIS could be inaccurate or out-of-date. The effects of physical deformations (due to thermal and stress distortions) of the chamber including wire-sag, incorrect wire positions may not have bee incorporated properly. The torus field map used by the reconstruction software may not have been accurate and complete enough \cite{e6momcor_cn}. To address issues like these, a general approach as described in \cite{e6momcor_cn} which makes corrections to $p$ and \ths was followed to develop the corrections.
+
+%SEK comment 12/4/13: The ordering of this still seems backward - FIRST explain the general scheme (corrections for p AND theta based on 4-momentum conservation, THEN explain that for sector 6 (and therefore electrons) we only use the momentum correction part
+
+Particles detected in the 6th sector were treated differently than the others. (Reason to be elaborated later on). The DC dependent momentum correction was developed for the sixth sector and other sectors separately and with different methods. Since, there was sufficiently large amount of data that came from the 6th sector, a straight forward approach of binning the scattered electron data in various kinematic bins, finding in them the momentum offsets and then using the offsets (in combination with an approximation of ionization energy loss correction) for a fit (to a parameterized function) was used to develop the correction function. This method provided correction to the magnitude p of the 3-momentum of a particle detected in the 6th sector. Because of various constraints, angular corrections were not easy to address and so left undone.
+%\subsubsection{For Sector 6:}
+%\paragraph{For Sector 6:}
+
+%Particles whose tracks were detected in the 6th sector drift chambers were subjected to only p-correction. 
+The ratio of the correction to the magnitude of the momentum could be expressed as: 
+
+\begin{eqnarray}
+\label{eqPCor}
+\frac{\Delta p}{p} = Pcorr1 + Pcorr2 + PatchCorr
+\end{eqnarray}
+where,
+\begin{eqnarray}
+\label{eqPCor1}
+%\frac{\Delta p}{p} = ((E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta)\frac{p}{qB_{torus}}  %Smallest normal sized parentheses
+%\frac{\Delta p}{p} = \big( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \big) \frac{p}{qB_{torus}} % same as above
+%\frac{\Delta p}{p} = \Big( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \Big) \frac{p}{qB_{torus}} %Bigger parentheses
+%\frac{\Delta p}{p} = \bigg( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \bigg) \frac{p}{qB_{torus}} %Bigger parentheses
+Pcorr1 = \left( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \right) \frac{p}{qB_{torus}} %Biggest parentheses
+\end{eqnarray}
+
+
+\begin{eqnarray}
+\label{eqPCor2}
+%\frac{\Delta p}{p} = (J cos\theta + K sin\theta) + (M cos\theta+N sin\theta)\phi
+Pcorr2 = (J cos\theta + K sin\theta) + (M cos\theta+N sin\theta)\phi
+\end{eqnarray}
+
+\begin{eqnarray}
+\label{eqPatchCor}
+PatchCorr = 0.02\left(P + (Q + R\frac{\phi_{deg}}{30^\circ})(\frac{10^\circ}{\theta_{deg}})^3 \right) 
+\end{eqnarray}
+
+
+The quantity $B_{tor}$ stands for $\int{B_{\perp}dl}$ along the track length multiplied by the speed of light in the units 
+of m/ns (c = 0.29979 m/ns) and is given by
+
+\begin{eqnarray}
+\label{eqBtor1}
+%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  for \quad  \theta < \frac{\pi}{8} %itallic text 'for'
+B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \rm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \mathrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \textrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+\end{eqnarray}
+
+\begin{eqnarray}
+\label{eqBtor2}
+B_{tor} = 0.76 \frac{I_{tor}}{3375\theta/rad}  \quad  \textrm{for}  \quad  \theta > \frac{\pi}{8}
+\end{eqnarray}
+
+In all these equations, sector number, $\theta$, $\phi$, $\theta_{deg}$, and $\phi_{deg}$ come from the angle information measured at DC1. The direction cosine variables tl1\_cx, tl1\_cy, tl1\_cz (from pass1 ntuples) are used to derive these quantities. C++ standard functions acos() and atan2() are used to evaluate $\theta$, $\phi$ (w.r.t the sector mid plane). %(One should take an extra care of the fact that the function atan2() gives the values of azimuthal angle $\phi$ between -$\pi$ to +$\pi$.) %SEK cor 12/4/13
+
+
+
+All these total of eleven unknown parameters were determined separately by fitting above mentioned momentum offsets (in combination with ionization energy loss correction for electrons) to the correction function given by the Eq. \ref{eqPCor}.
+
+
+
+
+%\subsubsection{For Other (1-5) Sectors:}
+%\paragraph{For Other (1-5) Sectors:}
+
+Unlike for sector-6, both p- and $\theta$ were subjected to correction if a given particle track was detected by the drift-chamber in any of the other 5 sectors. This time, the PatchCorr component was not considered in the expression (Eq. \ref{eqPCor}) for p-correction. On the other hand, following expression was used to parameterize the correction to the polar angle $\theta$.
+
+%\begin{equation} %equation reference didn't work with this  
+\begin{eqnarray}
+\label{eqThCor}
+\Delta\theta = (A+B\phi)\frac{cos\theta}{cos\phi} + (C+D\phi)sin\theta
+%\end{equation} 
+\end{eqnarray}
+
+A total of 12 (8 for p-correction and 4 for $\theta$ correction) parameters for each of these five sectors were determined (from a fit procedure to be described below) to account for the DC contribution to the corrections. 
+
+
+
+
+
+
+
+
+
+%\subsubsection{Solenoid Axis Tilt Correction} 
+\subsection{Solenoid Correction} 
+
+If the axis of the target solenoid field is not aligned exactly along the beam line% (as supposed to)
+, then the $\phi$ reconstruction is skewed. To correct for that, the following changes %corrections are to be 
+are made to the reconstructed angles: 
+
+\begin{subequations}
+\label{eqTiltCor}
+\begin{eqnarray}
+\label{eqTiltCor1}
+cx_{true} = cx_{ini} + a/p %\newline cx_{true} = cx_{ini} + b/p
+\end{eqnarray}
+
+\begin{eqnarray}
+\label{eqTiltCor2}
+cy_{true} = cy_{ini} + b/p
+\end{eqnarray}
+\end{subequations}
+where $cx$ and $cy$ are the x- and y- direction cosines, $p$ is the particle momentum and a and b are the parameters to be determined by the fit (described in \ref{secMcProcedure}). %{pCorFit2}). 
+It's clear that $cx$ and $cy$ and therefore $\phi = arctan(cy/cx)$ %$\phi = atan2(cy,cx)$ is corrected 
+is changed by this part of the correction.
+
+
+
+
+
+%\subsubsection{Solenoid Axis Offset Correction} 
+
+The target field may also have an overall displacement or offset w.r.t the beam line and so the following correction to
+the angles is used in addition to the other corrections:
+
+\begin{subequations}
+\label{eqOffsetCor}
+\begin{eqnarray}
+\label{eqOffsetCor1}
+\phi_{true} = \phi_{ini} + qB_{solenoid}\frac{S cos\phi_{ini} - T sin\phi_{ini}}{p sin\theta_{ini}}
+\end{eqnarray}
+
+\begin{eqnarray}
+\label{eqOffsetCor2}
+\theta_{true} = \theta_{ini} + qB_{solenoid} \frac{U cos\phi_{ini} - V sin\phi_{ini}}{p}
+\end{eqnarray}
+\end{subequations}
+
+Here, S, T, U and V are the additional parameters to be determined by the method of \chisqs minimization (see Sec. \ref{secMcProcedure}) for the overall correction.
+
+
+
+
+
+
+
+
+%\subsubsection{Additional Vertex-Z Correction}
+%\label{ssecVzCor} %sec for section and ssec for subsection and so on
+
+RECSIS evaluates the vertex assuming that it lies on the intersection of the track and the plane perpendicular to the 
+sector mid-plane that contains the beam axis \cite{kuhnDvcs_wb}. So, RECSIS backtracks the DC-reconstructed particle track and finds the point where
+the track meets this plane %the sector mid-plane 
+to determine the vertex. As a consequence, %This consideration is made 
+while doing the raster correction, we correct % which corrects 
+Z in addition to  $\phi$. Since the track itself is subject to further corrections even after the raster correction,
+the vertex should also be corrected further. The following expression is used to further correct the z-component of the vertex.
+\begin{eqnarray}
+\label{eqExVzCor}
+z_{true} = z_{rst} + Y \frac{\theta - \theta_{ini}}{sin^2\theta}
+\end{eqnarray}
+where $\theta_{ini}$ is the polar angle (in radians) at the start, $\theta$ is the one after all the previous corrections and 'Y' is the new fitting parameter to be determined whose physical meaning is the distance from the vertex to the first region of DC (about 150 cm) \cite{slava_th}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Outgoing Ionization Loss Correction}
+\label{ssecElossCor}
+ 
+%    \sqrt[root]{arg} The \sqrt command produces the square root of its argument. The optional argument, root, determines what root 
+%    to produce, i.e., the cube root of x+y  would be typed as  $\sqrt[3]{x+y}$
+After all the previous corrections are made, the energy of each of the particles is calculated as $E = \sqrt{p^2 + m^2_{rest}}$ and a correction for ionization loss is added to it: $E_{cor} = E + \Delta E $ with $\Delta E = \frac{dE}{dX}\tau$ % $\Delta E = (\frac{\Delta E/\Delta X}{1000.0})gm$,
+where the factor $\tau$ is the total effective mass thickness traversed by the particle and
+\begin{subequations}
+\begin{eqnarray}
+\label{eqElossEl}
+%\Delta E/ \Delta X = 2.8 ~MeV \quad \rm{for ~electrons}
+dE/dX \approx 2.8 ~\rm{MeV/(g ~cm}^{-2}\rm{)} \quad \rm{for ~electrons}
+\end{eqnarray}
+and, for hadrons \cite{leo1994techniques}
+\begin{eqnarray}
+\label{eqElossHad}
+%%%if( mass < 0.01) DEDX = 2.8;    else DEDX = 0.307 * ( 0.5 / Beta2 ) * ( log( 2. * 511000.0 * Beta2 * ( Gamma2 / 90. ) ) - Beta2 );
+%%%\Delta E/ \Delta X = 0.307 (\frac{ 0.5}{ \beta^2}) \left( log\bigg( 2.0( 511000.0 \beta^2) (\frac{ \gamma^2}{ 90.0} ) \bigg) - \beta^2 \right);
+%%%\Delta E/ \Delta X = 0.307 (\frac{ 0.5}{ \beta^2}) \left( ln\bigg( 2.0( 511000.0 \beta^2) (\frac{ \gamma^2}{ 90.0} ) \bigg) - \beta^2 \right) ~MeV ~\rm{for ~hadrons} 
+%\Delta E/ \Delta X = 0.307 \times \frac{ 0.5}{ \beta^2} \left( ln\bigg( 2.0 \times 511.0 \frac{\beta^2 \gamma^2}{ 0.090} \bigg) - \beta^2 \right) ~MeV 
+dE/dX \approx 0.307 \times \frac{ 0.5}{ \beta^2} \left( ln\bigg( 2.0 \times 511.0 \frac{\beta^2 \gamma^2}{ 0.090} \bigg) - \beta^2 \right) \rm{~MeV} 
+\end{eqnarray}
+\end{subequations}
+which is an approximation of the Bethe-Block formula \cite{leo1994techniques}: % (Eq.(\ref{eqBetheBlock})).
+
+\begin{eqnarray}
+\label{eqBetheBlock}
+-\frac{1}{\rho} \frac{dE}{dx} = 4\pi N_a r_e^2 m_e c^2 \frac{Z}{A} \frac{1}{\beta^2} \left( ln\bigg( \frac{2m_ec^2\gamma^2\beta^2}{I} \bigg) - \beta^2 \right) 
+\end{eqnarray}
+%And, the factor '$\tau$' is the total effective mass thickness traversed by the particle. 
+This quantity is calculated as follows:
+\begin{itemize}
+\item $\tau = \tau_{\parallel}/cos\theta$ \quad if $\theta <= \pi/4$
+\item $\tau = \tau_{\parallel}/cos(\pi/4)$ \quad if $\theta > \pi/4$    %SEK comment:  I don't understand. leave out! Why not \tau = r/sin \theta    (anyway \theta > \pi/4 is never true!
+\end{itemize}
+where $\tau_{\parallel}$ is calculated as:
+\begin{itemize}
+\item $\tau_{\parallel} = \Delta z \times 0.6 + 0.4$ \quad if $\Delta z > 0.0 $ and $\Delta z < 1.0 $
+\item $\tau_{\parallel} = 0.6 + 0.4$ \quad if $\Delta z \geq  1.0$
+\item $\tau_{\parallel} = 0.4$ \quad if $\Delta z \leq  0.0$
+%\item $\tau_{\parallel} = 0.75$ \quad if otherwise
+\end{itemize}
+with $\Delta z = z_{target\_center} - z_{ave} + L_{target}/2 = (-101.0$ cm $ - z_{ave} + 0.5)$ cm being the physical distance (along the target length) traveled by the particle through the polarized target material (e.g. the EG4ND$_3$ target has length 1.0 cm and is positioned at z = -101.0 cm). The factor 0.6 is the effective mass thickness of ND$_3$ (density of ND$_3$ ($\sim 1 ~g/cm^3$) %(e.g. one of the EG4 NH$_3$ (ND$_3$ too) target has length 1.0 cm and is positioned at z = -101.0 cm). The factor 0.6 is the effective mass thickness of NH$_3$ (density of NH$_3$ ($\sim 1 ~g/cm^3$) 
+multiplied by the packing fraction which is roughly 0.6  \cite{rfersch_th}, whereas 0.4 is the sum of the mass thicknesses of He ($\sim 0.3$) and that of window foils ($\sim 0.1$) \cite{nGuler_th}. %In fact these numbers were for NH3 targets and were decided when our own values for PFs were not available which are now at about 0.7 (I believe, this won't make things much different, may be systematic study has to be done. 12/5/13)
+
+
+% double zcenter    = -101.0; //-55.1;//#ignore
+%  double \Delta z = zcenter - zave + 0.5;//#ignore
+%  //kp:  \Delta z is the fraction of the distance the particle travelled i.e. \Delta z = (zave - zcenter + 0.5)/Lt  (Lt = target length = 1.0 for EG1B)
+%  //     (denoted by delta_z in Nevzat's thesis), also in thesis, the order of zave -zcenter is wrong.
+%  double E = sqrt(p*p + mass*mass);
+%  double fbeta = p/E;  double Beta2 = fbeta * fbeta; double Gamma2 = 1.0 / ( 1.0 - Beta2 );  
+    
+%    if( ( \Delta z <= 1.0 ) && ( \Delta z >= 0.0 ) )  \tau = \Delta z * 0.6 + 0.4;
+%    //kp: I think \tau is total effective mass thickness traversed by the particle
+%    //    The factor 0.6 is effective mass thickness of NH$_3$ (density of NH$_3$ (about 1 g/cm^3) multiplied by the packing fraction which is 
+%    //    roughly 0.6; See R. Fersch's thesis at page 215) and 0.4 is the sum of 0.3 and 0.1 where
+%    //    0.4 is for mass thickness of He and 0.1 for that of window foils (see Nevzat's thesis, page 158)
+
+%    else if( \Delta z >= 1.0 )  \tau = 0.6 + 0.4;
+%    else if( \Delta z <= 0.0 )  \tau = 0.4;
+%    else  \tau = 0.75;
+%   //Ignore all above lines with '#ignore' and use '\tau = 0.75' for all cases for a reasonable approximation (Dr. Kuhn)
+    
+%    if( theta * rad2deg <= 45. ) \tau = \tau / cos( theta );
+%    else  \tau = \tau / cos( 45. * deg2rad );
+
+Using the ionization loss corrected energy and the rest mass of the particle, momentum is recalculated as $p_{cor} = \sqrt{E^2_{cor}-m^2}$ (where $m$ is the mass of the particle). Finally, this new p is used along with the previously corrected angles to evaluate the three cartesian components $p_x$, $p_y$ and $p_z$ of the momentum.
+
+
+

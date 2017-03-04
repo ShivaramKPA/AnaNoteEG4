@@ -1,0 +1,55 @@
+The goal of this data analysis is to extract the spin structure function $g_1$ for the deuteron and evaluate its moments. Since the product $A_1F_1$, which is proportional to $\sigma_{TT}$, directly enters sum rules for the real photon point, which leads to the generalized GDH integral ($\bar{I}_{TT}$) and the generalized forward spin polarizability ($\gamma_0$) being expressed in terms of the first and third moments of the product $A_1F_1$, we decided also to extract the product $A_1F_1$ using exactly the same procedure as for \gone. 
+
+The extraction of both \gones and \afones depend directly on the measurement of the following polarized cross-section difference:
+
+\begin{equation}
+  \Delta \sigma_{\parallel} = \frac{d^2\sigma^{\downarrow \Uparrow } }{d\Omega dE'} - \frac{d^2\sigma^{\uparrow \Uparrow } }{d\Omega dE'}
+  %= \frac{1}{N_t}\cdot \left[ \frac{N^+}{N^+_{e^-}} - \frac{N^-}{N^-_{e^-}} \right]\cdot \frac{1}{P_bP_t} \cdot \frac{1}{\Delta\Omega}\cdot \frac{1}{E_{detector}}
+    = \frac{1}{N_t}\cdot \left[ \frac{N^+}{N^+_{e^-}} - \frac{N^-}{N^-_{e^-}} \right]\cdot \frac{1}{P_bP_t} \cdot \frac{1}{\Delta\Omega}\cdot \frac{1}{\eta_{detector}}
+  \label{eqXSdiff}
+\end{equation}
+
+where, 
+\begin{itemize}
+  \item $N_t$ = Number of deuteron nuclei in the target 
+  
+\begin{comment}  
+  \item $N_t$ = Number of deuteron nuclei in the target = $3 N_a l_A \frac{\rho_A}{m_A}$, with 
+    \begin{itemize}
+      \item 3: number of Deuteron atoms in a \hnd3 molecule
+      \item $N_a = 6.02\times 10^{23}$: Avogadro's number
+      \item $l_A =$ target length (cm) $\times$ packing fraction
+     % \item $\rho_A = 0.917 (g/cm^3)$: Target density
+      \item $\rho_A = 1.056 (g/cm^3)$: Target density
+            %\item $m_A = 18.023584 (g)$: Mass of target molecule \15nd3  
+      %\item $m_A = 20.0474 (g)$: Mass of target molecule \lnd3  
+      \item $m_A = 21.042414237 (g)$: Mass of target molecule \hnd3   %Calculated myself by using the masses of 15N and deuterons
+      %I spent a whole day trying to find the 15ND3 mass by googling, but to no avail. So, above value is a temporary solution.
+      % Molecular Weight of 15NH3: 18.0239 g/mol   http://www.chembase.com/cbid_107639.htm
+      % Molar mass of ND3 is 20.0474 g/mol;  http://www.webqc.org/molecular-weight-of-ND3.html (it's 14ND3)
+      % 14ND3 = 14.0030740048+3*2.01410178 = 20.04537934 (Calculated myself)
+    \end{itemize}
+\end{comment}
+    
+  \item $N^{+/-}$: Number of scattered electrons (off deuteron only) for each helicity state (+/-).
+  \item $N^{+/-}_{e^-}$: Number of incident electrons for +/- helicity states 
+  
+\begin{comment}    
+  \item $N^{+/-}_{e^-}$: Number of incident electrons for +/- helicity states = $\left(\frac{ C_{Fcup}^{+/-}\cdot (10^{-9}/9264)}{Q_{e^-}} \right)\cdot \frac{C_{BPM}}{C_{Fcup}}$ with 
+    \begin{itemize}
+      \item $C_{Fcup}^{+/-}$: Helicity dependent Faraday-cup counts (live time gated)
+      \item $\frac{10^9}{9264}$: Factor for converting Faraday cup counts into coulombs. (The factor 1/9264 converts the counts into nano-coulombs.)
+      \item $Q_e = 1.0602\times 10^{-19}(C)$: the electron charge. %kp: electronic charge.
+      \item $\frac{C_{BPM}}{C_{Fcup}}$: the ratio of the Beam-Position-Monitor (BPM) and Faraday-cup counts. The BPM is located before the target so its count doesn't suffer the loss, but the Faraday-cup is located at the end of the beamline and because its physical radius is not large enough, parts of the beam's halo are not collected. Since, the size of the halo depends on the amount of material in the beamline as well as on the beam energy, the ratio is a function of the beam energy. For high beam energies such as 3 GeV, the ratio is close to 1 but for the lower beam energies it is lower than 1. For example the ratio is 0.965919 for 2.3 GeV\cite{HK_dXs_extr}. 
+    \end{itemize}
+\end{comment} 
+   \item $P_bP_t$ = Product of the beam and target polarizations
+   \item $\Delta\Omega=sin\theta\cdot\Delta\theta\cdot\Delta\phi$: The solid angle for the given kinematic bin. %, also commonly known as ``detector acceptance''. %\textcolor{red}{Am I right about ``Acceptance''?}
+   This term includes the ``detector acceptance''.
+%   \item $E_{detector}$ %stands/
+   \item $\eta_{detector}$ %stands/
+   accounts for the detector efficiencies
+ % \item The third etc \ldots
+\end{itemize}
+
+The data analysis to extract the physics quantities involves accurately measuring each of these quantities, either separately or in some combined form. To do so, the data must be properly reconstructed, calibrated and corrected to build all the scattering events during the experiment. Since the reconstructed events include a wide range of physical processes in addition to the electron-deuteron scattering process that we are interested in, proper event selection cuts must be applied. In this chapter, all these steps from the data reconstruction and calibration through the extraction of \gones are described.

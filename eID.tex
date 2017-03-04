@@ -1,0 +1,79 @@
+
+
+\section{Electron Identification}
+\label{allCuts}
+
+In CLAS electron-scattering %(electro-production) %SEK/GED
+experiments, the scattered electron defines the timing of each event. In addition, in inclusive measurements, the scattered electron is the only particle 
+to be detected and measured. So, it is particularly important to make sure that electrons are well measured and properly identified and are 
+not contaminated with misidentified particles such as negative pions (\pim) or lost by being misidentified. %as something else, thus affecting the accurate measurement of cross sections. In particular, \pim and electrons give rather similar detector signals and, therefore, are difficult to discriminate in some kinematic regions.
+
+%%%%%In each event the electron candidate is the negative track that triggered the event. The trigger condition is ensured by choosing the first entry in the event bank and also requiring that the track has hit matches in CC, DC, EC and SC and is also time-based (positive DC status word in DCPB). 
+%%% ThCp
+%
+The process of identifying the primary scattered electrons starts by first rejecting all those particle 
+candidates which are not the first entries (i.e., the trigger particles) in the event bank. The 
+remaining sample of the candidates is refined further by rejecting those with positive
+charges. Then, the sample is further refined %After that they are filtered more 
+by applying a set of cuts %selection conditions (commonly known as ``cuts'') 
+that are listed and described below. An electron candidate is considered good if it passes %through 
+all of these cuts.
+%
+%%% ThCp
+%All four layers of detectors are important in identifying electrons. For example, tracking by DC decides the charge of a candidate, SC records the time of flight, which is important in the time-matching criteria as mentioned below. The following list shows criteria/cuts defining a good electron starting from a candidate electron.
+%%% ThCp
+
+\begin{enumerate}
+\item {\bf Good Electron Cuts}
+\begin{enumerate}
+\item {\bf Cut on particle charge:}  q=-1
+\item {\bf Detector status cuts:}  
+\begin{enumerate}
+\item {\bf DC status:}  dc\gt 0; dc\_part\gt 0
+\item {\bf SC status:}  sc\gt 0; sc\_part\gt 0 
+\item {\bf EC status:}  ec\gt 0; ec\_part\gt 0  
+\item {\bf CC status:}  cc\gt 0; cc\_part\gt 0  \\
+             (For simulated data, all of the above except those on CC variables are used.) % (see Sec. \ref{}).)
+\end{enumerate}
+\item {\bf Electromagnetic Calorimeter Cuts}  (see Sec. \ref{ecCuts})
+\item {\bf Osipenko cuts} Cuts on CC angle \th, \ph and time matching between CC and other detectors. (see Sec. \ref{osiCuts})
+\item {\bf Cut on minimum number of photoelectrons}  (see Sec. \ref{nphCut})
+\end{enumerate}
+\item {\bf Good Event Cuts}
+\begin{enumerate}
+\item {\bf Cut on minimum number of particles detected and reconstructed in the event:} gpart\gt 0 
+\item {\bf Minimum/maximum momentum cuts} (see Sec. \ref{pCuts}) %p\gt0.2$\times E_{beam}$ and p\gt0.3   %This may be a little out of order here %   $\cdot
+\item {\bf Sector cut}  dc\_sect = 6; cc\_sect = 6 (to select electrons from the sector where the low momentum Cherenkov detector was installed)
+\item {\bf Scattering vertex-z cuts}  (see Sec. \ref{vzCuts})
+%\item {\bf Cut around a hole in $\theta_{DC1}$:}  %(This removed because our new fiducial cuts considers it)
+%\item {\bf Vertex theta cut:}                     %(This removed because our new fiducial cuts considers it)
+\item {\bf Fiducial cuts}  (see Sec. \ref{fidCuts})
+\end{enumerate}
+\end{enumerate}
+
+%\textbf{\textcolor{red}{Comment: This section may be moved to another chapter later on .}}\\ %\\%\newline
+%It will be seen later that the %SEK
+This data analysis relied on comparing the experimental data with a Monte-Carlo simulated data set that was as realistic as practically possible. %The simulation process involves first the simulation of the physics process of inclusive electron scattering, then simulation of the CLAS detector response when the scattered electrons passed through it and finally reconstructing the events from the simulated detector responses using the same reconstruction software as used for the real data. 
+Thus, we also have to analyze the simulated data in the same way as the experimental data. % requiring similar event selection cuts of their own. 
+In the ideal situation, all cuts would be the same for both %types of 
+experimental and simulated data. However, %But, despite our best efforts, 
+we could not make our simulation match perfectly with our experimental data.% to the expected level. %- mainly due to some previously unseen issues with the reconstruction software (RECSIS). 
+Therefore, some of the data selection cuts are defined separately for the two cases and sometimes separately even for different \qsqs bins (to make sure we have the same fractions of events in corresponding kinematic bins for %on
+both type of data).
+
+
+\input{ecCuts.tex}
+\input{ccCuts.tex}
+\input{minMaxMomCuts.tex}
+\input{vzCuts.tex}
+\input{fiducialCuts.tex}
+
+%%%%%% To be worked 
+%%%%%% To be worked 
+%%%%%% To be worked 
+%%%%%% To be worked 
+%%%%%% To be worked 
+
+
+
+\clearpage

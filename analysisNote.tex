@@ -1,0 +1,126 @@
+\documentclass[12pt,epsfig]{report}
+
+\usepackage{subfigure}
+\usepackage{lineno}
+%\usepackage[dvips,dvipdfmx]{graphicx} \usepackage{rotating} \usepackage{bmpsize}
+\usepackage[dvips]{graphicx} \usepackage{rotating} 
+\usepackage[usenames]{color} \usepackage{epsfig}
+\usepackage{epsfig}
+\usepackage{url}
+\usepackage{verbatim}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\usepackage{pst-plot}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{bm}
+\usepackage{amssymb, amsmath, stackrel}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{url} \usepackage{pst-plot}
+\usepackage[font=small,format=plain,labelfont=bf,up, justification=justified]{caption}
+\usepackage{float} %kp: http://tex.stackexchange.com/questions/8625/force-figure-placement-in-text
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\floatpagefraction}{0.35}
+
+
+%12/28/16: Don't delete http://tex.stackexchange.com/questions/173547/bibtex-file-does-not-compile
+\usepackage{filecontents}
+\input{bibliFinal} %Compilation will produce trial.bib file 
+
+
+
+\setcounter{totalnumber}{5}
+
+\usepackage{longtable} % nate
+
+
+% This is to change the section numbering depth upto 5 level so even paragraph sections get some number (used in my thesis)
+%%%%kp: \setcounter{secnumdepth}{2}%{5}  % 10/28/13 http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Section_numbering 
+%\input{kpAddedPackages.tex}
+\input{myOwnShortCuts.tex}
+
+
+
+
+\begin{document}
+
+
+
+%\title{Extended GDH Sum Rule at Low $Q^2$ on the Deuteron/Neutron from Cross-section Differences}  %Old
+\title{Measurement of the spin structure function $g^D_{1}$ of the deuteron and its moments at low $Q^2$}   
+\author{Krishna P. Adhikari, Sebastian E. Kuhn, \\*
+Alexander Deur, Lamiaa El Fassi, Hyekoo Kang, Sarah K. Phillips, \\* %Ellie Long, 
+Marco Ripani, Karl Slifer, Raffaella De Vita, Gail E. Dodge, \\*
+ Xiaochao Zheng}
+
+\maketitle
+
+\begin{comment} %====================================
+\input{abstract.tex}  %\abstract{... }
+\end{comment} %====================================
+
+
+\tableofcontents
+\begin{comment} %====================================
+\listoffigures
+\listoftables
+\end{comment} %====================================
+
+
+% chapters of the thesis come here.
+\input{chapter1.tex}
+%\input{E1f.tex}
+
+%\begin{comment}  %=========== EG4
+\input{EG4.tex}
+
+
+\input{dataAnalysis}
+%\end{comment}    %=========== EG4
+
+\input{simulations.tex}
+
+\input{systematicUncertainty.tex}
+%\begin{comment}  %=========== EG4
+\input{resultsG1_A1F1.tex}  %\input{results.tex}
+\input{conclusionsEG4.tex}
+%\end{comment}    %=========== EG4
+
+
+\begin{comment} %==================================== Nathan
+\input{hadronID.tex}
+\input{kinematicCuts.tex}
+\input{momCorr.tex}
+\input{MonteCarlo.tex}
+\input{RC.tex}
+\input{BCC.tex}
+
+\end{comment} %==================================== Nathan
+
+
+
+\begin{comment} %====================================Nathan
+\input{A0AcAndAcc.tex}
+\input{comparisons.tex} % experimental (HERMES, Osipenko) and theoretical?
+\input{conclusions.tex}
+\end{comment} %====================================Nathan
+
+
+
+%\bibliographystyle{apsrev4-1}
+%\bibliography{bibli2}
+
+% All the references are located in here
+%\input{bibliography.tex}
+
+\bibliographystyle{unsrt}
+\bibliography{autoGenBib}    %% no .bib needed
+
+
+% appendices: we put them after the references in what ever order we prefer
+
+\appendix
+%\input{GoodRunList.tex}
+\input{ffreadCards.tex} %Moved from stdSimKPA.tex file (don't forget to disable if we're going to have these appendices).
+
+\end{document}

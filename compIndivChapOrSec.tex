@@ -1,0 +1,72 @@
+\documentclass[12pt,epsfig]{report}
+
+\usepackage{lineno}
+\usepackage[dvips]{graphicx} \usepackage{rotating}
+\usepackage[usenames]{color} \usepackage{epsfig}
+\usepackage{epsfig}
+\usepackage{url}
+\usepackage{verbatim}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\usepackage{pst-plot}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{bm}
+\usepackage{amssymb, amsmath}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{url} \usepackage{pst-plot}
+\usepackage[font=small,format=plain,labelfont=bf,up, justification=justified]{caption}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\floatpagefraction}{0.35}
+\setcounter{totalnumber}{5}
+
+\usepackage{longtable} % nate
+
+
+% This is to change the section numbering depth upto 5 level so even paragraph sections get some number (used in my thesis)
+%%%%kp: \setcounter{secnumdepth}{2}%{5}  % 10/28/13 http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Section_numbering 
+\input{myOwnShortCuts.tex}
+
+
+
+
+\begin{document}
+
+
+%\title{Extended GDH Sum Rule at Low $Q^2$ on the Deuteron/Neutron from Cross-section Differences}  %Old
+%%%\title{Measurement of the spin structure function $g^D_{1}$ of the deuteron and its moments at low $Q^2$}   
+%%%\author{Krishna P. Adhikari, Sebatian E. Kuhn}
+
+%%%\maketitle
+
+%%%% Removed abstract part
+
+%%%\tableofcontents
+%%%\listoffigures
+%%%\listoftables
+
+% chapters of the thesis come here.
+%%%\input{chapter1.tex}
+%\input{E1f.tex}
+%%%\input{EG4.tex}
+%%%\input{eID.tex}
+%%%\input{hadronID.tex}
+%%%\input{kinematicCuts.tex}
+%%%\input{momCorr.tex}
+%%%\input{MonteCarlo.tex}
+%%%\input{RC.tex}
+%%%\input{BCC.tex}
+\input{systematicUncertainty.tex}
+%%%\input{A0AcAndAcc.tex}
+%%%\input{comparisons.tex} % experimental (HERMES, Osipenko) and theoretical?
+%%%\input{conclusions.tex}
+
+% All the references are located in here
+%%%\input{bibliography.tex}
+
+% appendices: we put them after the references in what ever order we prefer
+
+%%%\appendix
+%\input{GoodRunList.tex}
+
+\end{document}

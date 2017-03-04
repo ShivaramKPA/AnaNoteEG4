@@ -1,0 +1,35 @@
+%
+% Pass2 fiducial cuts: all defined in #include "/home/adhikari/LinkedFiles/fiducialCutsPass2.h"   
+% The final results were for array indices C71 and S181
+% The fiducial cuts used for C71_S181 were
+%   
+%
+%   fidCtV1 
+%   fidCtExpBySimAndEConlyInInvPvsThVtx
+%   fidMoreMIPB
+%
+% %%%%%%%%%%%%%%%%  
+%
+%  where,
+%   fidCtV1: if(fidCtExp2Sim==true && fidCtReg2EC==true) fidCtV1 = true;
+%       with
+%  bool fidCtReg2EC = Pass2FidCutLatestFromRegECcomparison(Ebi, p[0], thDc1PosRad);//now in the same fiducialCutsPass2.h file
+%     corresponding image: 
+%           https://www.jlab.org/Hall-B//secure/eg4/adhikari/Analysis/Pass2/Cuts/Fid/BkUp/invMomVsThDc1Pass2Ebi4Ratio.gif
+%
+%  bool fidCtExp2Sim = Pass2FidCutLatest(phDc1PosRad, thetaRadC); //now in the same fiducialCutsPass2.h file
+%    corresponding image:
+%          https://www.jlab.org/Hall-B//secure/eg4/adhikari/Analysis/Pass2/Cuts/Fid/fidCutPlotsSet2_Eb2_RatioBigger.gif 
+%          &.../fidCutPlotsSet2_Eb1_Ratio.gif
+%
+%   
+%
+%   fidCtExpBySimAndEConlyInInvPvsThVtx = Pass2FidCutOnInvPvsThVtx(Ebi, ppC, thetaRadC);//3/8/16 defined in commonItems4SimExp.h for now
+%              ~/secure/Analysis/Pass2/Cuts/Fid/invMomVsThVtxPass2Ebi1RatioRegByEConlyFidCut09.gif
+%
+%  if(Ebi==2) fidMoreMIPB = moreFidCutsWithMoreInvPBins(Ebi, ppC, phDc1DegPlusMinus30, thVtxDeg);//7/11/16 defined in moreFidCuts.h
+%  else if(Ebi==1) fidMoreMIPB = moreFidCutsWithMoreInvPBinsEbi1(Ebi, ppC, phDc1DegPlusMinus30, thVtxDeg);//7/18/16 defined in moreFidCuts.h
+%   for which see plots:
+%       //https://www.jlab.org/Hall-B//secure/eg4/adhikari/Analysis/Pass2/Cuts/Fid/MoreCts/moreFiducialCutsMoreInversePBinsEbi1.gif
+%       and moreFiducialCutsMoreInversePBinsEbi2.gif   //11/13/16
+%   

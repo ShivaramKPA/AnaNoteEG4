@@ -1,0 +1,251 @@
+    
+%Megh
+\newcommand{\Eg}{\mbox{E$_\gamma$}}
+\newcommand{\Ogpp}{\mbox{$^{16}$O($\gamma$,pp)}}
+\newcommand{\Ognp}{\mbox{$^{16}$O($\gamma$,np)}}
+\newcommand{\Oeepp}{\mbox{$^{16}$O(e,e$'$pp)}}
+\newcommand{\Oeenp}{\mbox{$^{16}$O(e,e$'$np)}}
+\newcommand{\Cfour}{\mbox{$^{14}$C}}
+\newcommand{\Nfour}{\mbox{$^{14}$N}}
+\newcommand{\degree}{\mbox{$^{\circ}$}}
+\newcommand{\about}{\mbox{$\approx$}}
+\newcommand{\gnp}{\mbox{($\gamma$,np)}}
+\newcommand{\gpp}{\mbox{($\gamma$,pp)}}
+\newcommand{\ee}{\mbox{(e,e$'$)}}
+\newcommand{\eepp}{\mbox{(e,e$'$pp)}}
+\newcommand{\eep}{\mbox{(e,e$'$p)}}
+\newcommand{\eeppn}{\mbox{(e,e$'$pp)n}}
+\newcommand{\eenp}{\mbox{(e,e$'$np)}}
+\newcommand{\Het}{$^3$He}
+\newcommand{\Heteeppn}{$^3$He\mbox{($e,e^{\prime}pp$)$n$~}}
+\newcommand{\Heteepp}{$^3$He\mbox{($e,e^{\prime}pp$)}}
+\newcommand{\Heteep}{$^3$He\mbox{(e,e$'$p)}}
+%\documentstyle[12pt,epsf,picm]{article}
+%
+%Megh
+%kp \def\ge{ G_E }
+%kp \def\gm{ G_M }
+\def\Ge{ G_E }
+\def\Gm{ G_M }
+%kp \def\gegm{ G_E / G_M }
+\def\GeGm{ G_E / G_M }
+\def\y2g{ Y_{2\gamma} }
+\def\mugegm{ \mu_p G_E / G_M }
+
+\def\gtorder{\mathrel{\raise.3ex\hbox{$>$}\mkern-14mu
+ \lower0.6ex\hbox{$\sim$}}}
+\def\ltorder{\mathrel{\raise.3ex\hbox{$<$}\mkern-14mu
+ \lower0.6ex\hbox{$\sim$}}}
+
+\def\eep{$(e,e'p)$}
+\def\evepv{$(\vec e,e' \vec p\thinspace)$}
+\def\etal{{\it et al.} }
+\def\etalns{{\it et al.}}
+%Megh end
+
+%kp: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Beware! Avoid using numbers in the definitions. I came across a pi-problem because of \pi0 definiton earlier (see below)
+%\\
+%And this is here just to test my pi-problem: $A = \phi\cdot\gamma$; $\pi$    %Many thanks a lot to Dr. Weinstein for helping with this. Figured out that we shouldn't use numbers in our private definitions. I was using \def\pi0{$pion^0$} before, now I am using \piz instead of \pi0. With \pi0, the problem gave the following compilation message: Use of \pi doesn't match its definition.
+
+\def\q2{$Q^2$ }    
+\def\qsq{$Q^2$}    
+\def\qsqs{$Q^2$ }    
+\def\sq{\textsuperscript{2} } % space between the two closing braces is important, don't remove that.   
+\def\nusq{$\nu^2$ }
+\def\fmInvSq{fm$^{-2}$ }  %\def\fmInvSq{$fm^{-2}$}  %Unit of Q^2
+\def\het{ $^4$He~}  % changed \he3 to \het 1/12/13
+\def\hef{ $^3$He~}  % changed \he4 to \hef 1/12/13
+\def\nd3{ND$_3$}
+\def\nh3{NH$_3$}
+\def\c12{$^{12}$C~}
+\def\e97{E97-110)}
+\def\ep{$\lowercase{e^-e^+}$} % \lowercase or \uppercase forces the texts to appear accordingly
+\def\chipt{$\chi$PT}
+\def\chipts{$\chi$PT }
+\def\chiPT{\textchi PT } %10/5/13: Didn't work 
+\def\dlt{$\delta_{LT}$ }
+\def\dE{$\Delta$E~}
+\def\th{$\theta$~}
+\def\ph{$\phi$~}
+\def\ths{$\theta$ }
+\def\phs{$\phi$ }
+\def\thns{$\theta$}
+\def\phns{$\phi$}
+\def\thp{$\theta_{proj}$ }
+\def\php{$\phi_{proj}$ }
+\def\delRes{$\Delta$-resonance}
+\def\Delt{$\Delta$ }
+\def\chisq{$\chi^2$}
+\def\chisqs{$\chi^2$ }
+
+% Particle short-cuts
+\def\pip{$\pi^+$}
+\def\piz{$\pi^0$} %\def\pi0{$\pi^0$} gave me a problem of \pi not working
+\def\pim{$\pi^-$}
+\def\pips{$\pi^+$ }
+\def\pizs{$\pi^0$ } %\def\pi0{$\pi^0$} gave me a problem of \pi not working
+\def\pims{$\pi^-$ }
+\def\el{\lowercase{$\e^-$ }}
+\def\pos{\lowercase{$\e^+$ }}
+\def\epem{\lowercase{$e^+e^-$}}
+\def\epems{\lowercase{$e^+e^-$} }
+
+
+% kp: Physics quantity shot-cuts 9/13/13
+\def\Gamone{$\Gamma_{1}$~}
+\def\Gamonens{$\Gamma_{1}$}
+\def\Gam1q2{$\Gamma_{1}(Q^2)$~}
+\def\gamzero{\lowercase{$\gamma_0$} }
+\def\gamzeroq{\lowercase{$\gamma_0$}$(Q^2)$ }
+\def\wq{$(W,Q^{2})$~}
+\def\gone{\lowercase{$g_{1}$}}
+\def\gones{\lowercase{$g_{1}$ }}  %s for space
+\def\gtwo{\lowercase{$g_{2}$}}
+\def\gtwos{\lowercase{$g_{2}$ }}
+\def\fone{$F_{1}$}
+\def\fones{$F_{1}$ }
+\def\aone{$A_{1}$}
+\def\aones{$A_{1}$ }
+\def\afone{$A_{1}F_{1}$}
+\def\afones{$A_{1}F_{1}$ }
+\def\gowq{\lowercase{$g_{1}$}$(W,Q^{2})$ }  %\def\g1wq{\lowercase{$g_{1}\uppercase{(W,Q^{2})}$} %latter didn't work
+\def\goxq{\lowercase{$g_{1}$}$(x,Q^{2})$ }
+\def\gtwq{\lowercase{$g_{2}$}$(W,Q^{2})$ } %\def\g2wq{\lowercase{$g_{2}$}$(W,Q^{2})$}  %when \g2wq is used, even \g1wq doesn't work
+\def\gtxq{\lowercase{$g_{2}$}$(x,Q^{2})$ }
+\def\fowq{$F_{1}(W,Q^{2})$ }
+\def\aowq{$A_{1}(W,Q^{2})$ }
+\def\afonewq{$A_{1}F_{1}(W,Q^{2})$ }
+
+
+
+%My temporary commands
+%\def\kpb{\textcolor{red}{\textbf{\newline kp-begin!! : remove stuffs below \newline}}} %kpb == kp-Begin
+%\def\kpe{\textcolor{red}{\textbf{\newline kp-end!! \newline}}} %kpb == kp-End
+%\def\kpq{\textcolor{red}{\textbf{My-questions:}}} %kpb == kp-Questions
+\def\kpb{\textbf{\newline kp-begin!! : remove stuffs below \newline}} %kpb == kp-Begin
+\def\kpe{\textbf{\newline kp-end!! \newline}} %kpb == kp-End
+\def\kpq{\textbf{My-questions:}} %kpb == kp-Questions
+%kp: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%kp: 8/7/13: From EG4_analysis_SEK.tex (https://userweb.jlab.org/~kuhn/EG4/EG4_analysis.pdf) (see the cur. dir)
+%\def\etal{{\it et al.}}
+\def\nim#1{Nucl.\ Instr.\ Meth.\ {\bf #1} }
+\def\npa#1{Nucl.\ Phys.\ {\bf A#1} }
+\def\npb#1{Nucl.\ Phys.\ {\bf B#1} }
+\def\prl#1{Phys.\ Rev.\ Lett.\ {\bf #1} }
+\def\prc#1{Phys.\ Rev.\ C {\bf #1} }
+\def\prd#1{Phys.\ Rev.\ D {\bf #1} }
+\def\plb#1{Phys.\ Lett.\ {\bf B#1} }
+\def\mpl#1{Mod.\ Phys.\ Lett.\ {\bf #1} }
+\def\zpc#1{Z.\ Phys.\ {\bf C#1} }
+\def\zpa#1{Z.\ Phys.\ {\bf A#1} }
+\def\rmp#1{Rev.\ Mod.\ Phys.\ {\bf #1} }
+\def\epj#1{Eur.\ Phys.\ J.\ {\bf C#1} }
+\def\ann#1{Annals\ of\ Physics\ {\bf #1} }
+%kp: %%%%%%%%%%%%%%%%%%%%
+
+%kp: %%%%%%%%% 8/14/13: Math symbols in text mode
+\def\gt{\textgreater } %http://texblog.org/2012/01/10/strict-inequalities-greaterless-than-in-text-mode/
+\def\lt{\textless }    % \le & \ge are already defined by Latex
+%kp: %%%%%%%%% 8/14/13: Math symbols in text mode
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%   9/10/13: all the following copied from TechNotes/includeCommon.tex
+
+% Template for eg1-dvcs technical notes
+% To compile use pdflatex filename
+%
+% definitions for references
+%91013 \def\etal{{\it et al.}}
+%91013 \def\npa#1{Nucl.\ Phys.\ {\bf A#1}}
+%91013 \def\npb#1{Nucl.\ Phys.\ {\bf B#1}}
+%91013 \def\prl#1{Phys.\ Rev.\ Lett.\ {\bf #1}}
+%91013 \def\prc#1{Phys.\ Rev.\ C {\bf #1}}
+%91013 \def\prd#1{Phys.\ Rev.\ D {\bf #1}}
+%91013 \def\plb#1{Phys.\ Lett.\ {\bf B#1}}
+%91013 \def\zpc#1{Z.\ Phys.\ {\bf C#1}}
+%91013 \def\zpa#1{Z.\ Phys.\ {\bf A#1}}
+%91013 \def\nim#1{Nucl.\ Instr.\ Meth.\ {\bf #1}}
+%91013 \def\epja#1{Euro.\ Phys.\ J.\ A {\bf #1}}
+%91013 \def\epjc#1{Euro.\ Phys.\ J.\ C {\bf #1}}
+%91013 \def\jpg#1{J.\ Phys.\ {\bf G#1}}
+%91013 \def\ijmp#1{I.\ J.\ Mod.\ Phys.\ {\bf #1}}
+
+%My own additions
+% Chemical formulas
+%91013 \def\n15{$^{15}$N}
+%91013 \def\he4{$^4$He}
+%91013 \def\c12{$^{12}$C}
+%91013 \def\nh3{NH$_3$}
+\def\lnh3{$^{14}$NH$_3$ } %\def\lnh3{$^{14}$NH$_3$} %lighter NH3 i.e 14NH3
+\def\hnh3{$^{15}$NH$_3$ } %\def\hnh3{$^{15}$NH$_3$} %heavier NH3 i.e 15NH3
+%91013 \def\nd3{ND$_3$}
+\def\lnd3{$^{14}$ND$_3$ } %lighter ND3 i.e 14ND3
+\def\hnd3{$^{15}$ND$_3$ } %heavier ND3 i.e 15ND3
+
+% Particle short-cuts
+%\def\pip{$\pi^+$} %For some strange reason, both \pi and \Pi didn't work, while other Greek symbols worked, so I decided to use 'pion'
+%\def\pi0{$\pi^0$}
+%\def\pim{$\pi^-$}
+%91013 \def\pip{$pion^+$} 
+%91013 \def\pi0{$pion^0$}
+%91013 \def\pim{$pion^-$}
+%91013 \def\Pip{$\Pi^+$}
+%91013 \def\Pi0{$\Pi^0$}
+%91013 \def\Pim{$\Pi^-$}
+%91013 \def\el{$e^-$}
+%91013 \def\pos{$e^+$}
+%91013 \def\epem{$e^+e^-$~}
+
+
+%My Greek Symbol Short Cuts:
+\def\thh{$\theta$ }
+\def\phh{$\phi$ }
+\def\Thh{$\Theta$ }
+\def\Phh{$\Phi$ }
+\def\delt{$\delta$ }
+\def\Delt{$\Delta$ }
+\def\Deltns{$\Delta$}
+\def\Delts{$\Delta$ }
+\def\sigm{$\sigma$ }
+\def\Sigm{$\Sigma$ }
+
+
+%91013 \documentclass[11pt]{article}
+%91013 \usepackage{graphicx}
+%91013 \setlength{\evensidemargin}{0.0cm}
+%91013 \setlength{\oddsidemargin}{0.0cm}
+%91013 \setlength{\topmargin}{-1.5cm}
+%91013 \setlength{\textheight}{8.7in}
+%91013 \setlength{\textwidth}{16.3cm}
+
+%Added by KP
+%91013 \usepackage{verbatim} % For multiline comments: http://www.devdaily.com/blog/post/latex/multi-line-comments-in-latex-begin-123-comment-125-verbatim
+%91013 \usepackage{hyperref} %Kp-Addition: 9/12/11 (to link to web pages from LaTeX-generated PDF)
+%91013 \usepackage{amsmath} % For Aligning Equations: http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Math#Aligning_Equations_.28align.29 (example, see deutContam.tex under \subsection{Extracting the Contamination}
+%91013 \usepackage{amssymb,amsmath}
+%91013 \usepackage{subfigure} % For figures side by side: http://www.johndcook.com/blog/2009/01/14/how-to-display-side-by-side-figurs-in-latex/ (eg in chap4simul, dcSmear.tex)
+
+%===========
+%9/26/13: My Calligraphic shortcuts
+\def\Lcal{$\mathcal{L} $}
+\def\Mcal{$\mathcal{M} $}
+\def\Ncal{$\mathcal{N} $}
+
+%9/26/16: Rather interesting that I added short cuts on 9/26 both in 2013 and 2016.
+\def\kth{$k^{th} $}
+\def\pbpt{$P_{b}P_{t} $}
+\def\thvtx{$\theta_{vtx} $}
+\def\phvtx{$\phi_{vtx} $}
+\def\phdc1{$\phi_{DC1} $} % Not used yet
+\def\invP{$I_{torus}/(2250p) \,$}
+
+

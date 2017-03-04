@@ -1,0 +1,82 @@
+\section{Simulation and Approach to Analysis}
+
+%The main goal of this analysis is to extract the spin structure function $g_1$ and calculate its moments. The proposed method to extract \gone is to measure the polarized cross section difference which is evaluated from the normalized count difference between two polarizations. %The normalized counts for each polarization
+
+The EG4 data consist of a table %tally/array
+numbers of electrons reconstructed %detected
+within various $(W,Q^2)$ bins that are scattered off polarized hydrogen (NH$_3$) or deuteron  (ND$_3$), divided by the (life-time gated) integrated charge, for two different combinations of target polarization and beam helicity:
+\begin{equation}
+n^{\pm} = N^{\pm}/FC^{\pm} ,
+\end{equation}
+where ``$+$''  refers to beam helicity and target polarization %being %GED
+anti-parallel, while ``$-$'' refers to the parallel case. The difference between these two normalized counts is given by
+\begin{equation}
+\label{Delndef}
+\Delta n (W,Q^2) = n^+ (W,Q^2) - n^- (W,Q^2) = {\mathcal L}_r  \cdot P_b P_t \cdot \Delta \sigma (W,Q^2)  \cdot Acc  Eff (W,Q^2) + Bg
+\end{equation}
+where the ``relative luminosity'' ${\mathcal L}_r$ is a constant factor containing the density of polarized target nuclei per
+%kp: SEK HUGS pager pg9: Luminosity = # areal density of target Nuclei * # of beam particles pers second (denoted by I_i)
+unit area and the conversion factor from Faraday cup counts to integrated number of electrons incident on the target; $P_b$ and $P_t$ are the beam and target polarization, $Acc$ and $Eff$ are the geometric  acceptance and detection efficiency of CLAS for electrons within the kinematic bin in question (including cuts and trigger efficiency), and the background $Bg$ comes from several sources, including pions misidentified as electrons, electrons from $e^+e^-$ pair production, and electrons scattered off (partially) polarized target nucleons and nuclei that are not the intended species (e.g., bound protons in $^{15}$N, free proton contamination in nominal ND$_3$ targets, and bound proton-neutron pairs in any $^{14}$N contamination present)\footnote{While this background is a small correction for hydrogen targets, in the case of deuteron targets, it must be corrected for (see Sec. \ref{polBg}). %\textcolor{red}{I think we did nothing about it (at least no individual treatment). Or can we say the part of the systematic errors (one of 10 that we considered) where we labeled it 'PolHpiCont for Polarized H and Pi-contamination' is for all sources of polarized background? }
+}.
+
+
+
+Our main goal is to extract the spin structure function $g_1$ and calculate its moments. 
+The cross section difference $\Delta \sigma (W,Q^2) $ on the right side of the above equation is what contains the information on 
+$g_1(W,Q^2)$ along with various other contributions.\footnote{$\Delta \sigma (W,Q^2) $ also has contributions from the unmeasured 
+%structure function $g_2$ or, equivalently, from the virtual photon asymmetry $A_2$ %(the latter is modeled using World data to account for this contribution). 
+$g_2$ or, equivalently, from the product $A_2F_1$. Moreover, the cross section receives modifications and tails from radiative effects (both internal and external radiation) and kinematic resolution smearing.} This means we can, in principle, calculate the cross section (and then use that to extract $g_1$), from the background corrected measured quantity $\Delta n (W,Q^2)$ by putting in the values for all the rest of the quantities involved in Eq. \ref{Delndef}. But, in reality, having an accurate knowledge of $Acc$ and $Eff$ is challenging and %very complicated and even 
+the available measurements of polarizations and luminosities are not reliable enough. So, experimenters usually resort to Monte-Carlo simulation to determine some or all of those factors that are involved in the relation between the counts and cross-section differences.
+
+A standard way to extract the sought-after Physics quantities from these kinds of measurements proceeds along the following steps \cite{KuhnEG4ana}:
+\begin{enumerate}
+\item Use a full simulation of CLAS with a ``realistic'' event generator, detector simulation and event reconstruction 
+%GSIM, GPP and the full chain of event reconstruction with RECSIS (see sections ~\ref{evGen},~\ref{gsim},~\ref{gpp}, and ~\ref{recsis}) 
+including cuts to obtain the product $Acc Eff$ as the ratio of events  reconstructed  in a particular bin, divided by events thrown in that same bin.
+\item Extract the product ${\mathcal L}_r  \cdot P_b P_t$ from the ratio of the acceptance and efficiency corrected $\Delta n$ in the (quasi-)elastic region ($0.9 < W < 1.0$) to the well-known theoretical cross section difference for elastic (or quasi-elastic) scattering off the proton (deuteron).
+\item Estimate and correct for $Bg$.
+\item Apply radiative corrections, which use a model of the unradiated Born cross section and a calculation of the radiated cross section based on programs like RCSLACPOL (see below). %There is some ambiguity in how to apply these corrections; e.g., one can attempt to separate the effect of the (quasi-)elastic (or other) tail which should be simply subtracted from the measured cross section difference, and a multiplicative factor that accounts for vertex corrections and all other effects not accounted for in the tail. In practice, one has to repeat the calculation of these radiative corrections several times with different model input and assumptions about the target, to assess systematic uncertainties.
+\item Express the extracted Born cross section difference in terms of the desired quantity (here: $g_1$) and 
+additional input (e.g., $A_2F_1$). Use a model for the latter to extract $g_1$ only. Vary the model (concurrently with
+the model input to the previous step) to assess systematic uncertainties.
+\end{enumerate}
+
+One conceivable problem with this approach lies in the first step, and in particular with the choice of the
+``realistic event generator''. This choice would not matter at all if two conditions are fulfilled \cite{KuhnEG4ana}:
+\begin{enumerate}
+\item The kinematic bins are chosen so small that the variation of the cross section over the bin (and/or the
+corresponding variation of the acceptance times efficiency) do not lead to any significant deviations for
+the {\em average} $Acc Eff$ between the simulation and the real detector. %``nature''.
+\item The counts reconstructed within any one bin are directly proportional to the number of initial electrons generated
+within that {\em same} bin (the proportionality constant being $Acc Eff$), without any ``bin migration'' from other 
+kinematic bins. (Otherwise, the ratio reconstructed/generated depends on those ``migration tails'', and the simulation
+will give different results from the ``true value'' if the overall cross section model of the generator is not accurate enough.)
+\end{enumerate}
+
+Unfortunately, assumption 1 tends to directly contradict assumption 2 because 1 favors small bins and 2 favors large bins!  For most precision experiments %(like we hope EG4 will turn out to be)
+, bin migration effects are significant. This is aggravated by the difficulty of making %to make 
+a clean separation between bin migration due to detector resolution alone and the contribution from radiative effects. For instance, GEANT and therefore GSIM includes (at least by default) photon radiation as part of the simulation of outgoing electron tracks throughout the gas and building materials of all detectors. It is very important not to ``double count'' when simulating an experiment; the radiative calculations in step 4 above should not include any ``after'' radiation beyond the limit of the target itself (which, in turn, should then {\bf NOT} be included in the GSIM simulation as material to be traversed).
+
+This is a problem for all CLAS experiments attempting to extract absolute cross sections (or, here, cross section differences); however, the problem is magnified for our case: Since the cross section difference itself is not required to be positive, one can have both positive and negative tails migrating into adjacent bins. In any case, it is %hopefully 
+clear that using the average, {\bf un}polarized cross section as a model for the generator is not really appropriate (unless one is %pretty 
+ confident that the asymmetry is fairly %pretty much %GED (pretty removed)
+ constant or slowly-varying -- not a good assumption in the resonance region where the $\Delta$(1232) with negative asymmetry is adjacent to the S11 with positive asymmetry). Using a (hopefully realistic) model of the cross section difference instead would be much better, but % however, 
+ this causes two new problems \cite{KuhnEG4ana}:
+\begin{enumerate}
+\item Prima facie it is unclear how to simulate a negative cross section (difference). This problem can be circumvented fairly easily (see below), albeit at extra cost in terms of simulation effort.
+\item It obviously becomes impossible to  extract $Acc Eff$ from a simple ratio of reconstructed divided by generated events; both of these quantities could be positive, negative (even different sign under extreme circumstances), or simply zero (which is particularly bad for the denominator). From this discussion, it is also clear that such a ratio would depend very sensitively on the cross section model and bin migration tails and be a very poor indicator of the actual product $Acc Eff$.
+\end{enumerate}
+
+For this reason, we decided to try a different approach outlined in the following. %remaining sections of this note. 
+The basic idea is to study the dependence of the reconstructed count difference on the model input (in particular $g_1$) directly through the whole chain of simulation and reconstruction, and then use tables of Born and radiated cross section differences for various model inputs as estimates of systematic uncertainties\footnote{We developed this method for the case of an ND$_3$ target; however, it could, of course, easily be adopted to NH$_3$, as well}.
+
+
+
+\subsection{Outline of the method}
+\label{scaleerr} %1/16/17
+The basic idea is the following: If we already had a perfect model of $g_1$ and all other ingredients that go into $\Delta n$ (including a perfect simulation of CLAS), a simulation of $\Delta n$ would agree 100\% with the data (within statistical errors). Any (larger than statistical) deviation between such a simulation of $\Delta n$ and the data can only be due to the following possible sources:
+\begin{enumerate}
+\item The model for $g_1$ is not perfect and, therefore, must be adjusted to reflect the ``true'' $g_1$. This is the default assumption which we will use to extract $g_1$ from the data. This will be done by finding the proportionality factor between {\em small} changes in $g_1$ and the reconstructed $\Delta n$ and then adjusting $g_1$ to fully account for the observed $\Delta n$.
+\item There could be a systematic error on this proportionality factor (which, after all, will come from simulation); for instance, there could be systematic deviations from the simulated results for acceptance and efficiency (in particular efficiencies of the CC, EC, or tracking, that are not perfectly simulated by GSIM). This is a multiplicative uncertainty that must be carefully estimated and applied to the final data.
+\item Any imperfect simulation of the  ``background'' due to all events not originating in the bin in question (migration, radiation), or due to undesired target components (hydrogen, bound polarized nucleons in nitrogen), or from misidentified pions or $e^+e^-$ pairs, or due to contributions to $\Delta \sigma$ from $A_2$ can lead to an additive systematic deviation that would then be misinterpreted as a change in $g_1$. This systematic uncertainty must be studied by varying model inputs, parameters etc. in the simulation.
+\end{enumerate}

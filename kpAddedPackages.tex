@@ -1,0 +1,89 @@
+%http://www.quantumdiaries.org/2010/03/07/more-feynman-diagrams-momentum-conservation/  In one of the comments in this blog, the author replied to one reader that he used TIKZ to make Feynman diagrams. So, I became curious about it and got to the pages like http://www.texample.net/tikz/examples/ or http://www.texample.net/tikz/examples/data-flow-diagram/ http://www.ctan.org/pkg/pgf http://mirror.unl.edu/ctan/graphics/pgf/base/tex/latex/pgf/frontendlayer/ https://www.youtube.com/watch?v=hYjsJVXBlvM etc via google, 
+% and since I had been adding packages before as well, making my main file a bit too much cluttered - I thought, may be I should have a different file where I would put the new 'usepackage' type of lines in an entirely different file, so that things would look/be better organized & clean.
+
+
+%\documentclass{article}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+
+
+%Tried installing anything, didn't work
+
+\usepackage{hyperref} %Kp-Addition: 9/12/11 (to link to web pages from LaTeX-generated PDF)
+
+ 
+%kppppp      \usepackage{subeqn_kp} %Added on March 30,2010 (copied from http://www.iam.ubc.ca/old_pages/newbury/tex/subeqn.sty)
+ %http://www.johndcook.com/blog/2008/11/24/link-to-web-pages-from-latex-pdf/
+
+%kp: http://tex.stackexchange.com/questions/63415/eqnarray-and-cases
+\usepackage{amsmath}    %kp: 8/7/13: added for 'align' & it seems it already has subequation in it so, I disabled above
+\usepackage{amsfonts} %9/26/13: to get \mathcal{•} working
+%\usepackage{AMSfonts} %9/26/13: to get \mathcal{•} working
+%\usepackage{amssymb} %9/26/13: to get \mathcal{•} working
+
+\topmargin +10mm
+%\usepackage{epstopdf} %kp
+
+%Any of the following 'color' package conflicted with something so that no figure would appear if color worked
+%\usepackage{color}  %kp: added:   http://www.latex-community.org/forum/viewtopic.php?f=45&t=10938
+%\usepackage{xcolor}  %kp: added:
+%\definecolor{Green}{rgb}{0,0.75,0.0}
+%\definecolor{Blue}{rgb}{0.0,0,0.75}
+%\definecolor{Tour}{rgb}{0,0.6,0.85}
+%\definecolor{Red}{rgb}{1.0,0.0,0.0}
+\usepackage[dvips]{color}  %kp: added  %http://www.eng.cam.ac.uk/help/tpl/textprocessing/latex_advanced/node13.html
+%\usepackage[usenames,dvipsnames]{color} %http://en.wikibooks.org/wiki/LaTeX/Colors 11/28/13
+%\usepackage[usenames,dvipsnames]{color}  %kp: added
+%\usepackage[usenames]{color}  %kp: added
+\usepackage{subfigure} % For figures side by side: http://www.johndcook.com/blog/2009/01/14/how-to-display-side-by-side-figurs-in-latex/ (eg in chap4simul, dcSmear.tex)
+\usepackage{verbatim} % For multiline comments: http://www.devdaily.com/blog/post/latex/multi-line-comments-in-latex-begin-123-comment-125-verbatim
+
+\usepackage{textgreek} %http://texblog.org/2012/03/15/greek-letters-in-text-without-changing-to-math-mode/ 8/14/13
+%\usepackage{textcomp} %http://tex.stackexchange.com/questions/9043/should-greek-letters-inserted-in-text-using-math-mode-mostly-always-be-italic 8/14/13
+
+%\usepackage{amssymb}
+
+% I may need to replace all \href lines with url lines not to have different fonts in different cases/citations/references.
+%\usepackage{url}   %9/7/13 (added to solve the tilda problem that I had with 'href' package (see bibliography)
+\usepackage[hyphenbreaks]{breakurl}   %11/20/13: Mike Mayer (to break long hyperlinks, disabled url)
+
+
+%http://www.douglasvanbossuyt.com/2008/11/18/latex-too-many-unprocessed-floats-problem-and-solution/  9/17/13 added to avoid getting too many unprocessed floats errors when I was including a lot of plots in my 4th chapter first draft. The author of the website says:
+%  Doing a little digging, I found that many of the images were starting to back up on each other.  LaTeX was getting plugged up and was barfing. The solution: 
+%   Add this to your top-level file: \usepackage[section] {placeins}
+% By using the placeins package with the section option selected, LaTeX is forced to dump all of the unprocessed floats at the end of each section.  There are a few other ways to do it with that package but this way made the most sense to me.  Doing that, I get no more errors!  Well, at least from that problem.
+\usepackage[section] {placeins}
+\usepackage{alltt}  %9/28/13: http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting (added for 'verbatim' environment in phenomenologicalModels.tex
+\usepackage{bigfoot} %9/28/13: http://tex.stackexchange.com/questions/203/how-to-obtain-verbatim-text-in-a-footnote
+\usepackage{mathptmx}
+
+% http://tex.stackexchange.com/questions/9485/how-to-fix-table-position To use \FloatBarrier to fix the position of figures and tables
+%\usepackage{placeins}  (It seems its already included)
+\usepackage{float}
+\usepackage{doi}%<----------
+%http://stackoverflow.com/questions/480685/is-there-a-way-to-prevent-latex-from-splitting-long-footnotes-across-multiple-co
+% Added on 11/20/13 to force footnotes to show up in the same page where they are referenced.
+\interfootnotelinepenalty=10000
+
+
+% http://tex.stackexchange.com/questions/69667/how-can-one-keep-a-section-from-being-at-the-end-of-a-page http://tex.stackexchange.com/questions/2347/avoiding-page-breaks-shortly-after-section-subsection-headings (added to get rid of section headers showing up at the bottom of a page (page-break after Heading and before the following text.)
+%\widowpenalty=10000
+%\clubpenalty=10000
+% http://tex.stackexchange.com/questions/21983/how-to-avoid-page-breaks-inside-paragraphs/21985#21985
+%\clubpenalties 1 10000
+%\widowpenalties 1 10000
+%\raggedbottom
+
+%http://tex.stackexchange.com/questions/2347/avoiding-page-breaks-shortly-after-section-subsection-headings didn't work either
+%\usepackage{etex}
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\@afterheading}%
+%    {\clubpenalty \@M}{\clubpenalties 3 \@M \@M 0}{}{}
+%\patchcmd{\@afterheading}%
+%    {\clubpenalty \@clubpenalty}{\clubpenalties 2 \@clubpenalty 0}{}{}
+%\makeatother
+
+%http://tex.stackexchange.com/questions/46175/setting-exact-margins
+%\usepackage[margin=1in,footskip=0.25in]{geometry}
+%\usepackage[margin=1in]{geometry}
