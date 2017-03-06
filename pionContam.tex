@@ -4,7 +4,9 @@
 %Our method of physics quantity extraction depends directly on the precise knowledge of the amount/counting of electrons that are scattered off the polarized deuterons in the \nd3 targets. But the CLAS detector that we use cannot distinguish whether a detected electron candidate really scattered off the intended target or came from other sources such as scattering from other target species or from secondary sources such as \epem pair production. At the very best, it can only distinguish between one type of particle from another. Even then, quite often, the detector mistakes the identity of other entirely different type of particles such as negative pions and registers them as electrons thus overestimating the amount of scattered electrons by significant margins. Therefore, it is imperative that we must correct for such overestimations of the electron counts before we proceed for further calculations and the resultant conclusions. In this section, the work done to estimate and correct for the amount of negative pion contamination in EG4 data will be discussed. 
 
 % See Nevzat's thesis page 122 & 216 to expand this introductory section (Talk about CC threshold for  pions and electrons, and so on)
-One of the two major sources of backgrounds in the measured EG4 electron rates comes from misidentified negatively charged pions (\pim) that produce similar set of signals as electrons in various detector components and thus pass the electron ID cuts. In the EG4 experiment, signals from the electromagnetic calorimeter (EC) and Cherenkov counter (CC) are used to discriminate electrons from pions, but even with stringent conditions on these signals, some of the pions get misidentified as electrons. To avoid limiting statistics too much in order to minimize the final statistical error in a given kinematic bin, a trade-off in purity versus efficiency (statistics) is made by quantifying the amount of this kind of contamination.
+One of the two major sources of backgrounds in the measured EG4 electron rates comes from misidentified negatively charged pions (\pim) that produce similar set of signals as electrons in various detector components and thus pass the electron ID cuts. In the EG4 experiment, signals from the electromagnetic calorimeter (EC) and Cherenkov counter (CC) are used to %discriminate %xz
+identify %separate
+electrons from pions, but even with stringent conditions on these signals, some of the pions get misidentified as electrons. To avoid limiting statistics too much in order to minimize the final statistical error in a given kinematic bin, a trade-off in purity versus efficiency (statistics) is made by quantifying the amount of this kind of contamination.
 
 \subsection{Method}
 %\section{Binning}
@@ -42,11 +44,11 @@ is made (see Fig. \ref{fignphePiC}). Likewise, using a very stringent set of cut
 \begin{figure}[H]
 \centering
 \subfigure[For the first in momentum and seventh in \th bin.]{
-\includegraphics[scale=0.35]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_6.png} 
+\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_6.png} 
 \label{fignphe01}
 }
 \subfigure[For the first in momentum and eighth in \th bin.]{
-\includegraphics[scale=0.35]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_7.png}
+\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_7.png}
 \label{fignphe02}
 }
 \label{fignphePiC} %Effect of Dc-smear
@@ -64,15 +66,15 @@ is made (see Fig. \ref{fignphePiC}). Likewise, using a very stringent set of cut
 % http://tug.org/TUGboat/tb34-1/tb106thurnherr.pdf (12/3/13)
 \begin{figure}[ht]
 \centering
-\subfigure[For the first bin in momentum and seventh bin in \thns.]{\includegraphics[scale=0.36]{TexmakerMyFinTh/FigBkGrnd/pi2elRatio2999_0_6.png}
+\subfigure[For the first bin in momentum and seventh bin in \thns.]{\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/pi2elRatio2999_0_6.png}
 \label{figpiCont306}   }
 \quad
-\subfigure[For the first bin in momentum and eighth bin in \thns.]{\includegraphics[scale=0.36]{TexmakerMyFinTh/FigBkGrnd/pi2elRatio2999_0_7.png}
+\subfigure[For the first bin in momentum and eighth bin in \thns.]{\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/pi2elRatio2999_0_7.png}
 \label{figpiCont307}  }
-\subfigure[Fits in the $\theta(9.0,10.0)$ bin for 1.339 GeV data.]{\includegraphics[scale=0.36]{TexmakerMyFinTh/FigBkGrnd/GlbFitLinThEbBoth_E1ppt.png} 
+\subfigure[Fits in the $\theta(9.0,10.0)$ bin for 1.339 GeV data.]{\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/GlbFitLinThEbBoth_E1ppt.png} 
 \label{figpcFit1}    }
 \quad
-\subfigure[Fits in the $\theta(9.0,10.0)$ bin for 2.0 GeV data.]{\includegraphics[scale=0.36]{TexmakerMyFinTh/FigBkGrnd/GlbFitLinThEbBoth_E3ppt.png}
+\subfigure[Fits in the $\theta(9.0,10.0)$ bin for 2.0 GeV data.]{\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/GlbFitLinThEbBoth_E3ppt.png}
 \label{figpcFit2}    }
 %\caption{Main figure caption}
 \label{figpiCont}
@@ -103,7 +105,7 @@ is made (see Fig. \ref{fignphePiC}). Likewise, using a very stringent set of cut
 \subfigure[For the first bin in momentum and eighth bin in \thns.]{\includegraphics[scale=0.35]{FigBkGrnd/pi2elRatio2999_0_7.eps}
 \label{figpiCont307}
 }
-\label{figpiCont} %Effect of Dc-smear
+\label{figpiContN} %Effect of Dc-smear
 %\caption[Optional caption for list of figures]{Caption of subfigures \subref{figsubfig1}, \subref{figsubfig2} and \subref{figsubfig3}}
 \caption[Calculation of pion contamination.]{Calculation of pion contamination of electrons for the given kinematic bins of 3.0 GeV data. The dotted black line indicated by the label ``Raw El'' in the legends of each of the two plots are the contaminated electrons. Likewise, the line labeled ``El Fit'' is a polynomial fit to the electron distribution (in this case fitted from Nphe=1.8 to 7.0, but extrapolated down to Nphe=0). The line labeled ``Unscaled Pi' is the pure pion distribution obtained with stringent set of cuts. ``Raw El - Fit'' is the difference between the contaminated electron sample and the polynomial fit and finally ``Scaled Pi'' is the pure pion-sample but after its scaled to match with the ``Raw El - Fit'' at the pion peak position (around 1 Nphe). }
 \end{figure}

@@ -29,8 +29,9 @@
 %%kp: \section{Introduction}
 
 This work is mostly based on the work documented in the \href{https://www.jlab.org/Hall-B/secure/eg1-dvcs/technotes/targetinfo/target_info.pdf}%{EG1-DVCS technical note \#{} 4}
-{EG1-DVCS-TN-004} %xz: you can be consistent and say this as you do below.
-by P. Bosted \cite{trkCorNote}, in which a routine or method is developed
+{EG1-DVCS-TN-004}\cite{trkCorNote} %xz: you can be consistent and say this as you do below.
+%by P. Bosted
+, in which a routine or method is developed
 to swim the particles through the field map of the target magnet to
 the drift chambers in order to determine the particle angles and position
 at the target, provided the direction cosines of the tracks at DC
@@ -49,8 +50,8 @@ of \textbf{$\chi^{2}$-square minimization} using ep-elastic events.
 
 First of all, in order to convert raster magnet ADCs into corresponding beam positions x0 and y0,
 we need conversion parameters. These parameters are determined by using a method outlined in
-\href{https://www.jlab.org/Hall-B/secure/eg1-dvcs/technotes/raster/raster.pdf}{EG1-DVCS-TN-002}.
-The method determines the values of the slopes and offsets that convert the X- and Y-raster ADC readings to 
+\href{https://www.jlab.org/Hall-B/secure/eg1-dvcs/technotes/raster/raster.pdf}{EG1-DVCS-TN-002}\cite{rastXYnZ}% by P. Bosted and A. Kim.
+. The method determines the values of the slopes and offsets that convert the X- and Y-raster ADC readings to 
 corresponding beam positions x0 and y0 in cm by minimizing the sensitivity of target vertex position (vz) 
 for charged tracks to beam motion. 
 
@@ -59,7 +60,7 @@ Next, ep-elastic events are skimmed (from all of the \textbf{$NH_{3}$}
 target data-set) using electron ID cuts for the electrons (see section \ref{allCuts}) in the sixth sector and proton ID consisting mainly of the time-of-flight cuts are used to select protons in the third sector (opposite to the sixth one). Then missing momentum cuts (less than 0.1 GeV for each of the four components Px, Py, Pz and E) based on 4-momentum conservation requirements (within measurement uncertainties) are used to help further clean up the accidental coincidences. These skimmed events are saved in root files and later reused for the minimization process described here.
 
 
-The cuts used in the initial data skimming required that each of the four missing components be less than 0.1 GeV.
+The cuts used in the initial data skimming required that each of the four missing components $(Px, Py, Pz, E)_{miss}$ be less than 0.1 GeV.
 
 After that a correction routine involving a set of correction
 equations with several unknown parameters are established. Then

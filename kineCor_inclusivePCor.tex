@@ -5,7 +5,7 @@
 
 
 \subsection{Momentum Correction}
-Different DC related factors contribute to the biggest part of the systematic deviations of particle momenta as reconstructed by RECSIS. The drift chambers could be misaligned relative to their nominal positions or the survey results that is used by RECSIS could be inaccurate or out-of-date. The effects of physical deformations (due to thermal and stress distortions) of the chamber including wire-sag, incorrect wire positions may not have bee incorporated properly. The torus field map used by the reconstruction software may not have been accurate and complete enough \cite{e6momcor_cn}. Effects on angles \th and \ph due to these contributions are already factored in the tracking correction described earlier. However, a separate method is developed to correct for the effect on the magnitude $p$ of the momentum. This $p$-correction methods picks up and builds on some of the ideas outlined in the CLAS-NOTE 2003-005 \cite{e6momcor_cn}.
+Different DC related factors contribute to the biggest part of the systematic deviations of particle momenta as reconstructed by RECSIS. The drift chambers could be misaligned relative to their nominal positions or the survey results that is used by RECSIS could be inaccurate or out-of-date. The effects of physical deformations (due to thermal and stress distortions) of the chamber including wire-sag, incorrect wire positions may not have been incorporated properly. The torus field map used by the reconstruction software may not have been accurate and complete enough \cite{e6momcor_cn}. Effects on angles \th and \ph due to these contributions are already factored in the tracking correction described earlier. However, a separate method is developed to correct for the effect on the magnitude $p$ of the momentum. This $p$-correction methods picks up and builds on some of the ideas outlined in the CLAS-NOTE 2003-005 \cite{e6momcor_cn}.
 
 \subsubsection{Procedure to determine the first 11 parameters}
 \label{pCorFit1}
@@ -101,7 +101,10 @@ These total of eleven unknown parameters were determined by fitting above mentio
   \caption[Background removal from $\Delta E$]{Plots showing background removal from the $\Delta E$ counts from NH$_3$ 
 (shown by ``NH$_3$'' line) data (by subtracting cross-normalized counts from $^{12}$C data (shown by ``$^{12}$C$_{scaled}$'' 
 line)) to separate the elastic peak (shown by ``NH$_3$ - $^{12}$C$_{scaled}$'' line) in one of the kinematic bins, thereby 
-getting the momentum offset for that bin.}
+getting the momentum offset for that bin. The $^{12}$C data is used to account for the nuclear elastic background from $^{15}$N
+nucleii in the ammonia target. It would have been best to have data from $^{15}$N target itself but due to technical difficulties
+that was not possible and, therefore, $^{12}$C target was chosen as the closest possible approximation of $^{15}$N target.}
+  %Some comments on 12C use for 15N background, read page 195 (pdf 210), section IV.11.2 from Nevzat's thesis (my dropbox)
 %^{235}_{92}U an example of how an Uranium isotope symbol in Chemistry written with the Latex %kp: April 04, 2010
 \label{sec6dEall}
 \end{figure}
@@ -110,7 +113,7 @@ getting the momentum offset for that bin.}
 \begin{figure}[H]%[ht] 
 \centering
   \leavevmode \includegraphics[width=0.8\textwidth]{figuresEG4/FigKineCor/elasticPeaksFromNH3wdWoCorEi0mN15gausCropped.png} 
-  \caption[Nuclear elastic peak fron $^{15}$N target]{Nuclear elastic peaks fron $^{15}$N target and the Gaussian fits in two
+  \caption[Nuclear elastic peak from $^{15}$N target]{Nuclear elastic peaks fron $^{15}$N target and the Gaussian fits in two
 of many kinematic bins as seen in $\Delta E = E'_{elastic} - p$ distributions from NH$_3$ data before the momentum corrections.
 In this case $E'_{elastic}$ is evaluated using known mass of $^{15}$N in Eq. \ref{eqElasticEprime}.
 In the second plot, the proton elastic peak is also visible. Ideally, after all the corrections, the nuclear elastic peak is 
@@ -180,7 +183,8 @@ which is an approximation of the Bethe-Block formula \cite{leo1994techniques}: %
 -\frac{1}{\rho} \frac{dE}{dx} = 4\pi N_a r_e^2 m_e c^2 \frac{Z}{A} \frac{1}{\beta^2} \left( ln\bigg( \frac{2m_ec^2\gamma^2\beta^2}{I} \bigg) - \beta^2 \right) 
 \end{eqnarray}
 %And, the factor '$\tau$' is the total effective mass thickness traversed by the particle. 
-This quantity is calculated as follows:
+%This quantity is calculated as follows:
+The total effective mass thickness $\tau$ (in cm) is calculated as follows: %xz
 \begin{itemize}
 \item $\tau = \tau_{\parallel}/cos\theta$ \quad if $\theta <= \pi/4$
 \item $\tau = \tau_{\parallel}/cos(\pi/4)$ \quad if $\theta > \pi/4$    %SEK comment:  I don't understand. leave out! Why not \tau = r/sin \theta    (anyway \theta > \pi/4 is never true!
@@ -219,7 +223,15 @@ multiplied by the packing fraction which is roughly 0.6  \cite{rfersch_th}, wher
 
 Using the ionization loss corrected energy and the rest mass of the particle, momentum is recalculated as $p_{cor} = \sqrt{E^2_{cor}-m^2}$ 
 (where $m$ is the mass of the particle). Finally, this new p is used along with the previously corrected angles to evaluate the three 
-cartesian components $p_x$, $p_y$ and $p_z$ of the momentum.
+cartesian components $p_x$, $p_y$ and $p_z$ of the momentum as follows:
+
+\begin{equation}
+\begin{aligned}
+  p_x   = & p \sin\theta \cos\phi \\
+  p_y   = & p \sin\theta \sin\phi \\
+  p_z   = & p \cos\theta 
+\end{aligned}
+\end{equation}
 
 
 
@@ -231,8 +243,9 @@ cartesian components $p_x$, $p_y$ and $p_z$ of the momentum.
 \caption[Effects of corrections on inclusive events from 3 GeV NH$_3$ data]{Effects of kinematic corrections on inclusive events 
 from 3 GeV NH$_3$ data. Here, distributions of $\Delta E$ and $W$ are shown in two different ranges. The upper ones shown the full 
 range distributions, where as the lower two show the distributions near the quasi-elastic peak. The distributions before the 
-corrections are shown by {\bf black continuous} lines and the ones after the corrections are shown by the \textcolor{red}{{\bf red}}% dotted}} 
+corrections are shown by {\bf black continuous} lines and the ones after the corrections are shown by the \textcolor{red}{{\bf red}} 
 lines. Here, $E_{elast}$ is the calculated or expected energy of the scattered electron assumming it was scattered off
-elastically, whereas, p[0] is the momentum as measured by CLAS.}
+elastically, whereas, p[0] is the momentum as measured by CLAS. From these plots it is evident that the momentum correction works
+as expected because the peak of $\Delta E$ is narrower and better centered at zero after the correction.}
 \label{fig:epElastic}
 \end{figure}

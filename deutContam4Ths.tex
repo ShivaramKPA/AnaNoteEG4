@@ -80,10 +80,12 @@ of the quantity $\Delta$ from data with deuteron target decreases because the Fe
 \subsection{Event Selection}
 % Read /u/home/adhikari/Acceptance/ChkND3_NH3_MixUp/readme which says, ../DataSkimming/skim_AllgudEvnts.C was used for skimming out epX events first and then using testCuts4skim.C to put tighter cuts and then make the above mentioned 'Delta' histogram, which are saved in root files to be used later by fitdTheta.C to do the fitting and get the final contamination results.
 First, for each data set (corresponding either to \nh3, \nd3 or $^{12}$C runs), using standard electron and proton identification cuts %(selection conditions), it is found out whether a given event 
-events each with a well reconstructed scattered electron and a similarly well reconstructed candidate for proton are selected. 
+, events %each
+with a well reconstructed scattered electron and a similarly well reconstructed candidate for proton are selected. 
 We accept only events each of which have one electron, one proton and at most one neutral particle candidate (expected to be a neutron coming off from the deuteron target break-up). %We also look for events each of which has one electron, one proton and one neutral particle candidate (expected to be a neutron coming off from the deuteron target break-up). 
-If the event is one of the above two types, %it is put through the following more cuts to make sure they are elastic or quasi-elastic events:
-following additional cuts are applied to make sure it is elastic or quasi-elastic event:
+If the event is %one of the above two types, %it is put through the following more cuts to make sure they are elastic or quasi-elastic events:
+of the above type, %xz
+the following additional cuts are applied to make sure it is elastic or quasi-elastic event:
     \begin{itemize}
        \item $E_X<0.15$ GeV \qquad with $E_X = M_p + E_e - E_{e'} - E_p = M_p + \nu - E_p $
        \item $P_X<0.5$ GeV/c \qquad with $\vec{P}_X = \vec{0}_p + \vec{P}_e - \vec{P}_{e'} - \vec{P}_{p'} = \vec{P}_e - \vec{P}_{e'} - \vec{P}_{p'} $
@@ -93,7 +95,7 @@ following additional cuts are applied to make sure it is elastic or quasi-elasti
     \end{itemize}
 where X indicates the missing entity in the d(e,e'p)X channel, which is expected to be neutron in the case of the quasi-elastic channel, thus $E_X$ is the missing energy and so on.
 
-If it passes these cuts, the quantity \Delt~ is calculated for the event and then histogrammed as shown by the red curves in the top-left (from $^{12}$C runs), top-right (from \nh3 runs), and bottom-right (from \nd3 runs) panels of Fig. \ref{fig:deutContAll}.
+If it passes these cuts, the quantity \Delt~ in Eq. \ref{pDsinTh} is calculated for the event and then histogrammed as shown by the red curves in the top-left (from $^{12}$C runs), top-right (from \nh3 runs), and bottom-right (from \nd3 runs) panels of Fig. \ref{fig:deutContAll}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,8 +109,8 @@ If it passes these cuts, the quantity \Delt~ is calculated for the event and the
 \end{comment}
 
 %\subsection{Background Removal}
-After getting the histograms for the quantity \Delt~ for the ep-elastic or %ep 
-quasi-elastic events from the \nh3, \nd3 and $^{12}$C target data sets, we first remove the contribution from the non-hydrogen component of \nh3 and \nd3 targets by subtracting the corresponding carbon histogram (properly scaled to match with the shoulders from the background in each of the ammonia data). Since the carbon data is too low in counts (hence the raggedness in the histogram), %SEKpr: ruggedness->raggedness (kp: or rugged histogram)
+After getting the histograms for the quantity \Delt~  for the ep-elastic or %ep 
+quasi-elastic events from the \nh3, \nd3 and $^{12}$C target data sets, we first remove the contribution from the non-hydrogen component of \nh3 and \nd3 targets by subtracting the corresponding carbon histogram (properly scaled to match with the left-shoulders (mainly from the nuclear elastic background in each of the ammonia data)). Since the carbon data is too low in counts (hence the raggedness in the histogram), %SEKpr: ruggedness->raggedness (kp: or rugged histogram)
 a fit (a 'gaussian' times a 'linear' function) to the carbon data is obtained, and that fit (shown as the blue line in the first panel in Fig. \ref{fig:deutContAll} is used instead of the histogram itself to remove the background. The blue line in the second (top-right) panel and the cyan  line in the last (bottom-right) panel show the properly scaled carbon fits which are subtracted from the \nh3 and \nd3 histograms (shown by red lines) respectively. After the subtraction, we get new histograms that represent 'pure' elastic or quasi-elastic data from protons and deuterons (shown by the magenta lines in the third and last panels respectively).
 
 
