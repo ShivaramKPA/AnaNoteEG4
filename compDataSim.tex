@@ -13,16 +13,16 @@
 
 Using our final values for the smear parameters, the simulated data were passed through GPP and then reconstructed with RECSIS. 
  Finally, all applicable cuts %\footnote{Initially, we started out from different cuts, especially those on EC-sampling fraction, vertex-Z and the fiducial cuts. But, to solve the various simulation issues and the discrepancies in the comparison between the data and simulation, they were modified and we arrived at the current set of cuts as listed in section \ref{allCuts}}
-  and corrections were applied to both sets of polarized simulation data. Because the CC was turned of in GSIM for the simulation, 
+  and corrections were applied to both sets of polarized simulation data. Because the CC was turned off in GSIM for the simulation, 
  all experimental data cuts except those depending on CC were %all the cuts applied on experimental data (except those depending on CC) were also 
   applied to the simulated data. However, the cuts were modified (see Sec. \ref{allCuts}) to account for differences between simulation and data.
 %There are some important details on how to handle detectors (like the CC and, to a lesser extent, the EC) which are known to be imperfectly simulated in GSIM (if at all), and how to correct for further inefficiencies (for instance luminosity-dependent tracking inefficiencies) - the simulated data have to be corrected for those ``by hand''. The details will be described elsewhere. We also have to account for pions and other background mis-identified as electrons and for electrons from pair-symmetric decays that are present in the data (as part of the term $Bg$ in Eq.~\ref{Delndef}) but not in the simulation. Finally, we have to account for the polarized background by adjusting the simulated  or experimental data appropriately (see Section~\ref{Bg}).
 
-In the end, we had two sets of simulated events (for the two cases of $\Delta \sigma \geq 0 $ and $\Delta \sigma < 0$) in each kinematic bin. The number of these two type of events in each bin were then cross-normalized with respect to each other by their respective cross-section map integrals %areas 
-and the number of %thrown/generated
+In the end, we had two sets of simulated events (for the two cases of $\Delta \sigma \geq 0 $ and $\Delta \sigma < 0$) in each kinematic bin. The number of these two type of events in each bin were then cross-normalized with respect to each other by their respective cross-section map integrals and the number of %thrown/generated
 generated Monte-Carlo events and then combined to make the simulated polarized count difference $\Delta n$. To do that, the number of simulated event counts in a kinematic bin corresponding to the positive $\Delta \sigma$ %polarization 
 was kept unchanged but the one corresponding to the negative $\Delta \sigma$ %polarization 
 was multiplied with the following normalization factor:
+
 \begin{equation}
  norm^- = \frac{\sigma^-_{tot}}{\sigma^+_{tot}}\times \frac{N^+}{N^-}
 \end{equation}
@@ -33,13 +33,17 @@ of the cross section map and the corresponding number of Monte-Carlo events gene
 
 
 
-The next step was to properly cross-normalize the simulated events to the data, as outlined in the introduction. For this, we %simply 
-found the scale factor $SF$ necessary to have the same $\Delta n$ in the quasi-elastic region (e.g., $0.9 \le W \le 1.0$). This factor represents the ratio 
+The next step was to properly cross-normalize the simulated events to the data.%, as outlined in the introduction.
+For this, we %simply 
+found the scale factor $SF$ necessary to have the same $\Delta n$ in the quasi-elastic region (e.g., $0.9 \le W \le 1.0$). This factor represents the ratio
+
 \begin{equation}
  SF = \frac{n^+ - n^-}{\Delta n(simul)} % = \frac{{\mathcal L}_r  \cdot P_b P_t }{{\mathcal L}_s}
 \end{equation}
-since we assume that the simulation for the cross section difference in this region is reliable % ``perfect''
- and all other factors are common to the simulation and the data. In fact, we chose one \qsqs bin (the $20^{th}$ one - for which the agreement between the data and simulation was among the best) and calculated above ratio to get the global preliminary value of the scaling factor $SF_{20}$. The simulated $\Delta n$ was then multiplied with this factor to get our best ``prediction'' of the real data in all the kinematic bins, in order to directly compare it with the real data (see Figs. \ref{xsComp7} and \ref{xsComp8}). 
+%since we assume that the simulation for the cross section difference in this region is reliable % ``perfect''
+since the physics of QE is known (from form factors etc), we expect the simulation in this region is reliable %xz
+ and all other factors are common to the simulation and the data.
+ In fact, we chose one \qsqs bin (the $20^{th}$ one - for which the agreement between the data and simulation was among the best) and calculated above ratio to get the global preliminary value of the scaling factor $SF_{20}$. The simulated $\Delta n$ was then multiplied with this factor to get our best ``prediction'' of the real data in all the kinematic bins, in order to directly compare it with the real data (see Figs. \ref{xsComp7} and \ref{xsComp8}). 
 
 
 
@@ -71,8 +75,8 @@ After this normalization, the ratios $(n^+ - n^-)/\Delta n(simul)$ in the quasi-
 bins were calculated and plotted versus \qsqs as well as \ths %(which were somewhat similar to \ref{D2SvQ7qe}, \ref{D2SvTh7qe}, \ref{D2SvQ8qe}, and \ref{D2SvTh8qe} 
 (see Figs. \ref{D2SvQ7qe} - \ref{D2SvTh8qe})
 along with the corresponding statistical errors as given by $\sqrt{(n^+ + n^-)}/\Delta n(simul)$. As the figures show, the ratio in the quasi-elastic region drops %was observed to drop 
-off rapidly at small \qsq. The fall-off is likely due to CC inefficiencies for very high momenta and very forward angles. Also, our simple cross section model for the deuteron is less accurate at low \qsq.  Figs. \ref{D2SvQ7del} - \ref{D2SvTh8del} show that the $\Delta$-resonance region does not suffer from similar problems. %show such problems.
-
+off rapidly at small \qsq. The fall-off is likely due to CC inefficiencies for very high momenta and very forward angles. Also, our simple cross section model for the deuteron is less accurate at low \qsq.  Figs. \ref{D2SvQ7del} - \ref{D2SvTh8del} show that the $\Delta$-resonance region does not suffer from similar problems %. %show such problems.
+as the Delta model is quite reliable too (just like QE model).
 
 %One last normalization was done again, with the nomalization factor obtained this time 
 The final normalization was obtained by calculating the error weighted average $SF_{average}$ of above ratios in the quasi-elastic region%\footnote{The average was calculated using only those \qsqs bins which had ratios reasonably stable and closer to the expected value of 1.0. In the case of 1.337 GeV beam energy, the ratios from the first ten \qsqs bins as well as those with ratios greater than 2.5 were discared, and for the case of 1.993 GeV, those from the first thirteen bins as well as those that were greater than 2.0 were discarded from the average calculation.} 

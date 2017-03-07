@@ -126,7 +126,7 @@ the width shows a linear dependance.
 
 \subsection{Finding the width of the real CLAS data elastic peak.}
 With the knowledge of the DC-smear dependence of energy resolution (Fig. \ref{fig:SigmaVsm}), if we also know the resolution in the real data, 
-we can determine the right value of DC-smear which would make make the resolution in the simulation comparable with that in the real data. So, 
+we can determine the right value of DC-smear which would make the resolution in the simulation comparable with that in the real data. So, 
 the next step is to find the resolution in the real CLAS data, which is done again by measuring the width of the elastic peak in the real data. 
 But, because the real data is a very complex mixture of events coming from various reaction channels, we must first have a way to separate the elastic 
 data from the rest. One method entails histogramming \dE from both the \nh3 and \c12 target data (for a given beam energy) and subtracting 
@@ -201,8 +201,9 @@ Looking at Fig. \ref{fig:sigsProd}, it is obvious that the resolution is $\theta
 When the experimental and simulated resolutions are compared for the three different cases of $\theta$ cuts, we realize that the GPP asks for the 
 \th dependent DC-smearing, which makes the simulation work very complicated with the current version of GPP. To simplify the situation, we decide to 
 have a global (\th independent) value of DC-smearing (for a given beam energy) by comparing the experimental and simulated resolutions corresponding to 
-the case of ``all \th'' cut. That should be good enough for %the 
-practical purposes. By taking into account the fact that there seems to be an inherent 
+the case of ``all \th'' cut. %That should be good enough for practical purposes. %xz:
+%xz: "That should be good enough for practical purposes". Why?  Be careful to never make a statement without backing it up.
+By taking into account the fact that there seems to be an inherent 
 uncertainty in the measurement of the resolutions (evident from the discrepancy of the experimental resolutions determined from the two different methods)
 and comparing the experimental and simulated results, the values as listed in Table. \ref{tab:dcSmears} are chosen for the DC-smearing scales for the GPP.
 
