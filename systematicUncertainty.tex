@@ -35,6 +35,10 @@ In this analysis, ten sources of systematic uncertainties are studied as listed 
 For the ease of description later on, these ten components will be referred to by the index "k" with its value indicating the position 
 in the list. So, the uncertainty due to scaling factor will be identified with k=1 and so on.
 
+
+
+\section{Evaluation of Experimental Systematics} %upon xz suggestion
+
 \paragraph{Possible Uncertainty due to the overall scaling factor}
 This uncertainty is due to the uncertainties in the overall scaling factor (SF), which is a convolution of various unmeasured constants such as \pbpt, packing fraction etc (see Sec. \ref{scaleerr}). This contribution is estimated by assuming that the uncertainties in SF is not more than 10\%. Thus considering the worst case scenario of 10\% uncertainty in SF, we estimate the corresponding uncertainty in \gones as follows:
 \begin{equation}
@@ -72,7 +76,7 @@ where $\Delta n^{std}_{Eb+}$ is now the simulated $\Delta n^{std}$ obtained by a
 \label{syErCC}       
 
 This contribution is estimated by assuming a maximum of 50\% uncertainty in the estimated inefficiency as follows: %\textcolor{red}{section reference}
-The the 50\% error is justified because the uncertainty in inefficiency is no more than 50\% for nphe>2.5 (see Fig. \ref{figccInefFits}).
+The the 50\% error is justified because the uncertainty in inefficiency is no more than 50\% for $nphe>2.5$ (see Fig. \ref{figccInefFits}).
 \begin{equation}
 \label{eqSysCC}
 \Delta g_1^{Eb}(W,Q^2) = g_1^{std}(W,Q^2) + \frac{\Delta n^{data}(W,Q^2) - \Delta n^{std}_{0.5CCi}(W,Q^2)}{B(W,Q^2) } - g_1^{data}(W,Q^2)
@@ -104,12 +108,13 @@ where the proportionality factor $B(W,Q^2)$ for the bin is exactly the same as t
 
 \section{Model uncertainties}
 \label{sysMod}   
-The remaining four components in the total systematic uncertainty (the last four in the list \ref{TenSyErrors}) account for the model uncertainty contributions. %For this purpose, we changed the values of two of the model parameters ``AsymChoice'' and ``SFchoice'' (each takes value of 11, in the standard case)\footnote{ List of options for the values of {\bf AsymChoice} and {\bf SFchoice}
+The remaining four components in the total systematic uncertainty (the last four in the list \ref{TenSyUncertainties}) account for the model uncertainty contributions. %For this purpose, we changed the values of two of the model parameters ``AsymChoice'' and ``SFchoice'' (each takes value of 11, in the standard case)\footnote{ List of options for the values of {\bf AsymChoice} and {\bf SFchoice}
 For this purpose, we changed the values of two of the model parameters ``AsymChoice'' and ``SFchoice'' (each takes value of 11, in the standard case)
 
 %For this purpose, we 
 We repeated the full statistics simulation four more times by changing the values of two RCSLACPOL parameters ``AsymChoice'' and ``SFchoice'' (which controls the values of model asymmetries and the structure functions, with each taking a value of 11 in the standard case) one by one corresponding to the following four model variations: 
 \begin{enumerate}
+ \label{fourModelVariations} 
 \item Variation-1: AsymChoice=12, SFchoic=11
 \item Variation-2: AsymChoice=15, SFchoic=11
 \item Variation-3: AsymChoice=11, SFchoic=12
@@ -157,7 +162,7 @@ Vary the virtual photon asymmetry $A_2$ in the resonance region within its fit u
 
 
  %Both of these parameters use 11 for standard simulation and other values are used one by one (keeping other things the same) for different simulations in order to estimate the sytematic uncertainties from each as follows:
-After the simulation data for the above four cases were available, four more data tables (TM1,TM2,TM3 and TM4) were produced for the corresponding model values of \gone, \aone, \fones etc. Then, the contributions to the systematic uncertainty from each of these four cases of model variation were given as follows:
+After the simulation data for the above four cases (see \ref{fourModelVariations}) were available, four more data tables (TM1,TM2,TM3 and TM4) were produced for the corresponding model values of \gone, \aone, \fones etc. Then, the contributions to the systematic uncertainty from each of these four cases of model variation were given as follows:
 \begin{equation}
 \label{eqSysMd}
 \Delta g_1^{i}(W,Q^2) = g_1^{std}(W,Q^2) - g_1^{i}(W,Q^2) + \frac{\Delta n^{i}(W,Q^2) - \Delta n^{std}(W,Q^2)}{B(W,Q^2) }
@@ -182,21 +187,21 @@ data is available only from one beam energy, then combined uncertainty for the \
 \label{eqSeUncorEb78Comb}
 \delta g_1(\text{k=8,10,11, combined}) = \sqrt{ \left( \sum_i \frac{ (\delta g_1)^2(i)} {(\Delta g_1)^2(i)} \right)  / Sum2 }
 \end{eqnarray}	
- where, $\delta$ represents the \kth component of the systematic uncertainty, whereas, 'Sum2', 'i' and $\Delta$ have the same meanings as before.
-\item while all other variations are correlated between the two beam energies and should be averaged linearly (WITH sign): 
+where, $\delta$ represents the \kth component of the systematic uncertainty, whereas, 'Sum2', 'i' and $\Delta$ have the same meanings as before, with 'Sum2' given by 
+\begin{eqnarray}
+\label{eqDataComb}
+ Sum2 =  \sum_i \frac{1}{(\Delta g_1)^2(i)} 
+\end{eqnarray}	
+which provides the statistical weight, where the index 'i' represents two beam energy (1.3 and 2.0 GeV) data sets, %\text{with i=1.3 and 2.0 GeV}   \\  
+and $\Delta g_1$ indicates the statistical uncertainty in \gone in the corresponding kinematic bin.
+
+\item All other variations are correlated between the two beam energies and should be averaged linearly (WITH sign): 
 \begin{eqnarray}
 \label{eqSeUncorEb78Comb2}
 \delta g_1(\text{other k, combined}) =  \left( \sum_i \frac{ (\delta g_1)(i)} {(\Delta g_1)^2(i)} \right)  / Sum2 
 \end{eqnarray}	
 \end{enumerate}
 
-with
-\begin{eqnarray}
-\label{eqDataComb}
- Sum2 =  \sum_i \frac{1}{(\Delta g_1)^2(i)} 
-\end{eqnarray}	
-providing the statistical weight, where the index 'i' represents two beam energy (1.3 and 2.0 GeV) data sets, %\text{with i=1.3 and 2.0 GeV}   \\  
-and $\Delta g_1$ indicates the statistical uncertainty in \gone in the corresponding kinematic bin.
 
 
 \subsection{Combining uncertainties from the ten sources}
@@ -252,7 +257,7 @@ as follows:
   \label{sysErEb7n}  
 \end{figure}
 
-Figs. (\ref{sysErEb7} and \ref{sysErEb7n}) show, for example, the different components of the systematic uncertainties (along with the grand total) on \gones (from 1.3 GeV data) evaluated in the manner just outlined. Likewise, Figs. (\ref{sysErEb8} and \ref{sysErEb8n}) show similar plots for the 2.0 GeV data.
+Figs. (\ref{sysErEb7} and \ref{sysErEb7n}) show, for example, the different components of the systematic uncertainties along with the grand total on \gones (from 1.3 GeV data) evaluated in the manner just outlined. Likewise, Figs. (\ref{sysErEb8} and \ref{sysErEb8n}) show similar plots for the 2.0 GeV data.
 
 \begin{figure}[h] 
 \centering
@@ -268,15 +273,15 @@ Figs. (\ref{sysErEb7} and \ref{sysErEb7n}) show, for example, the different comp
   \label{sysErEb8n}  
 \end{figure}
 
-These ten different components of systematic uncertainties on \gones (and similarly on \afone) thus calculated separately for both beam energies are later combined % in quadrature with proper statistical weighting to get the combined components as well as the grand total as shown 
-as follows:
+These ten different components of systematic uncertainties on \gones and similarly on \afone thus calculated separately for both beam energies are later combined % in quadrature with proper statistical weighting to get the combined components as well as the grand total as shown 
+as described below.
 
 
 \subsection{Combining data from the two beam energies}
 Once the data \gones and \afones and their corresponding uncertainties are evaluated from each beam energy data set, they are combined as follows \cite{pComKuhn} (to make the description simple, the procedure is described only for \gone, but, in the end, the exact same procedure is followed for \afones as well):
 
 \begin{enumerate}
-\item First a table is made, separately for each beam energy, of all $(Q^2,W)$ bins with with calculated values of \gone, their statistical uncertainties and each of the ten components of the systematic uncertainties (making sure to keep the correct signs of the systematic changes) in separate columns (one row is for one bin in $(Q^2,W)$. 
+\item First a table is made, separately for each beam energy, of all $(Q^2,W)$ bins with calculated values of \gone, their statistical uncertainties and each of the ten components of the systematic uncertainties (making sure to keep the correct signs of the systematic changes).% in separate columns (one row is for one bin in $(Q^2,W)$. 
 \item Then another table is made for the combined values of \gone, which are evaluated as follows:
 \begin{enumerate}
 \item If for a given $(W,Q^2)$ bin, \gones comes only from one beam energy, then all the entries from that energy go into the "combined" table
