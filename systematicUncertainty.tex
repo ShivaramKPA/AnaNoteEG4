@@ -237,8 +237,17 @@ as follows:
 
 
   %\leavevmode \includegraphics[width=0.9\textwidth]{figuresEG4/FigAnal/indvSystErrsEb7Wbins70NoG1N3.png} 
-  %\leavevmode \includegraphics[width=0.9\textwidth]{figuresEG4/FigAnal/indvSystErrsEb7Wbins70NoG1N3pass2.png} 
-  \caption[Breakdown of systematic uncertainties on \gones for 1.3 GeV]{Various components of systematic uncertainty (see Secs. \ref{sysErrsAll} and \ref{TenSyUncertainties}) on \gones plotted against $W$ in a \qsqs bin (1.3 GeV data). The band width represents the size of the uncertainties. The vertical position of each band has no physical meaning (arbitrarily chosen for the convenience of display). The first five (blue) bands are the contributions due to \epem-contamination (see Sec. \ref{syErEpEm}), CC-inefficiency (see Sec. \ref{syErCC}), uncertainties in beam energy measurement (see Sec. \ref{syErEb}), polarized background (H, \pim etc - see Sec. \ref{polBg}) and scaling factor uncertainties (see Sec. \ref{scaleerr}) respectively. The first (top) magenta band is the contribution due to the uncertainties in the radiative corrections (see Sec. \ref{sysRC}), next four (magenta) are due to model uncertainties (see Sec. \ref{sysMod}) and the last (green) one is the total uncertainty after properly combining all components. For similar plots in other \qsqs bins see Figs. \ref{sysErEb7} and \ref{sysErEb7n}.} %{sysErrsAll}{TenSyErrors}  {scaleerr} {polBg} {syErEb}{syErCC} {syErEpEm}{sysRC}{sysMod}
+%\leavevmode \includegraphics[width=0.9\textwidth]{figuresEG4/FigAnal/indvSystErrsEb7Wbins70NoG1N3pass2.png}
+%xz: too many Sec. references in version 2 note (most always showed up as Sec 5), so I disabled most of them.
+\caption[Breakdown of systematic uncertainties on \gones for 1.3 GeV]{On the left: various components of systematic uncertainty (see Sec. \ref{sysErrsAll} %and \ref{TenSyUncertainties})
+  on \gones plotted against $W$ in a \qsqs bin (1.3 GeV data). The band width represents the size of the uncertainties. The vertical position of each band has no physical meaning (arbitrarily chosen for the convenience of display). The first five (blue) bands are the contributions due to \epem-contamination % (see Sec. \ref{syErEpEm})
+  , CC-inefficiency %(see Sec. \ref{syErCC})
+  , uncertainties in beam energy measurement %(see Sec. \ref{syErEb})
+  , polarized background (H, \pim etc %- see Sec. \ref{polBg}
+  ) and scaling factor uncertainties %(see Sec. \ref{scaleerr})
+  respectively. The first (top) magenta band is the contribution due to the uncertainties in the radiative corrections %(see Sec. \ref{sysRC})
+  , next four (magenta) are due to model uncertainties %(see Sec. \ref{sysMod})
+  and the last (green) one is the total uncertainty after properly combining all components. For similar plots in other \qsqs bins see Figs. \ref{sysErEb7} and \ref{sysErEb7n}. On the right: extracted \gones vs W shown along with the total systematic uncertainty.} %{sysErrsAll}{TenSyErrors}  {scaleerr} {polBg} {syErEb}{syErCC} {syErEpEm}{sysRC}{sysMod}
   \label{sysErEb7q1}  
 \end{figure}
 
@@ -285,35 +294,37 @@ Once the data \gones and \afones and their corresponding uncertainties are evalu
 \item Then another table is made for the combined values of \gone, which are evaluated as follows:
 \begin{enumerate}
 \item If for a given $(W,Q^2)$ bin, \gones comes only from one beam energy, then all the entries from that energy go into the "combined" table
-\item If \gones has measurements from both beam energies, we combine them with statistical weights as follows: 
+\item If \gones has measurements from both beam energies, we combine them with statistical weights as follows:
+  
 \begin{eqnarray}
 \label{eqDataComb}
 %Sum1 &=&  \sum_i \frac{g_1(i)}{(\Delta g_1)^2(i)}  \qquad         Sum2 =  \sum_i \frac{1}{(\Delta g_1)^2(i)} \\        
 %g_1(combined) &=& Sum1 / Sum2                      \qquad         \sigma g_1(combined) = \sqrt{1/Sum2} 
 Sum1 &=&  \sum_i \frac{g_1(i)}{(\Delta g_1)^2(i)}  \\
-Sum2 &=&  \sum_i \frac{1}{(\Delta g_1)^2(i)} \\        
+%Sum2 &=&  \sum_i \frac{1}{(\Delta g_1)^2(i)} \\    %xz asked to disabled it    
 g_1(combined) &=& Sum1 / Sum2 \\
-\sigma g_1(combined) &=& \sqrt{1/Sum2} 
+\sigma g_1(combined) &=& \sqrt{1/Sum2}
 \end{eqnarray}	
-where the index 'i' represents two beam energy (1.3 and 2.0 GeV) data sets. %\text{with i=1.3 and 2.0 GeV}   \\  
-and $\Delta g_1$ indicates the statistical uncertainty in \gone.
+where the index 'i' represents two beam energy (1.3 and 2.0 GeV) data sets, %\text{with i=1.3 and 2.0 GeV}   \\  
+ $\Delta g_1$ indicates the statistical uncertainty in \gone and $Sum2$ is again given by Eq. \ref{eqDataComb} above..
 \end{enumerate}
 \item In principle, each of the individual contributions to the systematic uncertainty can also be combined using the same equations. However, we must be careful to distinguish between correlated and uncorrelated uncertainties. 
 \begin{enumerate}
 \item The variations due to scale factor (k=1), beam energy (k=3) and CC-efficiency (k=4) are all un-correlated and, therefore, added in quadrature as follows:
 \begin{eqnarray}
-\label{eqSeUncorEb78Comb}
-\delta g_1(\text{k=8,10,11, combined}) = \sqrt{ \left( \sum_i \frac{ (\delta g_1)^2(i)} {(\Delta g_1)^2(i)} \right)  / Sum2 }
+\label{eqSeUncorEb78Comb}  %xz saw problem with k=8,10,11, and I don't know why I had these numbers.
+%\delta g_1(\text{k=8,10,11, combined}) = \sqrt{ \left( \sum_i \frac{ (\delta g_1)^2(i)} {(\Delta g_1)^2(i)} \right)  / Sum2 } 
+\delta g_1(\text{k=1,3,4, combined}) = \sqrt{ \left( \sum_i \frac{ (\delta g_1)^2(i)} {(\Delta g_1)^2(i)} \right)  / Sum2 }
 \end{eqnarray}	
  where, $\delta$ represents the $k^{th}$ component of the systematic uncertainty, whereas, 'Sum2', 'i' and $\Delta$ have the same meanings as before.
-\item while all other variations are correlated between the two beam energies and should be averaged linearly (WITH sign): 
+\item while all other variations are correlated between the two beam energies and should be averaged with linear weighting (WITH sign): 
 \begin{eqnarray}
 \label{eqSeUncorEb78Comb2}
 \delta g_1(\text{other k, combined}) =  \left( \sum_i \frac{ (\delta g_1)(i)} {(\Delta g_1)^2(i)} \right)  / Sum2 
 \end{eqnarray}	
 \end{enumerate}
 %\textcolor{red}{Reference to an example figure}
-\item Once each of the $k^{th}$ component of the systematic uncertainties are combined between the two beam energies, we then proceed to combine them all to get a grand total. This is done by simply adding the ten combined systematic uncertainties in quadrature and taking the square-root of the sum. % \textcolor{red}{Reference to an example figure}
+\item Once each of the $k^{th}$ component of the systematic uncertainties are combined between the two beam energies, we then proceed to combine them all to get a grand total. This is done by simply adding the ten combined systematic uncertainties in quadrature and taking the square-root. % of the sum. % \textcolor{red}{Reference to an example figure}
 \end{enumerate}
 
 
@@ -325,9 +336,10 @@ and $\Delta g_1$ indicates the statistical uncertainty in \gone.
 %\section{Systematic Uncertainties in the Extracted \gones, \afones}
 
 
-The figures \ref{extG1SEcomb} and \ref{extA1F1SEcomb} show the breakdown of the total contribution to the systematic uncertainty from different sources. We can see that the dominant contribution comes from the uncertainties in the overall scale factor (the cyan band indicated with SF-err in the legend) which is used to normalize the simulated data to make them comparable with data. One of the big part of this uncertainty comes from those in $P_bP_t$ and target size measurements. Next big contributions seem to come from the model (in particular the model for the unmeasured $A_2$) and radiative corrections. Near the $\Delta$-resonance region, the effect of beam energy uncertainty also seems to be very pronounced. 
+Figures \ref{extG1SEcomb} and \ref{extA1F1SEcomb} show the breakdown of the total contribution to the systematic uncertainty from different sources. We can see that the dominant contribution comes from the uncertainties in the overall scale factor (the cyan band indicated with SF-err in the legend) which is used to normalize the simulated data to make them comparable with data. One of the big part of this uncertainty comes from those in $P_bP_t$ and target size measurements. Next big contributions seem to come from the model (in particular the model for the unmeasured $A_2$) and radiative corrections. Near the $\Delta$-resonance region, the effect of beam energy uncertainty also seems to be very pronounced. 
 %Showing only systematic uncertainties (breakdonw of the 10 components for the beam-energy-combined data)
-The breakdown of the different components (but combined between the two beam energies) of the total systematic uncertainties are also shown separately in the figures \ref{extG1SEcomb} and \ref{extA1F1SEcomb}
+The breakdown of the different components (but combined between the two beam energies) of the total systematic uncertainties are also shown separately in the Figs. \ref{extG1SEcomb} and \ref{extA1F1SEcomb}.
+
 \begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
 \centering
   %\leavevmode \includegraphics[width=0.95\textwidth]{figuresEG4/FigResults/indvSystErrsG1_Eb78Wbins70.png} 
