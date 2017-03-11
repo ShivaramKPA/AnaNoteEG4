@@ -150,7 +150,12 @@ The integrals with the model contributions were calculated from $x=0.001$ to the
 \label{eqGamma12}
               &+& \int^{W=1.08}_{W=1.15}        g_1(x,Q^2) dx \qquad \text{model} % with} \Delta x (\Delta W = 10.0 \text{1 MeV}) 
 \end{eqnarray}
-where $W_{data}$ indicates the upper edge of the last $W$ bin in which the EG4 data is available in a given \qsqs bin (the $W$ variable was divided into 70 bins of size 20 MeV in the range W=(0.7,2.1) GeV). The first part of the integral as given by Eq. \ref{eqGamma10} is evaluated by using the model values of \gones and using $\Delta x$ corresponding to a W bin of size 10.0 MeV (The $\Delta W$ is converted to $\Delta x$ by using $x = Q^2/(Q^2 + W^2 - M^2)$ to evaluate $x$ at the two edges of each $W$ bin and taking the difference.). The second part given by Eq. \ref{eqGamma11} is evaluated similarly but using the EG4 results for \gones if there is no measurement gap in between. If there is any gap, the same method as in the first part is used to get a model contribution for the gap and added to the data contribution. Lastly, the the third contribution given by Eq. \ref{eqGamma11} again were evaluated from from model values (quasi-elastic part turned off from the model in all of these cases) but with finer W bins (1 MeV) because the integrals are very sensitive to the region near the $\Delta$ resonance due to the fact that the structure functions show rapid changes in this region. The reason to calculate the third integral using model values rather than data values is to avoid having contributions in the integrals from the quasi-elastic contamination.
+where $W_{data}$ indicates the upper edge of the last $W$ bin in which the EG4 data is available in a given \qsqs bin (the $W$ variable was divided into 70 bins of size 20 MeV in the range W=(0.7,2.1) GeV). The first part of the integral as given by Eq. \ref{eqGamma10} is evaluated by using the model values of \gones and using $\Delta x$ corresponding to a W bin of size 10.0 MeV. The $\Delta W$ is converted to $\Delta x$ by using $x = Q^2/(Q^2 + W^2 - M^2)$ to evaluate $x$ at the two edges of each $W$ bin and taking the difference as follows:
+\begin{eqnarray}
+\label{eqDeltaX}
+\Delta x = x_{High} - x_{Low} = \frac{Q^2}{Q^2 + W_{High}^2 - M^2} - \frac{Q^2}{Q^2 + W_{Low}^2 - M^2}
+\end{eqnarray}
+The second part given by Eq. \ref{eqGamma11} is evaluated similarly but using the EG4 results for \gones if there is no measurement gap in between. If there is any gap, the same method as in the first part is used to get a model contribution for the gap and added to the data contribution. Lastly, the the third contribution given by Eq. \ref{eqGamma11} again were evaluated from from model values (quasi-elastic part turned off from the model in all of these cases) but with finer W bins (1 MeV) because the integrals are very sensitive to the region near the $\Delta$ resonance due to the fact that the structure functions show rapid changes in this region. The reason to calculate the third integral using model values rather than data values is to avoid having contributions in the integrals from the quasi-elastic contamination.
 
 The statistical errors are evaluated by adding the statistical error contribution in each $W$ or $x$ bin in quadrature. For example, if the integral is evaluated in a \qsqs bin by calculating the sum $\left( \sum\limits_{W ~bins} g_1 \cdot \Delta x \right) $, then the corresponding statistical error is evaluated by calculating %$\sqrt{ \sum\limits_{W ~bins} g_1 \cdot \Delta x  }$. 
 $\sqrt{ \sum\limits_{W ~bins} (\sigma g_1)^2 \cdot \Delta x  }$. %1/6/17: Modified according to Dr. Kuhn's comment (see page 3/98 in ~\Box Sync\KpDocuments\MSUpostdocRelated\EG4\AnalysisNote\EG4_MyOwn\Comments\DrKuhn\Pages96_114Chap7.PDF)
@@ -168,7 +173,7 @@ the first moment of \gones i.e., $\Gamma_1$ (see Eq. \ref{eqGamma1}) , which was
 \qsqs bins for which the new data are %measurements were 
 available. Figs. \ref{Gamma1Low} and \ref{Gamma1Log} show the two calculations (with and without model input) along with EG1b data and several \chipts and model predictions. One important observation here is that our measurements provide the only data points in %at %for -SEK, in-GED
 the very low \qsqs region (i.e for $Q^2<0.05$ GeV$^2$) where \chipts is thought to be able to make %the only theory that can 
-rigorous calculations. Therefore, our data will provide important benchmarks for the future calculations in this kinematics. Particularly, the latest \chipts prediction by Bernard \etal \cite{BEKM13} seems to agree remarkably well in %at %SEK
+rigorous calculations. Therefore, our data will provide important benchmarks for the future calculations in this kinematics. Particularly, the latest \chipts prediction by Bernard \etal \cite{BEKM13} seems to agree remarkably well with data in %at %SEK
 the very low \qsqs region.
 
 While all other higher \qsqs predictions, except that of Ji \etalns, seem to be within the uncertainties of our measurements, it can be seen that the phenomenological predictions of Soffer \etal compare slightly better with data than others (excluding, of course, the Bernard \etal prediction).
@@ -226,7 +231,7 @@ transition towards positive values.
 \begin{figure}[H] %[ht] %ht, htpb (p - float, b = bottom, h=? t = top)
   \centering
   \leavevmode \includegraphics[width=1.0\textwidth]{figuresEG4/FigResults/integralsFromCombinedG1nA1F1_Wbins70IttLogN.png} 
-  \caption[$I^d_{tt}$ (log scale)]{Extracted $I_{tt}$ for deuteron compared with the used model and a \chipts prediction  with a logarithmic scale used for \qsq.}
+  \caption[$I^d_{tt}$ (log scale)]{Extracted $I_{tt}$ for deuteron compared with the model used in the simulation and two \chipts predictions  with a logarithmic scale used for \qsq.}
   \label{GDHLog}  
 \end{figure}
 
