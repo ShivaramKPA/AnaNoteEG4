@@ -19,8 +19,10 @@ within the kinematic coverage of the resonance region ($1.08 ~ < W <2.0$ GeV.) %
 
 In addition to the use of low beam energies and low $\theta$ measurements, in order to maximize the statistics in the low momentum transfers, following measures were taken that were unique to the experiment:
 \begin{itemize}
-\item Used electron outbending torus field configuration to enhance the low angle acceptance (so that more of very forward going electrons would be bent towards and detected by the CLAS detector).
-\item Used (in the $6^{th}$ sector\footnote{For reasons of limited resources, only one new CC was built and the $6^{th}$ sector alone was used to detect the scattered electrons}) a newly built Cerenkov Counter (CC) (see Figs. \ref{nwCcCAD} and \ref{figcherenkovNw}) that was designed to optimize electron detection in the outbending torus configuration such that the detection efficiency would be better and more uniform than with the existing counters\footnote{The standard CLAS Cherenkov detectors were designed such that their optics, geometry, module position and mirror orientation were optimized for low rate high \qsq experiments that mostly use(d) electron in-bending torus fields. The design was a compromise between the desired kinematic coverage and the complexities of the CLAS detector system including the effect of the torus field.} which were optimized for electron inbending configuration. 
+\item Use of the electron outbending torus field configuration to enhance the low angle acceptance (so that more of very forward going electrons would be bent towards and detected by the CLAS detector).
+\item Use of a a newly built Cerenkov Counter (CC) in the $6^{th}$ sector\footnote{For reasons of limited resources, only one new CC was built and the $6^{th}$ sector alone was used to detect the scattered electrons} (see Figs. \ref{nwCcCAD} and \ref{figcherenkovNw}) that was designed to optimize electron detection in the outbending torus configuration. %such that the %sek
+This led to a better and more uniform %sek
+  detection efficiency would be better and more uniform than with the existing counters\footnote{The standard CLAS Cherenkov detectors were designed such that their optics, geometry, module position and mirror orientation were optimized for low rate high \qsq experiments that mostly use(d) electron in-bending torus fields. The design was a compromise between the desired kinematic coverage and the complexities of the CLAS detector system including the effect of the torus field.} which were optimized for electron inbending configuration. 
 \item To further enhance the low angle coverage, the polarized target was placed in a more retracted position along the beam line i.e. at about -101.0 cm upstream of the CLAS center.
 \end{itemize}
 
@@ -47,16 +49,16 @@ Other than that the CLAS detector was used in the standard configuration like in
 
 
 
-\begin{comment}
+
 \begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
 \centering
 %\leavevmode \includegraphics[width=0.8\textwidth]{chap6expSetup/Figures/ccunit.eps}  %0.6 is the fraction of the real image width????
 \leavevmode \includegraphics[width=0.8\textwidth]{figuresEG4/FigExp/ccunit.pdf}  %0.6 is the fraction of the real image width????
 \caption[The Standard CLAS Cherenkov Counter]{The computer rendered image of the Standard CLAS Cherenkov Counter}
-\label{figccunit}
+\label{figcherenkov}%{figccunit}
 \end{figure}
 
-
+\begin{comment}
 %\pagebreak   %12/6/13 (because nothing else that I tried worked)
 
 %Threshold Counter https://en.wikipedia.org/wiki/Cherenkov_radiation#Particle_physics_experiments 
@@ -66,16 +68,16 @@ the particle identification. %ID. %GED
 The index of refraction (n) is carefully optimized for the particle masses and momentum range of the experiments in question. Threshold counters record all light produced, thus providing a signal whenever $\beta$ is above the threshold $\beta_t$ = 1/n. In the standard configuration, CLAS uses one Cherenkov threshold detector in each of the six sectors in the forward region from $8^o$ to $45^o$.
 
 
-
+\end{comment}
 \begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
 \centering
 \leavevmode \includegraphics[width=1.0\textwidth]{figuresEG4/FigExp/ccsegment}  %0.6 is the fraction of the real image width????
 \caption[A Cherenkov Counter module]{The schematic diagram of a CLAS Cherenkov Counter (CC) module showing mirrors, PMTs and the light reflections. %\textcolor{red}{Changed}
 }
-\label{figcherenkov}
+\label{figccunit}%{figcherenkov}
 \end{figure}
 
-\end{comment}
+
 
 
 
@@ -85,16 +87,17 @@ The index of refraction (n) is carefully optimized for the particle masses and m
 \section{New CC in the $6^{th}$ Sector}
 \label{newCCsec}
 %Threshold Counter https://en.wikipedia.org/wiki/Cherenkov_radiation#Particle_physics_experiments 
-The Cherenkov Counters (CC) serve the dual function of triggering on electrons and separating electrons from pions (or identifying charged particles). These detectors use the light emitted by Cherenkov radiation (emission of light when the charged particle travels faster than light in that medium) to measure the particle velocity (and, therefore, $\beta=v/c$). The knowledge of $\beta$ combined with the particle momentum (from the tracking detectors) determines the particle's mass, thus giving us information on %the clue for %SEK
+The Cherenkov Counters (CC) serve the dual function of triggering on electrons and separating electrons from pions (or identifying charged particles). These detectors use the light emitted by Cherenkov radiation (emission of light when the charged particle travels faster than light in that medium) to measure the particle velocity (or rather $\beta=v/c$). The knowledge of $\beta$ combined with the particle momentum (from the tracking detectors) determines the particle's mass, thus giving us information on %the clue for %SEK
 the particle identification. %ID. %GED
 %Choosing different gases to fill in, the %GED
 The index of refraction (n) is carefully optimized for the particle masses and momentum range of the experiments in question. Threshold counters record all light produced, thus providing a signal whenever $\beta$ is above the threshold $\beta_t$ = 1/n. In the standard configuration, CLAS uses one Cherenkov threshold detector in each of the six sectors in the forward region from $8^o$ to $45^o$.
 
 
 
-
+\begin{comment} %Partly redundant with \footnote and also too verbose as per SEK
 The standard CLAS Cherenkov detectors (as shown by Figs. \ref{figcherenkov} and \ref{figccunit}) were designed such that their optics, geometry, module position and mirror orientation were optimized for low rate high \qsq experiments that mostly use(d) electron in-bending torus fields. The design was a compromise between the desired kinematic coverage and the complexities of the CLAS detector system including the effect of the torus field. As a consequence, light collection is constrained causing the number of photoelectrons to be strongly dependent on scattering angles, and making the detection efficiency non-uniform, and strongly reduced in some regions (for example, up to 30\% drop in the middle of the sector and at forward angles) \cite{propE03_006}. While it would still be possible to detect electrons, the use of the existing CC would mean that the absolute cross-section measurement would require large and complex corrections which are difficult to evaluate. %be evaluated. In addition, that %SEK
 That would significantly contribute to the systematic uncertainties, thus not meeting the proposed high accuracy requirement of the measurements.
+\end{comment}
 
 \begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
 \centering
@@ -109,13 +112,15 @@ That would significantly contribute to the systematic uncertainties, thus not me
 
 
 
-In order to avoid having all those CC-related issues in the new measurements, a new gas threshold cherenkov counter (designed and built by INFN - Genova, Italy) was installed in the sixth sector. %, with no further modifications of the CLAS. 
-This new CC detector (see Fig. \ref{nwCcCAD} for its CAD rendition) is specifically optimized for the out-bending field configuration, which is necessary to reach the desired low momentum transfer (measurements down to 6 degrees). The detector uses the same radiator gas ($C_4 F_{10}$ - perfluorobutane) and the same gas flow control system as the old one, but it uses a %completely %SEK
+%In order to avoid having all those CC-related issues in the new measurements, a
+A new gas threshold cherenkov counter (designed and built by INFN - Genova, Italy) was installed in the sixth sector. %, with no further modifications of the CLAS. 
+This new CC detector (see Fig. \ref{nwCcCAD} for its CAD rendition) is specifically optimized for the out-bending field configuration, which is necessary to reach the desired low momentum transfer (measurements down to 6 degrees). The detector uses the same radiator gas ($C_4 F_{10}$ - perfluorobutane) and the same gas flow control system as the standard %old
+one, but it uses a %completely %SEK
 different design. %, including mirror types and orientation for light reflection and 
 In the new CC, the number of CC-modules %/units 
 is now 11 instead of the 18 in the standard ones. In order to maximize the light collection, a single reflection design (see Fig. \ref{newCCphRefl}) using spherical mirrors is used (the standard CC used double relections from elliptical and hyperbolic mirrors). The geometry, the size, the mirror size, position, and orientation, the dimensions as well as the assembly of the modules were optimized for the experiment %using a dedicated FORTRAN code 
 and the performance study was %also 
-done using a complete GEANT simulation \cite{propE03_006}.
+done using a complete GEANT simulation \cite{propE03_006}. Additionally, for the purpose of efficiency and performance studies (see Sec. \ref{secCCineff}), a few special trigger data runs were taken during the experiment. These special runs had the trigger that mainly involved EC-signals (and no CC-signal at all) to decide whether the detected particle was a good scattered electron candidate.
 
 
 \begin{figure}[h]
