@@ -81,7 +81,7 @@ The the 50\% error is justified because the uncertainty in inefficiency is no mo
 \label{eqSysCC}
 \Delta g_1^{Eb}(W,Q^2) = g_1^{std}(W,Q^2) + \frac{\Delta n^{data}(W,Q^2) - \Delta n^{std}_{0.5CCi}(W,Q^2)}{B(W,Q^2) } - g_1^{data}(W,Q^2)
 \end{equation}
-where $\Delta n^{std}_{0.5CCi}$ is now the simulated $\Delta n^{std}$ obtained after applying 50\% more inefficiency instead of the actually estimated value.
+where $\Delta n^{std}_{0.5CCi}$ is now the simulated $\Delta n^{std}$ obtained after applying 50\% more inefficiency instead of the actually estimated value. This considers the worst case scenario of 50\% inefficiency and evaluates the corresponding systematic uncertainty to be the deviation of the extracted quantity from the one that would be obtained when there were to be a 100\% efficiency.
 
 \paragraph{Possible uncertainty due to \epem pair symmetric contamination}
 \label{syErEpEm}
@@ -163,9 +163,10 @@ Vary the virtual photon asymmetry $A_2$ in the resonance region within its fit u
 
  %Both of these parameters use 11 for standard simulation and other values are used one by one (keeping other things the same) for different simulations in order to estimate the sytematic uncertainties from each as follows:
 After the simulation data for the above four cases (see \ref{fourModelVariations}) were available, four more data tables (TM1,TM2,TM3 and TM4) were produced for the corresponding model values of \gone, \aone, \fones etc. Then, the contributions to the systematic uncertainty from each of these four cases of model variation were given as follows:
+%3/14/17: SEK asked to explain why '- g_1^{i}(W,Q^2)' when it was right after the first term on the rhs. Suspecting that it may have been less convincing due to its position, I moved it the end of the equation to make it similar to other equations to account for other contributions to the syst. error. Now it takes similar form as Eq. 5.3, 5.4, 5.5 etc, I hope I don't have to offer any extra explanation.
 \begin{equation}
 \label{eqSysMd}
-\Delta g_1^{i}(W,Q^2) = g_1^{std}(W,Q^2) - g_1^{i}(W,Q^2) + \frac{\Delta n^{i}(W,Q^2) - \Delta n^{std}(W,Q^2)}{B(W,Q^2) }
+\Delta g_1^{i}(W,Q^2) = g_1^{std}(W,Q^2) + \frac{\Delta n^{i}(W,Q^2) - \Delta n^{std}(W,Q^2)}{B(W,Q^2) } - g_1^{i}(W,Q^2) 
 \end{equation}
 with ``i'' indicating any of the four cases of model variation, $g_1^i$ being the model prediction for the $i^{th}$ case as obtained from the corresponding data table ``TMi'' and the proportionality factor $B(W,Q^2)$ again being exactly the same as used to calculate \gones as earlier.
 
@@ -176,7 +177,7 @@ with ``i'' indicating any of the four cases of model variation, $g_1^i$ being th
 Contributions from the 10 individual components are estimated and then a total contribution is estimated by first combining the corresponding individual compenents for each of the two beam energies %energy (1.3 \& 2.0 GeVs) data sets 
 and finally combining them all by calculating the RMS of the ten combined contributions.
 
-\subsection{Combining uncertainties from the two beam energies}
+%\subsection{Combining uncertainties from the two beam energies}
 In principle, each of the individual contributions to the systematic uncertainty can also be combined using the same equations as for combining \gones and \afones (see above). However, we must be careful to distinguish between correlated and uncorrelated uncertainties. 
 If for a given $(W,Q^2)$ bin, %\gone or \afone comes 
 data is available only from one beam energy, then combined uncertainty for the \kth component is simply the uncertainty from that beam energy. If there are measurements from both beam energies, we combine them with statistical weights as follows: 
@@ -204,7 +205,7 @@ and $\Delta g_1$ indicates the statistical uncertainty in \gone in the correspon
 
 
 
-\subsection{Combining uncertainties from the ten sources}
+%\subsection{Combining uncertainties from the ten sources}
 Once each of the $k^{th}$ component of the systematic uncertainties are combined between the two beam energies, we then proceed to combine them all to get a grand total. This is done by simply adding the ten $E_b$-combined systematic uncertainties in quadrature and taking the square-root of the sum % \textcolor{red}{Reference to an example figure}
 as follows:
 
@@ -240,7 +241,7 @@ as follows:
 %\leavevmode \includegraphics[width=0.9\textwidth]{figuresEG4/FigAnal/indvSystErrsEb7Wbins70NoG1N3pass2.png}
 %xz: too many Sec. references in version 2 note (most always showed up as Sec 5), so I disabled most of them.
 \caption[Breakdown of systematic uncertainties on \gones for 1.3 GeV]{On the left: various components of systematic uncertainty (see Sec. \ref{sysErrsAll} %and \ref{TenSyUncertainties})
-  on \gones plotted against $W$ in a \qsqs bin (1.3 GeV data). The band width represents the size of the uncertainties. The vertical position of each band has no physical meaning (arbitrarily chosen for the convenience of display). The first five (blue) bands are the contributions due to \epem-contamination % (see Sec. \ref{syErEpEm})
+  on \gones vs $W$ in a \qsqs bin (1.3 GeV data). The band width represents the size of the uncertainties. The vertical position of each band has no physical meaning (arbitrarily chosen for the convenience of display). The first five (blue) bands are the contributions due to \epem-contamination % (see Sec. \ref{syErEpEm})
   , CC-inefficiency %(see Sec. \ref{syErCC})
   , uncertainties in beam energy measurement %(see Sec. \ref{syErEb})
   , polarized background (H, \pim etc %- see Sec. \ref{polBg}
@@ -255,7 +256,7 @@ as follows:
 \begin{figure}[h] 
 \centering
   \leavevmode \includegraphics[width=0.9\textwidth]{figuresEG4/FigAnal/indvSystErrsEb7Wbins70NoG1Npass2.png} 
-  \caption[Breakdown of systematic uncertainties on \gones for 1.3 GeV]{Plots like that shown in Fig. \ref{sysErEb7q1} showing various components of systematic uncertainty on \gones plotted against $W$ in different \qsqs bins for 1.3 GeV data.}
+  \caption[Breakdown of systematic uncertainties on \gones for 1.3 GeV]{Plots like that shown in Fig. \ref{sysErEb7q1} showing various components of systematic uncertainty on \gones vs $W$ in different \qsqs bins for 1.3 GeV data.}
   \label{sysErEb7}  
 \end{figure}
 
@@ -271,7 +272,7 @@ Figs. (\ref{sysErEb7} and \ref{sysErEb7n}) show, for example, the different comp
 \begin{figure}[h] 
 \centering
   \leavevmode \includegraphics[width=0.9\textwidth]{figuresEG4/FigAnal/indvSystErrsEb8Wbins70NoG1Npass2.png} 
-  \caption[Breakdown of systematic uncertainties on \gones for 2.0 GeV]{Plots similar to those shown in Fig. \ref{sysErEb7} but for 2.0 GeV, showing various components of systematic uncertainty on \gones plotted against $W$ in different \qsqs bins.}
+  \caption[Breakdown of systematic uncertainties on \gones for 2.0 GeV]{Plots similar to those shown in Fig. \ref{sysErEb7} but for 2.0 GeV, showing various components of systematic uncertainty on \gones vs $W$ in different \qsqs bins.}
   \label{sysErEb8}  
 \end{figure}
 
@@ -306,8 +307,10 @@ g_1(combined) &=& Sum1 / Sum2 \\
 \sigma g_1(combined) &=& \sqrt{1/Sum2}
 \end{eqnarray}	
 where the index 'i' represents two beam energy (1.3 and 2.0 GeV) data sets, %\text{with i=1.3 and 2.0 GeV}   \\  
- $\Delta g_1$ indicates the statistical uncertainty in \gone and $Sum2$ is again given by Eq. \ref{eqDataComb} above..
+$\Delta g_1$ indicates the statistical uncertainty in \gone and $Sum2$ is again given by Eq. \ref{eqDataComb} above.
 \end{enumerate}
+
+\begin{comment} % 3/15/17 =========================== repitition. (see above) ==========
 \item In principle, each of the individual contributions to the systematic uncertainty can also be combined using the same equations. However, we must be careful to distinguish between correlated and uncorrelated uncertainties. 
 \begin{enumerate}
 \item The variations due to scale factor (k=1), beam energy (k=3) and CC-efficiency (k=4) are all un-correlated and, therefore, added in quadrature as follows:
@@ -325,7 +328,16 @@ where the index 'i' represents two beam energy (1.3 and 2.0 GeV) data sets, %\te
 \end{enumerate}
 %\textcolor{red}{Reference to an example figure}
 \item Once each of the $k^{th}$ component of the systematic uncertainties are combined between the two beam energies, we then proceed to combine them all to get a grand total. This is done by simply adding the ten combined systematic uncertainties in quadrature and taking the square-root. % of the sum. % \textcolor{red}{Reference to an example figure}
+
+\end{comment} % 3/15/17 =========================== repitition. (see above) ==========
+
+  
 \end{enumerate}
+
+
+
+
+
 
 
 
@@ -388,7 +400,8 @@ The breakdown of the different components (but combined between the two beam ene
 
 \end{comment}
 
-
+%Kp: Following added upon SEK's suggestion (PDF page 18, scanned2_6_17docFront for Version 2)
+It should be noted here that the same methods were used to calculate the systematic uncertainties on $A_1F_1$ and on all integrals directly (i.e., they are not calculated from propagated systematic uncertainties on $g1$ or $A_1F_1$ but directly from variations of the integrals.
 
 
 %

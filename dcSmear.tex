@@ -1,7 +1,7 @@
 %This chapter/section is about the work on ``dc-smearing in GPP''
 %Created by kp on Sep 17, 2011
 
-\hspace{0.5cm}
+%\hspace{0.5cm}
 % \newline \newline
 %\newline  %double \newline gives underfull warnings
 
@@ -62,30 +62,7 @@ the width shows a linear dependance.
 
 
 
-%Don't delete the following commented out lines. They are important reminders.
-%The following four images are made using ~/Acceptance/SimStuffs/dE_resolHistoFits.C and enabling ``#define DRAW_EPS'' & ``#define USE_THETA_ALL''
-\begin{comment} %=======================================Comments begin
-%idea source: http://texblog.wordpress.com/2007/08/01/placing-figurestables-side-by-side-minipage/ : Placing figures/tables side-by-side (\minipage)
-%This method of putting figures/tables side by side doesn't have the option of global caption (if there is, it treats it like a
-% caption of a different figure assigning it with a different figure number in the output file. So, I chose the 'subfigure' method instead
-\begin{figure}[h]
-\begin{minipage}[b]{0.5\linewidth}
-\centering
-\includegraphics[scale=0.37]{figuresEG4/DcSmear/dE_ThAllEb3_DcSmear1.3.png}
-\caption{$\Delta$E of 2.3 GeV simulated elastic-only proton-target events (see fig(\ref{fig:genEvnts3})) after passing through GSIM, GPP 
-  (with Dc-smear scale of 1.3) and RECSIS.}
-\label{fig:figure1}
-\end{minipage}
-\hspace{0.0cm} %\hspace{0.1cm}
-\begin{minipage}[b]{0.5\linewidth}
-\centering
-\includegraphics[scale=0.37]{figuresEG4/DcSmear/dE_ThAllEb3_DcSmear2.9.png}
-\caption{$\Delta$E of 2.3 GeV simulated proton elastic-only events after passing through GSIM, GPP (with Dc-smear scale of 2.9) and RECSIS.}
-\label{fig:figure2}
-\end{minipage}
-\caption{$\Delta$E of 2.3 GeV simulated elastic-only proton-target events (see fig(\ref{fig:genEvnts3})) after passing through GSIM, GPP (with Dc-smear scale of 1.3) and RECSIS.}
-\end{figure}
-\end{comment}  %=======================================Comments end
+
 
 
 % idea source: http://texblog.wordpress.com/2007/08/28/placing-figurestables-side-by-side-subfigure/ :Placing figures/tables side-by-side (\subfigure)
@@ -124,88 +101,9 @@ the width shows a linear dependance.
 \end{figure}
 
 
-\subsection{Finding the width of the real CLAS data elastic peak.}
-With the knowledge of the DC-smear dependence of energy resolution (Fig. \ref{fig:SigmaVsm}), if we also know the resolution in the real data, 
-we can determine the right value of DC-smear which would make the resolution in the simulation comparable with that in the real data. So, 
-the next step is to find the resolution in the real CLAS data, which is done again by measuring the width of the elastic peak in the real data. 
-But, because the real data is a very complex mixture of events coming from various reaction channels, we must first have a way to separate the elastic 
-data from the rest. One method entails histogramming \dE from both the \nh3 and \c12 target data (for a given beam energy) and subtracting 
-the latter (after cross-normalization) from the former (as in fig (\ref{fig:elNH3mC})) to effectively remove the contribution from nitrogen 
-component of the \nh3 target leaving the contribution coming only (mostly) 
-%More words about this background subtraction can be found in the section for the inclusive momentum correction.
-from the proton component. Another method consists of using only the \nh3 data but this time calculating the helicity dependent cross-section 
-difference in the elastic region Fig. (\ref{fig:elXsDif}). In the latter method, the difference removes the contribution from the unpolarized 
-nuclear background because they have the same contribution to the opposite helicity state cross-sections. After the elastic data is separated, its 
-\dE distribution is fitted to a Gaussian as with the simulation data and we arrive at the experimental energy resolution. 
-%Since on the simulation side, we used the total cross-section, to make an apple-to-apple comparison, the measurement coming from the 1st method
-%would be better choice for the experimental data.
-
-% Put a intra-thesis chapter/section link (rather than the web link) in thesis version
-% \href{http://www.jlab.org/Hall-B/secure/eg4/ripani/Reference/Reference.html}{groups 1, 2 and 4 cuts}. 
-% Check DoEvent..() function in file /u/home/adhikari/Acceptance/SimStuffs/dE_resol_DataSim.C to see what cuts were used to select the events
-
-
-%The following image is made using ~/Acceptance/SimStuffs/subtractHistos4ProdElast.C and enabling ``#define DRAW_EPS'' & ``#define USE_THETA_ALL''
-%The following four images are made using ~/Acceptance/SimStuffs/dE_resolHistoFits.C and enabling ``#define DRAW_EPS'' & ``#define USE_THETA_ALL''
-\begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
-\centering
-  \leavevmode \includegraphics[width=0.8\textwidth]{figuresEG4/DcSmear/dE_elastProdEb3.png} 
-  \caption[Background subtraction to get elastic peak]{Histograms illustrating the extraction of elastic peak for 2.3 GeV by using carbon-12 data for background removal from the total-cross section (all good electrons with $\theta>7$ used).}
-  \label{fig:elNH3mC}
-\end{figure}
-
-%The following image is made using ~/Acceptance/SimStuffs/subtractHistos4xsDiff.C and enabling ``#define DRAW_EPS'' & ``#define USE_THETA_ALL''
-\begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
-\centering
-  \leavevmode \includegraphics[width=1.0\textwidth]{figuresEG4/DcSmear/dE_elastXsDiffEb0Tgt11.png} 
-  \caption[Cross-section difference]{Plots showing the cross-section difference for 2.3 GeV NH$_3$ target data with the right one zoomed in around the elastic region (all good electrons with $\theta>7$ used).}
-  \label{fig:elXsDif}
-\end{figure}
-
- %\\ %12/4/13 (Addressing Gabriel's concern)
- %\\
- 
-
-
-
-%\subsection{Comparing the width of the real CLAS data elastic peak and those from Simulation with different DC-smears.}
-%The following two images are made using ~/Acceptance/SimStuffs/graphSigmaVsEb.C and enabling ``#define DRAW_EPS'' & ``#define USE_THETA_ALL''
-Using the first of the two methods mentioned above, the real data resolutions were evaluated for three different %cases 
-polar angle ($\theta$) cuts - 
-all \th (in fact $\theta\ge7^o$), $\theta>15^o$, and $\theta>20^o$. The dependence of these experimental resolutions on the beam energy for these cases are 
-shown together in the Fig. \ref{fig:sigsProd}, along with the resolution for the case ``all $\theta$'', but determined from the cross-section difference 
-method. Likewise, as described above, the DC-smear dependence of the simulated resolution were determined separately for all these three cases of 
-angle cuts, so that we could compare the experimental resolutions with the simulations correspondingly. One such comparison is illustrated in 
-the figure \ref{fig:sigsProdSim}, where we show resolutions evaluated for the case of ``all \th'' - first two for the experimental data and the rest for 
-the simulated data. 
-
-    
-     
- \begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
-\centering
-  \leavevmode \includegraphics[width=1.0\textwidth]{figuresEG4/DcSmear/graphSigmaVsEb_prodOnly.png} 
-  \caption[$E_{beam}$ dependence of DC smearing (Experimental) ]{Graphs showing the dependence of width ($\sigma$) of the elastic peaks (from experimental data) on the beam energy (GeV).}
-  \label{fig:sigsProd}
-\end{figure}
-    
- \begin{figure}[h] %ht, htpb (p - float, b = bottom, h=? t = top)
-\centering
-  \leavevmode \includegraphics[width=1.0\textwidth]{figuresEG4/DcSmear/graphSigmaVsEb_SimThAll.png} 
-  \caption[$E_{beam}$ dependence of DC smearing (Experimental) ]{Graphs showing the dependence of width ($\sigma$) of the elastic peaks (from both experimental and simulated data) on the beam energy (GeV).}
-  \label{fig:sigsProdSim}
-\end{figure}
-    
-     
-     
-Looking at Fig. \ref{fig:sigsProd}, it is obvious that the resolution is $\theta$-dependent as expected. %Remember resol = beta/sqrt(p_t), mom-cor
-When the experimental and simulated resolutions are compared for the three different cases of $\theta$ cuts, we realize that the GPP asks for the 
-\th dependent DC-smearing, which makes the simulation work very complicated with the current version of GPP. To simplify the situation, we decide to 
-have a global (\th independent) value of DC-smearing (for a given beam energy) by comparing the experimental and simulated resolutions corresponding to 
-the case of ``all \th'' cut. %That should be good enough for practical purposes. %xz:
-%xz: "That should be good enough for practical purposes". Why?  Be careful to never make a statement without backing it up.
-By taking into account the fact that there seems to be an inherent 
-uncertainty in the measurement of the resolutions (evident from the discrepancy of the experimental resolutions determined from the two different methods)
-and comparing the experimental and simulated results, the values as listed in Table. \ref{tab:dcSmears} are chosen for the DC-smearing scales for the GPP.
+%\subsection{Finding the width of the real CLAS data elastic peak.}
+With the knowledge of the DC-smear dependence of energy resolution (Fig. \ref{fig:SigmaVsm}), we can look at the resolution in the real data such as the one estimated in Fig. \ref{sec6dEall}, 
+and then determine the right value of DC-smear which would make the resolution in the simulation comparable with that in the real data. By repeating this process of comparing the experimental and simulated resolutions for each of the beam energies, the values of the DC-smear parameters for the GPP were deterimined as listed in Table. \ref{tab:dcSmears} below.
 
 
 %\FloatBarrier  
