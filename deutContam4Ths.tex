@@ -58,18 +58,18 @@ in some quantity that reflects the correlation between the scattered electron (e
 The most suitable correlation is the one between the polar angles of the electron and the proton. That is because of the better angular resolution in CLAS than that for momentum, and also due to the fact that polar angle (\thns) resolution is much better than that of the azimuthal angle (\phns) because of the rotational effect (on %along 
 \phns) of the polarized target field as well as the drift chamber resolutions \cite{bostedD2Cont}.
 
-The \thns-correlation can be studied mainly in two ways. The first way is to reconstruct and histogram the beam energy using the measured polar angles and the known target mass and then compare the histogram from the \nd3 target run with that from a pure \nh3 target run. % Eb = M*( 1.0/( tan(theta_e/2) * theta(theta_pr)) - 1.0 )
+The \thns-correlation can be studied mainly in two ways. The first way is to reconstruct and histogram the beam energy using the measured polar angles and the known target mass and then compare the histogram from the \nd3 target run with that from a pure \nh3 target run. % Eb = M*( 1.0/( \tan(theta_e/2) * theta(theta_pr)) - 1.0 )
 The other equivalent way is to predict the proton polar angles (using the measured electron angles, known target mass and the beam energy) and then histogram the deviation of the measured proton angles from the expected values. We chose to use a slightly modified %different 
 version of the latter approach %one 
 in which we histogram the following quantity\footnote{We chose this quantity $\Delta$ rather than the simple angle difference (\thns$_q$-\thns$_p$) because the former is more %kp: sensitive to the revealing of the contamination.}:
 directly interpretable in terms of transverse missing momentum for the case of quasi-elastic scattering.}: %SEKpr
 \begin{equation}
-\Delta = p_p\cdot(sin\theta_q - sin\theta_p)
+\Delta = p_p\cdot(\sin\theta_q - \sin\theta_p)
 \label{pDsinTh}
 \end{equation}
 where $p_p$ is the measured proton momentum, \thns$_p$ is the measured polar angle of the proton, and \thns$_q$ is the expected polar angle of the recoiling proton (which is also the angle of the exchanged virtual photon (q)) given by:
 \begin{equation}
-\theta_q = tan^{-1}\left(\frac{M_p}{tan(\theta/2)\cdot(E_{beam}+M_p)} \right)%th1 = atan2(mmPr, tan(th1/2)*(Eb + mmPr));
+\theta_q = \tan^{-1}\left(\frac{M_p}{\tan(\theta/2)\cdot(E_{beam}+M_p)} \right)%th1 = atan2(mmPr, \tan(th1/2)*(Eb + mmPr));
 \label{thQ}
 \end{equation}
 
@@ -117,7 +117,7 @@ a fit (a 'gaussian' times a 'linear' function) to the carbon data is obtained, a
 \begin{figure}[H]%[h]
 %\centerline{\includegraphics[height=6.0in]{TechNotes/Figures/deutContamPlotsAll.pdf}}
 \centerline{\includegraphics[height=5.0in]{TexmakerMyFinTh/TechNotes/Figures/deutContamPlotsAll.png}}
-\caption[\Delt = $p_{p}\cdot(sin\theta_q - sin\theta_{p})$ for quasi-elastic events]{Histograms showing the quantity \Delt = $p_{p}\cdot(sin\theta_q - sin\theta_{p})$ for elastic or quasi-elastic events from carbon-12 (top-left), \nh3 (top-right) and \nd3 (bottom-right) target runs respectively. The third (bottom-left) panel shows the background removed elastic events from the \nh3 data. In the fourth panel, various \Delts are shown - red is the raw \nd3, light green is the scaled-$^{12}C$ for the nuclear background, brown is for the difference between the two.
+\caption[\Delt = $p_{p}\cdot(\sin\theta_q - \sin\theta_{p})$ for quasi-elastic events]{Histograms showing the quantity \Delt = $p_{p}\cdot(\sin\theta_q - \sin\theta_{p})$ for elastic or quasi-elastic events from carbon-12 (top-left), \nh3 (top-right) and \nd3 (bottom-right) target runs respectively. The third (bottom-left) panel shows the background removed elastic events from the \nh3 data. In the fourth panel, various \Delts are shown - red is the raw \nd3, light green is the scaled-$^{12}C$ for the nuclear background, brown is for the difference between the two.
 %\textcolor{red}{Figure to be updated with different line styles. Also, details to be added on the fourth plot. Couldn't finish on 11/26/13 early morning at 4.02 because the rather dim light didn't help me recongnize/distinguish the colors from one another.}
 }
 \label{fig:deutContAll}

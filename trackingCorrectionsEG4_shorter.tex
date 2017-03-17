@@ -121,7 +121,7 @@ $f_{c}$ is 0.995)
 \item If it's the electron in the event,
 
 \begin{itemize}
-\item $\theta_{f}=\theta_{f}+(\mathbf{par[0]}+\mathbf{par[1]}\times\phi_{f})\thinspace\frac{cos\theta_{f}}{cos\phi_{f}}+(\mathbf{par[2]}+\mathbf{par[3]}\times\phi_{f})\thinspace sin\theta_{f}$
+\item $\theta_{f}=\theta_{f}+(\mathbf{par[0]}+\mathbf{par[1]}\times\phi_{f})\thinspace\frac{cos\theta_{f}}{cos\phi_{f}}+(\mathbf{par[2]}+\mathbf{par[3]}\times\phi_{f})\thinspace \sin\theta_{f}$
 \end{itemize}
 \item else if its the proton, 
 
@@ -145,8 +145,8 @@ term for beam (x,y)=0.
 to it ($y_{p}$) 
 
 \begin{itemize}
-\item $x_{p}=x_{r}\thinspace cos\phi_{0}+y_{r}\thinspace sin\phi_{0}$ 
-\item $y_{p}=-(x_{r}+\mathbf{par[6]})\thinspace sin\phi_{0}+(y_{r}+\mathbf{par[7]})\thinspace cos\phi_{0}$ 
+\item $x_{p}=x_{r}\thinspace cos\phi_{0}+y_{r}\thinspace \sin\phi_{0}$ 
+\item $y_{p}=-(x_{r}+\mathbf{par[6]})\thinspace \sin\phi_{0}+(y_{r}+\mathbf{par[7]})\thinspace cos\phi_{0}$ 
 \end{itemize}
 \item Correction to $\delta\theta$ from radial target field, which only
 depends on raster x and y but not vertex z. Also, no effect on peak
@@ -169,8 +169,8 @@ at zero!
 \item Get cx and cy using this cz 
 
 \begin{itemize}
-\item $cx_{c}=sin\theta_{0}\thinspace cos\phi_{0}$
-\item $cy_{c}=sin\theta_{0\thinspace}sin\phi_{0}$
+\item $cx_{c}=\sin\theta_{0}\thinspace cos\phi_{0}$
+\item $cy_{c}=\sin\theta_{0\thinspace}\sin\phi_{0}$
 \end{itemize}
 \item Renomalize czc 
 
@@ -346,10 +346,10 @@ where
 \item $Y_{offset}=Par[3\thinspace E{}_{i}+5]$
 \item $x_{r}=(X_{ADC}-X_{offset})\thinspace X_{gain}$
 \item $y_{r}=(Y_{ADC}-Y_{offset})\thinspace Y_{gain}$
-\item $X_{p}=(x_{r}\thinspace cos\phi_{s}+y_{r}\thinspace sin\phi_{s})/cos(\phi-\phi_{s})$
-\item $factor1=q\cdot10\cdot(Par[19]\cdot cx+Par[20]\cdot cy)\frac{1}{p\times sin\theta\times sin\theta}$; 
-\item $factor2=\frac{1-0.25\times tan\theta\times tan\theta}{sin\theta\times cos\theta}$ 
-\item $P_{t}=p\times sin\theta$
+\item $X_{p}=(x_{r}\thinspace \cos\phi_{s}+y_{r}\thinspace \sin\phi_{s})/\cos(\phi-\phi_{s})$
+\item $factor1=q\cdot10\cdot(Par[19]\cdot cx+Par[20]\cdot cy)\frac{1}{p\times \sin\theta\times \sin\theta}$; 
+\item $factor2=\frac{1-0.25\times tan\theta\times tan\theta}{\sin\theta\times \cos\theta}$ 
+\item $P_{t}=p\times \sin\theta$
 \end{itemize}
 \end{itemize}
 \begin{thebibliography}{1}

@@ -21,7 +21,7 @@ maximum range allowed is (-30.0,30.0)).
   
 \begin{eqnarray}
 \label{eqElasticEprime}
-E'_{elastic} = \frac{E_{beam}}{1+\frac{2E_{beam}}{M_p}sin^2(\theta_e/2)}
+E'_{elastic} = \frac{E_{beam}}{1+\frac{2E_{beam}}{M_p}\sin^2(\theta_e/2)}
 \end{eqnarray}
 
 %\textcolor{red}{To be expanded later on.}
@@ -41,18 +41,18 @@ and using the method of \chisq-minimization in order to determine the values of 
 where, $\frac{\Delta p}{p}$ is the ratio of the correction ($\Delta p$) to the magnitude ($p$) of the momentum and 
 \begin{eqnarray}
 \label{eqPCor1}
-%\frac{\Delta p}{p} = ((E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta)\frac{p}{qB_{torus}}  %Smallest normal sized parentheses
-%\frac{\Delta p}{p} = \big( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \big) \frac{p}{qB_{torus}} % same as above
-%\frac{\Delta p}{p} = \Big( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \Big) \frac{p}{qB_{torus}} %Bigger parentheses
-%\frac{\Delta p}{p} = \bigg( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \bigg) \frac{p}{qB_{torus}} %Bigger parentheses
-Pcorr1 = \left( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \right) \frac{p}{qB_{torus}} %Biggest parentheses
+%\frac{\Delta p}{p} = ((E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta)\frac{p}{qB_{torus}}  %Smallest normal sized parentheses
+%\frac{\Delta p}{p} = \big( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \big) \frac{p}{qB_{torus}} % same as above
+%\frac{\Delta p}{p} = \Big( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \Big) \frac{p}{qB_{torus}} %Bigger parentheses
+%\frac{\Delta p}{p} = \bigg( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \bigg) \frac{p}{qB_{torus}} %Bigger parentheses
+Pcorr1 = \left( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \right) \frac{p}{qB_{torus}} %Biggest parentheses
 \end{eqnarray}
 
 
 \begin{eqnarray}
 \label{eqPCor2}
-%\frac{\Delta p}{p} = (J cos\theta + K sin\theta) + (M cos\theta+N sin\theta)\phi
-Pcorr2 = (J cos\theta + K sin\theta) + (M cos\theta+N sin\theta)\phi
+%\frac{\Delta p}{p} = (J \cos\theta + K \sin\theta) + (M \cos\theta+N \sin\theta)\phi
+Pcorr2 = (J \cos\theta + K \sin\theta) + (M \cos\theta+N \sin\theta)\phi
 \end{eqnarray}
 
 \begin{eqnarray}
@@ -65,10 +65,10 @@ of m/ns (c = 0.29979 m/ns) and is given by
 
 \begin{eqnarray}
 \label{eqBtor1}
-%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  for \quad  \theta < \frac{\pi}{8} %itallic text 'for'
-B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \rm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
-%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \mathrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
-%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \textrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  for \quad  \theta < \frac{\pi}{8} %itallic text 'for'
+B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  \rm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  \mathrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  \textrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
 \end{eqnarray}
 
 \begin{eqnarray}
@@ -186,8 +186,8 @@ which is an approximation of the Bethe-Block formula \cite{leo1994techniques}: %
 %This quantity is calculated as follows:
 The total effective mass thickness $\tau$ (in cm) is calculated as follows: %xz
 \begin{itemize}
-\item $\tau = \tau_{\parallel}/cos\theta$ \quad if $\theta <= \pi/4$
-\item $\tau = \tau_{\parallel}/cos(\pi/4)$ \quad if $\theta > \pi/4$    %SEK comment:  I don't understand. leave out! Why not \tau = r/sin \theta    (anyway \theta > \pi/4 is never true!
+\item $\tau = \tau_{\parallel}/\cos\theta$ \quad if $\theta <= \pi/4$
+\item $\tau = \tau_{\parallel}/\cos(\pi/4)$ \quad if $\theta > \pi/4$    %SEK comment:  I don't understand. leave out! Why not \tau = r/\sin \theta    (anyway \theta > \pi/4 is never true!
 \end{itemize}
 where $\tau_{\parallel}$ is calculated as:
 \begin{itemize}
@@ -219,8 +219,8 @@ whereas 0.4 is the sum of the mass thicknesses of He ($\sim 0.3$) and that of wi
 %    else  \tau = 0.75;
 %   //Ignore all above lines with '#ignore' and use '\tau = 0.75' for all cases for a reasonable approximation (Dr. Kuhn)
     
-%    if( theta * rad2deg <= 45. ) \tau = \tau / cos( theta );
-%    else  \tau = \tau / cos( 45. * deg2rad );
+%    if( theta * rad2deg <= 45. ) \tau = \tau / \cos( theta );
+%    else  \tau = \tau / \cos( 45. * deg2rad );
 
 Using the ionization loss corrected energy and the rest mass of the particle, momentum is recalculated as $p_{cor} = \sqrt{E^2_{cor}-m^2}$ 
 (where $m$ is the mass of the particle). Finally, this new p is used along with the previously corrected angles to evaluate the three 

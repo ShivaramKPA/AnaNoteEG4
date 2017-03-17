@@ -23,18 +23,18 @@ The ratio of the correction to the magnitude of the momentum could be expressed 
 where,
 \begin{eqnarray}
 \label{eqPCor1}
-%\frac{\Delta p}{p} = ((E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta)\frac{p}{qB_{torus}}  %Smallest normal sized parentheses
-%\frac{\Delta p}{p} = \big( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \big) \frac{p}{qB_{torus}} % same as above
-%\frac{\Delta p}{p} = \Big( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \Big) \frac{p}{qB_{torus}} %Bigger parentheses
-%\frac{\Delta p}{p} = \bigg( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \bigg) \frac{p}{qB_{torus}} %Bigger parentheses
-Pcorr1 = \left( (E+F\phi)\frac{cos\theta}{sin\phi} + (G+H\phi)sin\theta   \right) \frac{p}{qB_{torus}} %Biggest parentheses
+%\frac{\Delta p}{p} = ((E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta)\frac{p}{qB_{torus}}  %Smallest normal sized parentheses
+%\frac{\Delta p}{p} = \big( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \big) \frac{p}{qB_{torus}} % same as above
+%\frac{\Delta p}{p} = \Big( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \Big) \frac{p}{qB_{torus}} %Bigger parentheses
+%\frac{\Delta p}{p} = \bigg( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \bigg) \frac{p}{qB_{torus}} %Bigger parentheses
+Pcorr1 = \left( (E+F\phi)\frac{\cos\theta}{\sin\phi} + (G+H\phi)\sin\theta   \right) \frac{p}{qB_{torus}} %Biggest parentheses
 \end{eqnarray}
 
 
 \begin{eqnarray}
 \label{eqPCor2}
-%\frac{\Delta p}{p} = (J cos\theta + K sin\theta) + (M cos\theta+N sin\theta)\phi
-Pcorr2 = (J cos\theta + K sin\theta) + (M cos\theta+N sin\theta)\phi
+%\frac{\Delta p}{p} = (J \cos\theta + K \sin\theta) + (M \cos\theta+N \sin\theta)\phi
+Pcorr2 = (J \cos\theta + K \sin\theta) + (M \cos\theta+N \sin\theta)\phi
 \end{eqnarray}
 
 \begin{eqnarray}
@@ -48,10 +48,10 @@ of m/ns (c = 0.29979 m/ns) and is given by
 
 \begin{eqnarray}
 \label{eqBtor1}
-%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  for \quad  \theta < \frac{\pi}{8} %itallic text 'for'
-B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \rm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
-%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \mathrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
-%B_{tor} = 0.76 \frac{I_{tor}sin^2(4\theta)}{3375\theta/rad} \quad  \textrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  for \quad  \theta < \frac{\pi}{8} %itallic text 'for'
+B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  \rm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  \mathrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
+%B_{tor} = 0.76 \frac{I_{tor}\sin^2(4\theta)}{3375\theta/rad} \quad  \textrm{for} \quad  \theta < \frac{\pi}{8} %Roman (no itallic)
 \end{eqnarray}
 
 \begin{eqnarray}
@@ -76,7 +76,7 @@ Unlike for sector-6, both p- and $\theta$ were subjected to correction if a give
 %\begin{equation} %equation reference didn't work with this  
 \begin{eqnarray}
 \label{eqThCor}
-\Delta\theta = (A+B\phi)\frac{cos\theta}{cos\phi} + (C+D\phi)sin\theta
+\Delta\theta = (A+B\phi)\frac{\cos\theta}{\cos\phi} + (C+D\phi)\sin\theta
 %\end{equation} 
 \end{eqnarray}
 
@@ -126,12 +126,12 @@ the angles is used in addition to the other corrections:
 \label{eqOffsetCor}
 \begin{eqnarray}
 \label{eqOffsetCor1}
-\phi_{true} = \phi_{ini} + qB_{solenoid}\frac{S cos\phi_{ini} - T sin\phi_{ini}}{p sin\theta_{ini}}
+\phi_{true} = \phi_{ini} + qB_{solenoid}\frac{S \cos\phi_{ini} - T \sin\phi_{ini}}{p \sin\theta_{ini}}
 \end{eqnarray}
 
 \begin{eqnarray}
 \label{eqOffsetCor2}
-\theta_{true} = \theta_{ini} + qB_{solenoid} \frac{U cos\phi_{ini} - V sin\phi_{ini}}{p}
+\theta_{true} = \theta_{ini} + qB_{solenoid} \frac{U \cos\phi_{ini} - V \sin\phi_{ini}}{p}
 \end{eqnarray}
 \end{subequations}
 
@@ -156,7 +156,7 @@ Z in addition to  $\phi$. Since the track itself is subject to further correctio
 the vertex should also be corrected further. The following expression is used to further correct the z-component of the vertex.
 \begin{eqnarray}
 \label{eqExVzCor}
-z_{true} = z_{rst} + Y \frac{\theta - \theta_{ini}}{sin^2\theta}
+z_{true} = z_{rst} + Y \frac{\theta - \theta_{ini}}{\sin^2\theta}
 \end{eqnarray}
 where $\theta_{ini}$ is the polar angle (in radians) at the start, $\theta$ is the one after all the previous corrections and 'Y' is the new fitting parameter to be determined whose physical meaning is the distance from the vertex to the first region of DC (about 150 cm) \cite{slava_th}.
 
@@ -209,8 +209,8 @@ which is an approximation of the Bethe-Block formula \cite{leo1994techniques}: %
 %And, the factor '$\tau$' is the total effective mass thickness traversed by the particle. 
 This quantity is calculated as follows:
 \begin{itemize}
-\item $\tau = \tau_{\parallel}/cos\theta$ \quad if $\theta <= \pi/4$
-\item $\tau = \tau_{\parallel}/cos(\pi/4)$ \quad if $\theta > \pi/4$    %SEK comment:  I don't understand. leave out! Why not \tau = r/sin \theta    (anyway \theta > \pi/4 is never true!
+\item $\tau = \tau_{\parallel}/\cos\theta$ \quad if $\theta <= \pi/4$
+\item $\tau = \tau_{\parallel}/\cos(\pi/4)$ \quad if $\theta > \pi/4$    %SEK comment:  I don't understand. leave out! Why not \tau = r/\sin \theta    (anyway \theta > \pi/4 is never true!
 \end{itemize}
 where $\tau_{\parallel}$ is calculated as:
 \begin{itemize}
@@ -242,8 +242,8 @@ whereas 0.4 is the sum of the mass thicknesses of He ($\sim 0.3$) and that of wi
 %    else  \tau = 0.75;
 %   //Ignore all above lines with '#ignore' and use '\tau = 0.75' for all cases for a reasonable approximation (Dr. Kuhn)
     
-%    if( theta * rad2deg <= 45. ) \tau = \tau / cos( theta );
-%    else  \tau = \tau / cos( 45. * deg2rad );
+%    if( theta * rad2deg <= 45. ) \tau = \tau / \cos( theta );
+%    else  \tau = \tau / \cos( 45. * deg2rad );
 
 Using the ionization loss corrected energy and the rest mass of the particle, momentum is recalculated as $p_{cor} = \sqrt{E^2_{cor}-m^2}$ (where $m$ is the mass of the particle). Finally, this new p is used along with the previously corrected angles to evaluate the three cartesian components $p_x$, $p_y$ and $p_z$ of the momentum.
 
