@@ -95,9 +95,10 @@ where f(\epem) is the fraction of electrons in a given bin that come from pair-s
 
 \paragraph{Radiative correction uncertainty}
 \label{sysRC}    
-Here, we need to change the parameter that most influences radiative corrections, the number of radiation lengths before (RADB) and after (RADA) the scattering. By increasing both numbers by 10\%, % 5\%, 
+Here, we need to change the parameter that most influences radiative corrections i.e., the number of radiation lengths before (RADB) and after (RADA) the scattering. By increasing both numbers by 10\%, % 5\%, 
 we should have a safe upper limit on practically all uncertainties coming from the radiative procedure itself. But, to simplify the situation, we increased the RADA parameter in RCSLACPOL by 20\% and repeated the full-statistic simulation. %Correlate corresponding change in $\delta \sigma^{rad}$ from the RCSLACPOL output with the corresponding inferred change in $g_1$ for each bin.
-As a result the simulated count difference in each kinematic bin changed from $\Delta n^{std}$ to a new value $\Delta n^{rad}$. This change can be converted to the corresponding inferred change in $g_1$ by using the same proportionality factors $B(W,Q^2)$ as used earlier in the \gones (or \afone) extraction/calculation. In other words, for a given kinematic bin this particular contribution to the systematic uncertainty is calculated as:
+%As a result the simulated count difference in each kinematic bin changed from $\Delta n^{std}$ to a new value $\Delta n^{rad}$. This change can be converted to the corresponding inferred change in $g_1$ by using the same proportionality factors $B(W,Q^2)$ as used earlier in the \gones (or \afone) extraction/calculation. In other words, for a given kinematic bin this particular contribution to the systematic uncertainty is calculated as:
+As a result, this particular contribution to the systematic uncertainty in a given kinematic bin is calculated as:
 \begin{equation}
 \label{eqSysRC}
 \Delta g_1^{rad}(W,Q^2) =  g_1^{std} +  \frac{\Delta n^{data}(W,Q^2) - \Delta n^{rad}(W,Q^2)}{B(W,Q^2) }  - g_1^{data}(W,Q^2)
