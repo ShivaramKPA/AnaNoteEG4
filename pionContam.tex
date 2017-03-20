@@ -15,16 +15,46 @@ First, % of all,
 the whole kinematic space covered by EG4 is divided into 90 two-dimensional bins - 9 in p and 10 in %along p-axis and 10 along \th-axis
 \thns\footnote{For 2 GeV or higher beam energy data sets, the p-bin boundaries are chosen as (0.30, 0.60, 0.90, 1.20, 1.50, 1.80, 2.20, 2.60, 3.00) and (0.30, 0.45, 0.60, 0.75, 0.9, 1.1, 1.4) for others. And, for \thns, the boundaries are (5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 12.0, 15.0, 19.0, 25, 49). The choice of the binning was rather arbitrary. Nevertheless higher statistics region was divided into relatively finer bins (event population peaks around \thns = 10 degrees).}.
 
+
+%\textcolor{red}{Will work more here after defense, especially on the fits mentioned on the last three items above.}
+
+
+
+
 %\subsection{Event Selection}
 %file $N_{phe}$NH3n.C is compiled and used with the directive PI_CONT_STUDY_$N_{phe}$ & PI_CONT_NH3/PI_CONT_ND3 enabled (same program is used for pair-symm. contam. histograms too, but with different directives).
-For each kinematic bin, a histogram of the number of photo-electrons (variable `$N_{phe}$' in the data ntuple) produced by the electron candidates (selected using the standard particle selection conditions (cuts) except that     no cut on `$N_{phe}$' is included %GED '$N_{phe}$' itself) 
+For each kinematic bin, a histogram of the number of photo-electrons (variable `$N_{phe}$' in the data ntuple) produced by the electron candidates (selected using the standard particle selection conditions (cuts) except that     no cut on `$N_{phe}$' is included) %GED '$N_{phe}$' itself) 
 is made (see Fig. \ref{fignphePiC}). Likewise, using a very stringent set of cuts, a similar histogram is made for the cleanest possible sample of pion candidates in the same kinematic bin. %These selection conditions are as follows: %\item Event selection: clean pion samples (different set of strict cuts) and contaminated electron samples (standard cuts)
+
+
+%The scale sizes below are hit and trial numbers chosen to make the figures as big as possible while putting them together
+\begin{figure}[H]
+  \centering
+\subfigure[For the $1^{st}$ p-bin and $7^{th}$ \th-bin.]{
+  \includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_6}
+  %\leavevmode \includegraphics[width=0.31\textwidth]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_6.png}  
+\label{fignphe01}
+}
+\subfigure[For the $1^{st}$ p-bin and $8^{th}$ \th-bin.]{
+\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_7}
+%\leavevmode \includegraphics[width=0.31\textwidth]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_7.png}
+\label{fignphe02}
+}
+\caption[$N_{ph}$ from pion and electron samples]{Number of photo-electrons produced in CC by clean pion and contaminated electron samples (3.0 GeV data) %\textbf{\textcolor{red}{See footnote of 'Method' subsection for more on binning.}}\\
+  \label{fignphePiC} 
+}
+\end{figure}
 
 %\subsection{Electron Selection Cuts}
 %\subsection{Pion Selection Cuts}
 
 %Next, a 7th order polynomial is fit to the $N_{phe}$ histogram for electrons in the $N_{phe}$ range extending from $N_{phe}$ = 2.5 to $N_{phe}$=10, then this fit is extrapolated down to $N_{phe}$ = 0. The distribution represented by this fit would be what one would get if there were no contamination\footnote{Beyond $N_{phe}$ = 2.5, the electron sample is nearly pure except for a tiny fraction due to the pion tail, so any function that fits with that section of $N_{phe}$-distribution is supposed to represent truly pure electron distribution. In order to simplify the situation, we chose only from 2.5 to 10.0 rather than covering the full range beyond 10.0.}.
 %\begin{comment} %11/7/13
+
+
+
+
+
 \begin{itemize}
  
  \item {\bf Estimating the contamination in each bin:} %A polynomial fit of the impure electron sample is done beyond $N_{phe}>5$. %or so?, 
@@ -37,24 +67,6 @@ is made (see Fig. \ref{fignphePiC}). Likewise, using a very stringent set of cut
  \item Finally, a global fit is performed on all the contaminations in different \thns- and p- bins (not on the fit parameters). The fit parameters from the earlier two fits only give us a hint to the type of the dependence, thus allowing us decide the form of the fit function.
 \end{itemize}
 %\end{comment}
-
-%\textcolor{red}{Will work more here after defense, especially on the fits mentioned on the last three items above.}
-
-%The scale sizes below are hit and trial numbers chosen to make the figures as big as possible while putting them together
-\begin{figure}[H]
-\centering
-\subfigure[For the first in momentum and seventh in \th bin.]{
-\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_6.png} 
-\label{fignphe01}
-}
-\subfigure[For the first in momentum and eighth in \th bin.]{
-\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/purePi_ContEl2999_0_7.png}
-\label{fignphe02}
-}
-\label{fignphePiC} %Effect of Dc-smear
-\caption[$N_{ph}$ from pion and electron samples]{Number of photo-electrons produced in CC by clean pion and contaminated electron samples (3.0 GeV data) %\textbf{\textcolor{red}{See footnote of 'Method' subsection for more on binning.}}\\
-}
-\end{figure}
 
 
 
@@ -77,9 +89,11 @@ is made (see Fig. \ref{fignphePiC}). Likewise, using a very stringent set of cut
 \subfigure[Fits in the $\theta(9.0,10.0)$ bin for 2.0 GeV data.]{\includegraphics[scale=0.31]{TexmakerMyFinTh/FigBkGrnd/GlbFitLinThEbBoth_E3ppt.png}
 \label{figpcFit2}    }
 %\caption{Main figure caption}
-\label{figpiCont}
+
 \caption[Calculation of pion contamination and fits.]{The top row plots show the calculation of pion contamination of electrons for the given kinematic bins of 3.0 GeV data. The dotted black line indicated by the label ``Raw El'' in the legends of each of the two plots are the contaminated electrons. Likewise, the line labeled ``El Fit'' is a polynomial fit to the electron distribution (in this case fitted from Nphe=1.8 to 7.0, but extrapolated down to Nphe=0). The line labeled ``Unscaled Pi' is the pure pion distribution obtained with stringent set of cuts. ``Raw El - Fit'' is the difference between the contaminated electron sample and the polynomial fit and finally ``Scaled Pi'' is the pure pion-sample but after its scaled to match with the ``Raw El - Fit'' at the pion peak position (around 1 Nphe). The bottom row plots show the fits of the contaminations as a functions of momentum ($p$) in a given $\theta$ bin. }
 %\label{figpcFit} \caption[Fits of pion contamination]{Fits of pion contamination as a function of momentum in one \ths bin.}
+\label{figpiCont}
+
 \end{figure}
 
 
