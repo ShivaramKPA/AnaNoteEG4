@@ -1,24 +1,36 @@
 \subsection{Vertex-Z cuts}
 \label{vzCuts}
 
-In the EG4 experiment, the ND$_3$ polarized target was of 1 cm long and was placed at (x= 0, y = 0, z = -100.93 cm) in the CLAS coordinate system. Since the beam electrons have to go through a few foils %materials 
-before reaching the target as well as the detector, 
-we want to reject electron tracks with vertices 
+\begin{figure}[H]%[htp] %ht, htpb (p - float, b = bottom, h=? t = top)
+\centering
+\leavevmode \includegraphics[width=0.8\textwidth]{figuresEG4/FigCuts/vzCuts_BanjoLength3GeV.png}  %0.6 is the fraction of the real image width????
+\caption[Banjo length fits (3.0 GeV)]{Z-distribution of electron vertices which scattered off an empty cell target (with no Helium) from a 3.0 GeV run (50916) before (black) and after (blue) the vertex corrections. The two big peaks at about $z = - 102$ and $-100$ cm arise from the scattering of electrons off the Al windows of the target chamber (also known sometimes as Banjo) and the other small peaks are from insulation aluminized mylar foils along the beam path downstream of the target. From the mean values of the Gaussian fits to the bigger two peaks, it was determined that the banjo length was $2.13 \pm 0.2 cm$ and the actual polarized target position was $-100.93 cm$ (by averaging over similar estimates from all beam energy cases). }
+\label{banjoLength}
+\end{figure}
+
+In the EG4 experiment, the ND$_3$ polarized target was of 1 cm long and was placed at (x= 0, y = 0, z = -100.93 cm)\footnote{Although, the nominal value of 
+  the z-coordinate of the target position was -101.0 cm, the actual value was determined by doing the Gaussian fits of the double peaks in the vz-distribution
+  of electrons from the empty-cell data runs as shown in Fig. \ref{banjoLength}. The average position of the target was calculated to be the average of the mean
+  positions of these two double peaks which represent the two Al windows of the target chamber.}
+in the CLAS coordinate system. Since the beam electrons have to go through a few foils %materials 
+before reaching the target as well as the detector, we want to reject electron tracks with vertices 
 %sometimes, many of the electrons that get detected happen to have scattered from points (scattering centers) that are outside the target volume. Our focus being on events that scattered off the actual target material, we want to reject those electrons that had %its 
 %reconstructed vertices 
 outside the target volume. %To do just that we 
 For this purpose, use a cut on the reconstructed vertex co-ordinate ``v$_z$''. %But, because the resolution of ``v$_z$'' or any of the other variables is not good enough to cut events right at the edges of the target volum. Rather, the actual resolution
 However the vertex resolution demands reasonably %much 
 wide ``v$_z$'' cuts so as not to lose too many %much of 
-good events. % due to the cuts applied. 
+good events. % due to the cuts applied.
 That is why the distribution of ``v$_z$'' was %is 
 studied and based on the position and width of the distribution as well as our knowledge of the location of various foils and target materials, the cuts on ``v$_z$'' were decided. %Obviously, we were initially tempted to have a simpler, single set of cuts for all the kinematics (such as $\pm$ 4 or 5 cm on both sides of the nominal target  position), but it 
 It was seen (see Figs. \ref{vzCtExp} and \ref{vzCtSim}) that the resolutions get worse and the distributions get wider as we go to lower \qsqs values, so again \qsqs dependent cuts were chosen for both data and simulation with the cuts tightening as \qsq increases.
 
+
+
 \begin{figure}[H]%[htp] %ht, htpb (p - float, b = bottom, h=? t = top)
 \centering
 %\leavevmode \includegraphics[width=1.0\textwidth]{TexmakerMyFinTh/chap4simul/FigCuts/vzCutsFinalEb2.eps}  %0.6 is the fraction of the real image width????
-\leavevmode \includegraphics[width=1.0\textwidth]{TexmakerMyFinTh/chap4simul/FigCuts/vzCutsFinalEb2Ncropped}  %0.6 is the fraction of the real image width????
+\leavevmode \includegraphics[width=0.8\textwidth]{TexmakerMyFinTh/chap4simul/FigCuts/vzCutsFinalEb2Ncropped}  %0.6 is the fraction of the real image width????
 \caption[v$_z$ cuts (Exp.)]{2.0 GeV data showing the \qsqs dependent v$_z$-cuts (the magenta lines on the left and right of the peaks) in some of the \qsqs bins. The continuous black line represents events before applying all the other event selection cuts (except on v$_z$) and the thicker dotted red line are the events after the cuts. The blue lines are the centers of the distributions, from which the cuts are 3 times $\sigma$ away on each side, where $\sigma$ is the standard deviation for the distribution in the given \qsqs bin (both the central value and the $\sigma$ are determined during the cut development studies).}
 \label{vzCtExp}
 \end{figure}
@@ -33,8 +45,9 @@ As in the case of EC variables, the reconstructed ``v$_z$'' distribution in the 
 
 
 \begin{figure}[H]%[h] %ht, htpb (p - float, b = bottom, h=? t = top)
+  \centering
 %\leavevmode \includegraphics[width=1.0\textwidth]{TexmakerMyFinTh/chap4simul/FigCuts/vzCutsFinalEb2sim.eps}  %0.6 is the fraction of the real image width????
-\leavevmode \includegraphics[width=1.0\textwidth]{TexmakerMyFinTh/chap4simul/FigCuts/vzCutsFinalEb2simNcropped}  %0.6 is the fraction of the real image width????
+\leavevmode \includegraphics[width=0.8\textwidth]{TexmakerMyFinTh/chap4simul/FigCuts/vzCutsFinalEb2simNcropped}  %0.6 is the fraction of the real image width????
 \caption[v$_z$ cuts (Sim.)]{\qsqs dependent v$_z$-cuts on simulation data (similar to Fig. \ref{vzCtExp}).}
 \label{vzCtSim}
 \end{figure}
